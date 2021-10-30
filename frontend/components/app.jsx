@@ -1,20 +1,23 @@
 import React from "react";
 import { Route, Switch } from "react-router";
-import { AuthRoute } from "../util/route_util";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
+import DiscoverPageContainer from "./discover/discover_page_container";
 import GreetingContainer from './greeting/greeting_container'
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
+import Splash from "./splash/splash";
 
 const App = () => (
     <div>
         <header>
             <h1>SoundCRUD</h1>
-            <GreetingContainer />
         </header>
 
         <Switch>
+            <AuthRoute exact path="/" component={Splash} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
+            <ProtectedRoute exact path="/discover" component={DiscoverPageContainer} />
         </Switch>
     </div>
 );

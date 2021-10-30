@@ -18,10 +18,6 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state)
         this.props.processForm(user)
-        this.setState({
-            username: '',
-            password: ''
-        })
     }
 
     update(field) {
@@ -50,7 +46,7 @@ class SessionForm extends React.Component {
                 <h2>{this.props.formType}</h2>
                 <span>{link}</span>
                 <br />
-                <a href="#" onClick={this.loginGuest}>Login as a guest</a>
+                <Link onClick={this.loginGuest} to="/discover">Login as a guest</Link>
 
                 <ul>
                     {this.props.errors.map((error, i) => (
