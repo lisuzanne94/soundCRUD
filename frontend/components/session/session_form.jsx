@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.loginGuest = this.loginGuest.bind(this);
     }
 
     handleSubmit(e) {
@@ -27,6 +28,15 @@ class SessionForm extends React.Component {
         return e => this.setState({ [field]: e.target.value })
     }
 
+    loginGuest(e) {
+        const guest = {
+            username: 'guest',
+            password: 'password'
+        };
+        
+        this.props.processForm(guest);
+    }
+
     render() {
 
         const link = this.props.formType === 'Sign Up' ? (
@@ -39,6 +49,8 @@ class SessionForm extends React.Component {
             <div>
                 <h2>{this.props.formType}</h2>
                 <span>{link}</span>
+                <br />
+                <a href="#" onClick={this.loginGuest}>Login as a guest</a>
 
                 <ul>
                     {this.props.errors.map((error, i) => (
