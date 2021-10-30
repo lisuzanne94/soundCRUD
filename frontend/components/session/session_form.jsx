@@ -28,13 +28,13 @@ class SessionForm extends React.Component {
         return e => this.setState({ [field]: e.target.value })
     }
 
-    loginGuest(e) {
+    loginGuest() {
         const guest = {
             username: 'guest',
             password: 'password'
         };
         
-        this.props.processForm(guest);
+        this.props.loginGuest(guest);
     }
 
     render() {
