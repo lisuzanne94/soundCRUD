@@ -1,0 +1,56 @@
+import * as TrackAPIUtil from '../util/track_api_util';
+
+export const RECEIVE_TRACKS = 'RECEIVE_TRACKS';
+export const RECEIVE_TRACK = 'RECEIVE_TRACK';
+export const REMOVE_TRACKS = 'REMOVE_TRACKS';
+
+export const RECEIVE_TRACK_ERRORS = 'RECEIVE_TRACK_ERRORS';
+export const CLEAR_TRACK_ERRORS = 'CLEAR_TRACK_ERRORS';
+
+export const receiveAllTracks = tracks => ({
+    type: RECEIVE_TRACKS,
+    tracks
+});
+
+export const receiveTrack = track => ({
+    type: RECEIVE_TRACK,
+    track
+});
+
+export const removeTrack = track => ({
+    type: REMOVE_TRACKS,
+    track
+});
+
+export const receiveTrackErrors = errors => ({
+    type: RECEIVE_TRACK_ERRORS,
+    errors
+});
+
+export const clearTrackErrors = () => ({
+    type: CLEAR_TRACK_ERRORS
+});
+
+//Thunk action creators
+
+export const fetchTracks = () => dispatch => (
+    TrackAPIUtil.fetchTracks().then(tracks => dispatch(receiveAllTracks(tracks)))
+);
+
+export const fetchTrack = trackId => dispatch => (
+    TrackAPIUtil.fetchTrack(trackId).then(track => dispatch(receiveTrack(track)))
+);
+
+export const createTrack = track => dispatch => (
+    TrackAPIUtil.createTrack(track).then(track => dispatch(receiveTrack(track))),
+    err => dispatch(receiveTrackErrors(err.responseJSON))
+);
+
+export const updateTrack = track => dispatch => (
+    TrackAPIUtil.updateTrack(track).then(track => dispatch(receiveTrack(track))),
+    err => dispatch(receiveTrackErrors(err.responseJSON))
+);
+
+export const deleteTrack = trackId => dispatch => (
+    TrackAPIUtil.deleteTrack(trackId).then(() => dispatch(removeTrack(trackId)))
+);
