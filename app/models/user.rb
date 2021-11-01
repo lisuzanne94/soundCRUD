@@ -6,6 +6,12 @@ class User < ApplicationRecord
   validates :password_digest, presence: { message: "Password can't be blank" }
   validates :password, length: { minimum: 6, allow_nil: true }
 
+ # Associations
+  has_many :tracks,
+    primary_key: :id,
+    foreign_key: :uploader_id,
+    class_name: :Track
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     (user && user.is_password?(password)) ? user : nil

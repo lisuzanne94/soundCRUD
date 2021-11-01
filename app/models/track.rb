@@ -1,5 +1,5 @@
 class Track < ApplicationRecord
-    validates :title, :uploader_id, presence: true
+    validates :title, presence: true
 
     belongs_to :uploader,
         primary_key: :id,
