@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -12,6 +11,10 @@ class SessionForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.loginGuest = this.loginGuest.bind(this);
+    }
+
+    componentWillUnmount () {
+        this.props.clearErrors();
     }
 
     handleSubmit(e) {

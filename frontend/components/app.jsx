@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router";
+import { Redirect, Route, Switch } from "react-router";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import DiscoverPageContainer from "./discover/discover_page_container";
 import NavBarContainer from "./navbar/navbar_container";
@@ -17,6 +17,7 @@ const App = () => (
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <ProtectedRoute exact path="/discover" component={DiscoverPageContainer} loading />
+            <Route><Redirect to="/" /></Route>
         </Switch>
     </div>
 );
