@@ -35,18 +35,9 @@ class SessionForm extends React.Component {
 
     render() {
 
-        const link = this.props.formType === 'Sign Up' ? (
-            <Link to='/login'>Login</Link>
-        ) : (
-            <Link to='/signup'>Sign Up</Link>
-        )
-
         return (
             <div>
                 <h2>{this.props.formType}</h2>
-                <span>{link}</span>
-                <br />
-                <Link onClick={this.loginGuest} to="/discover">Login as a guest</Link>
 
                 <ul>
                     {this.props.errors.map((error, i) => (
@@ -70,6 +61,8 @@ class SessionForm extends React.Component {
                     </label>
                     <button>{this.props.formType}</button>
                 </form>
+                <br />
+                <button onClick={this.loginGuest}>Login as a guest</button>
             </div>
         )
     }

@@ -5,8 +5,7 @@ const DiscoverPage = ({ currentUser, logout }) => {
 
     return (
         <div>
-            <h2>Welcome, {currentUser.username}!</h2>
-            <button onClick={logout}>Logout</button>
+            <h2>THIS IS THE DISCOVER PAGE</h2>
         </div>
     )
 }
