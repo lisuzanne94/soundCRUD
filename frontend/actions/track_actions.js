@@ -7,27 +7,27 @@ export const REMOVE_TRACKS = 'REMOVE_TRACKS';
 export const RECEIVE_TRACK_ERRORS = 'RECEIVE_TRACK_ERRORS';
 export const CLEAR_TRACK_ERRORS = 'CLEAR_TRACK_ERRORS';
 
-export const receiveAllTracks = tracks => ({
+const receiveAllTracks = tracks => ({
     type: RECEIVE_TRACKS,
     tracks
 });
 
-export const receiveTrack = track => ({
+const receiveTrack = track => ({
     type: RECEIVE_TRACK,
     track
 });
 
-export const removeTrack = track => ({
+const removeTrack = trackId => ({
     type: REMOVE_TRACKS,
-    track
+    trackId
 });
 
-export const receiveTrackErrors = errors => ({
+const receiveTrackErrors = errors => ({
     type: RECEIVE_TRACK_ERRORS,
     errors
 });
 
-export const clearTrackErrors = () => ({
+const clearTrackErrors = () => ({
     type: CLEAR_TRACK_ERRORS
 });
 
