@@ -26,7 +26,7 @@ class TrackShow extends React.Component {
 
                 <br />
 
-                <Link to='/discover' onClick={() => this.props.deleteTrack(this.props.track.id)}>Delete Track</Link>
+                <button onClick={() => this.props.deleteTrack(this.props.track.id).then(() => this.props.history.push('/discover'))}>Delete Track</button>
             </div>
         ) : null
 
