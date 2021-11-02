@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class SessionForm extends React.Component {
+
+    componentDidMount () {
+        this.props.clearErrors();
+    }
+
     constructor(props) {
         super(props)
 
@@ -33,17 +38,23 @@ class SessionForm extends React.Component {
         this.props.loginGuest(guest);
     }
 
+    renderErrors() {
+        return (
+        <ul>
+            {this.props.errors.map((error, i) => (
+                <li key={i}>{error}</li>
+            ))}
+        </ul>
+        )
+    }
+
     render() {
 
         return (
             <div>
                 <h2>{this.props.formType}</h2>
-
-                <ul>
-                    {this.props.errors.map((error, i) => (
-                        <li key={i}>{error}</li>
-                    ))}
-                </ul>
+                
+                {this.renderErrors()}
 
                 <form onSubmit={this.handleSubmit}>
                     <label>Username
