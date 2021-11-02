@@ -19,8 +19,14 @@ class TrackShow extends React.Component {
         const trackDetails = this.props.track ? (
             <div>
                 <h2>{this.props.track.title}</h2>
+
                 <p>Uploaded by: {this.props.track.uploader.username}</p>
+
                 <Link to={`/tracks/${this.props.track.id}/edit`}>Edit Track</Link>
+
+                <br />
+
+                <Link to='/discover' onClick={() => this.props.deleteTrack(this.props.track.id)}>Delete Track</Link>
             </div>
         ) : null
 

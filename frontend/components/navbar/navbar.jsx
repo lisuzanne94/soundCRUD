@@ -11,7 +11,7 @@ class NavBar extends React.Component {
             <div>
                 <span>Welcome, {currentUser.username}!</span>
                 <Link to="/upload">Upload</Link>
-                <Link onClick={logout} to="/">Logout</Link>
+                <button onClick={logout} to="/">Logout</button>
             </div>
         ) : (
             <div>
