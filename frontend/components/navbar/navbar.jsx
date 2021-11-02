@@ -5,7 +5,7 @@ class NavBar extends React.Component {
     
     render () {
 
-        const { currentUser, logout } = this.props;
+        const { currentUser, logout, openModal } = this.props;
 
         const navLinks = currentUser ? (
             <div>
@@ -15,9 +15,9 @@ class NavBar extends React.Component {
             </div>
         ) : (
             <div>
-                <span><Link to="/login">Log In</Link></span>
+                <span><button onClick={() => openModal('Login')}>Log In</button></span>
                 <span>  </span>
-                <span><Link to="/signup">Sign up</Link></span>
+                    <span><button onClick={() => openModal('Sign up')}>Sign up</button></span>
             </div>
         )
 

@@ -1,4 +1,4 @@
-.modal-background {
+.modal-bg {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -12,5 +12,9 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  border: solid 2px black;
   transform: translate(-50%, -50%);
 }

@@ -4,17 +4,17 @@ import { connect } from "react-redux";
 import LoginFormContainer from "../session/login_form_container";
 import SignupFormContainer from "../session/signup_form_container";
 
-function Modal ({ modal, closeModal }) {
+const Modal = ({ modal, closeModal }) => {
     if (!modal) {
         return null;
     }
 
     let component;
     switch (modal) {
-        case 'login':
+        case 'Login':
             component = <LoginFormContainer />;
             break;
-        case 'signup':
+        case 'Sign up':
             component = <SignupFormContainer />;
             break;
         default:
