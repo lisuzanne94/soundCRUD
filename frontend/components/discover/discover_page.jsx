@@ -12,6 +12,7 @@ class DiscoverPage extends React.Component {
         return (
             <div>
                 <h2>THIS IS THE DISCOVER PAGE</h2>
+                <br />
                 <ul>
                     {
                         this.props.tracks.map(track => (
