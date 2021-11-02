@@ -15,6 +15,7 @@ class EditTrackForm extends React.Component {
 
         return (
             <TrackForm
+                history={this.props.history}
                 track={this.props.track}
                 action={this.props.action}
                 formType={this.props.formType}

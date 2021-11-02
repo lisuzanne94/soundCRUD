@@ -5,16 +5,24 @@ class TrackForm extends React.Component {
     constructor (props) {
         super(props);
         this.state = this.props.track
-        console.log(this.props.currentUserTracks)
-
+        this.state['uploaded'] = false;
+        
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.changeUploadedStatus = this.changeUploadedStatus.bind(this);
     }
 
 
-    //want to change push location to render success message
+    changeUploadedStatus () {
+        this.setState({ ['uploaded']: true })
+    }
+
     handleSubmit (e) {
         e.preventDefault();
-       this.props.action(this.state).then(this.props.history.push('/discover'))
+        // this.props.action(this.state).then(this.props.history.push('/discover'))
+        this.props.action(this.state).then(this.changeUploadedStatus())
+        this.setState({
+            title: ''
+        })
     };
 
     update (field) {
@@ -23,8 +31,20 @@ class TrackForm extends React.Component {
 
     render () {
 
+        const uploadMsg = this.state.uploaded ? (
+            <div>
+                Success! =D
+            </div>
+        ) : (
+            null
+        )
+
         return (
             <div>
+
+                {uploadMsg}
+
+                <br />
 
                 <form onSubmit={this.handleSubmit}>
                     <label>Track Title: </label>
