@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class TrackShow extends React.Component {
 
@@ -19,6 +20,7 @@ class TrackShow extends React.Component {
             <div>
                 <h2>{this.props.track.title}</h2>
                 <p>Uploaded by: {this.props.track.uploader.username}</p>
+                <Link to={`/tracks/${this.props.track.id}/edit`}>Edit Track</Link>
             </div>
         ) : null
 

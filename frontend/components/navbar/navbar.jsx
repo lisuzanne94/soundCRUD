@@ -10,6 +10,7 @@ class NavBar extends React.Component {
         const navLinks = currentUser ? (
             <div>
                 <span>Welcome, {currentUser.username}!</span>
+                <Link to="/upload">Upload</Link>
                 <Link onClick={logout} to="/">Logout</Link>
             </div>
         ) : (
@@ -22,7 +23,7 @@ class NavBar extends React.Component {
 
         return (
             <div className="navbar">
-                <h2>SoundCRUD</h2>
+                <Link to="/discover"><h2>SoundCRUD</h2></Link>
                 { navLinks }
             </div>
         )
