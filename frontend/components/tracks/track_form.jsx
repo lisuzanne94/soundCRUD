@@ -2,33 +2,53 @@ import React from "react";
 
 class TrackForm extends React.Component {
 
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = this.props.track
-        console.log(this.props.currentUserTracks)
+        this.state['uploaded'] = false;
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.changeUploadedStatus = this.changeUploadedStatus.bind(this);
     }
 
 
-    //want to change push location to render success message
-    handleSubmit (e) {
+    changeUploadedStatus() {
+        this.setState({ ['uploaded']: true })
+    }
+
+    handleSubmit(e) {
         e.preventDefault();
-       this.props.action(this.state).then(this.props.history.push('/discover'))
+        // this.props.action(this.state).then(this.props.history.push('/discover'))
+        this.props.action(this.state).then(this.changeUploadedStatus())
+        this.setState({
+            title: ''
+        })
     };
 
-    update (field) {
+    update(field) {
         return e => this.setState({ [field]: e.target.value })
     };
 
-    render () {
+    render() {
+
+        const uploadMsg = this.state.uploaded ? (
+            <div>
+                Success! =D
+            </div>
+        ) : (
+            null
+        )
 
         return (
             <div>
 
+                {uploadMsg}
+
+                <br />
+
                 <form onSubmit={this.handleSubmit}>
                     <label>Track Title: </label>
-                    <input type="text" 
+                    <input type="text"
                         value={this.state.title}
                         onChange={this.update('title')}
                     />
@@ -36,7 +56,7 @@ class TrackForm extends React.Component {
                     <label>File: </label>
                     <button>Upload</button>
                     <br />
-                <button>{this.props.formType}</button>
+                    <button>{this.props.formType}</button>
                 </form>
             </div>
         )
