@@ -20,16 +20,10 @@ export const receiveErrors = errors => ({
     errors
 });
 
-// export const receiveSessionErrors = errors => ({
-//     type: RECEIVE_SESSION_ERRORS,
-//     errors
-// });
+export const clearErrors = () => ({
+    type: CLEAR_ERRORS
+});
 
-//thunks
-
-// export const login = user => dispatch => (
-//     SessionUtil.login(user).then(user => dispatch(receiveCurrentUser(user)))
-// );
 
 export const login = user => dispatch => {
     return (
