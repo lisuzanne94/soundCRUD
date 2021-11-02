@@ -37,9 +37,11 @@ export const fetchTracks = () => dispatch => (
     TrackAPIUtil.fetchTracks().then(tracks => dispatch(receiveAllTracks(tracks)))
 );
 
-export const fetchTrack = trackId => dispatch => (
-    TrackAPIUtil.fetchTrack(trackId).then(track => dispatch(receiveTrack(track)))
-);
+export const fetchTrack = trackId => dispatch => {
+    // debugger
+
+    return TrackAPIUtil.fetchTrack(trackId).then(track => dispatch(receiveTrack(track)))
+};
 
 export const createTrack = track => dispatch => (
     TrackAPIUtil.createTrack(track).then(track => dispatch(receiveTrack(track))),
