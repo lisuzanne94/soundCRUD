@@ -22,7 +22,7 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state)
-        this.props.processForm(user)
+        this.props.processForm(user).then(this.props.closeModal)
     }
 
     update(field) {
@@ -35,7 +35,7 @@ class SessionForm extends React.Component {
             password: 'password'
         };
         
-        this.props.loginGuest(guest);
+        this.props.loginGuest(guest).then(this.props.closeModal)
     }
 
     renderErrors() {
@@ -74,6 +74,7 @@ class SessionForm extends React.Component {
                 </form>
                 <br />
                 <button onClick={this.loginGuest}>Login as a guest</button>
+                {this.props.otherForm}
             </div>
         )
     }
