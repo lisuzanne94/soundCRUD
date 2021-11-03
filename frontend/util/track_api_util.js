@@ -26,7 +26,9 @@ export const updateTrack = track => (
     $.ajax({
         method: 'PATCH',
         url: `/api/tracks/${track.id}`,
-        data: track
+        data: track,
+        contentType: false,
+        processData: false
     })
 );
 

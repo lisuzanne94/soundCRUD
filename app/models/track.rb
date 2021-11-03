@@ -7,5 +7,4 @@ class Track < ApplicationRecord
         class_name: :User
 
     has_one_attached :cover_image
-    has_one_attached :default_cover_image
 end

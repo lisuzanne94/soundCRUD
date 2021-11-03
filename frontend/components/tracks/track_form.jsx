@@ -6,6 +6,7 @@ class TrackForm extends React.Component {
         super(props);
         this.state = {
             ...this.props.track,
+            coverImage: null
         }
         
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,10 +29,11 @@ class TrackForm extends React.Component {
         // this.setState({
         //     title: ''
         // })
-        console.log(this.state)
         const formData = new FormData();
         formData.append('track[title]', this.state.title);
-        formData.append('track[cover_image]', this.state.coverImage);
+        if (this.state.coverImage) {
+            formData.append('track[cover_image]', this.state.coverImage);
+        }
 
 
         this.props.action(formData)
