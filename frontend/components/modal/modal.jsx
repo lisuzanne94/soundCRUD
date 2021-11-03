@@ -4,17 +4,17 @@ import { connect } from "react-redux";
 import LoginFormContainer from "../session/login_form_container";
 import SignupFormContainer from "../session/signup_form_container";
 
-const Modal = ({ modal, closeModal }) => {
+const Modal = ({ modal, closeModal, currentUser }) => {
     if (!modal) {
         return null;
-    }
+    };
 
     let component;
     switch (modal) {
         case 'Login':
             component = <LoginFormContainer />;
             break;
-        case 'Sign up':
+        case 'Sign Up':
             component = <SignupFormContainer />;
             break;
         default:
@@ -31,6 +31,7 @@ const Modal = ({ modal, closeModal }) => {
 }
 
 const mSTP = state => ({
+    currentUser: state.entities.users[state.session.id],
     modal: state.ui.modal
 });
 
