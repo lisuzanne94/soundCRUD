@@ -6,7 +6,6 @@ class TrackForm extends React.Component {
         super(props);
         this.state = {
             ...this.props.track,
-            cover_Image: null
         }
         
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,21 +28,14 @@ class TrackForm extends React.Component {
         // this.setState({
         //     title: ''
         // })
-
+        console.log(this.state)
         const formData = new FormData();
         formData.append('track[title]', this.state.title);
         formData.append('track[cover_image]', this.state.coverImage);
 
+
         this.props.action(formData)
             .then(this.props.history.push(`/discover`))
-        // $.ajax({
-        //     url: '/api/tracks',
-        //     method:'POST',
-        //     data: formData,
-        //     contentType: false,
-        //     processData: false
-        // }).then((response) => console.log(response.message)),
-        // (response) => console.log(response.responseJSON)
     };
 
     update(field) {
