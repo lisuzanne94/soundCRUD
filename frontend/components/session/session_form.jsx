@@ -34,13 +34,8 @@ class SessionForm extends React.Component {
             username: 'guest',
             password: 'password'
         };
-<<<<<<< HEAD
-
-        this.props.loginGuest(guest);
-=======
         
         this.props.loginGuest(guest).then(this.props.closeModal)
->>>>>>> aws
     }
 
     renderErrors() {
