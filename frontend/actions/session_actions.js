@@ -24,10 +24,6 @@ export const receiveErrors = errors => ({
 export const clearErrors = () => ({
     type: CLEAR_ERRORS
 });
-<<<<<<< HEAD
-
-=======
->>>>>>> user-auth-fixes
 
 export const login = user => dispatch => {
     return (

@@ -43,10 +43,6 @@ export const fetchTrack = trackId => dispatch => {
 
 export const createTrack = track => dispatch => (
     TrackAPIUtil.createTrack(track).then(track => dispatch(receiveTrack(track)))
-<<<<<<< HEAD
-
-=======
->>>>>>> user-auth-fixes
 );
 
 export const updateTrack = track => dispatch => (

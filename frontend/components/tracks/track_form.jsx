@@ -39,14 +39,6 @@ class TrackForm extends React.Component {
             null
         )
 
-        const uploadMsg = this.state.uploaded ? (
-            <div>
-                Success! =D
-            </div>
-        ) : (
-            null
-        )
-
         return (
             <div>
 
