@@ -19,7 +19,6 @@ const App = () => (
             <ProtectedRoute exact path="/discover" component={DiscoverPageContainer} />
             <ProtectedRoute exact path="/tracks/:trackId" component={TrackShowContainer} />
             <ProtectedRoute exact path="/upload" component={CreateTrackFormContainer} />
-            <ProtectedRoute exact path="/tracks/:trackId/edit" component={EditTrackForm} />
 
             <Route><Redirect to="/"></Redirect></Route>
         </Switch>

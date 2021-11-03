@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Modal from '../modal/modal';
 
 class TrackShow extends React.Component {
 
@@ -24,7 +25,8 @@ class TrackShow extends React.Component {
 
                 <p>Uploaded by: {this.props.track.uploader.username}</p>
 
-                <Link to={`/tracks/${this.props.track.id}/edit`}>Edit Track</Link>
+                <Modal trackId={this.props.track.id} />
+                <button onClick={() => this.props.openModal('Update Track')}>Update Track</button>
 
                 <br />
 

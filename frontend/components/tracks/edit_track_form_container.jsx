@@ -6,7 +6,7 @@ import { fetchTrack, updateTrack, clearTrackErrors } from "../../actions/track_a
 class EditTrackForm extends React.Component {
     
     componentDidMount() {
-        this.props.fetchTrack(this.props.match.params.trackId)
+        this.props.fetchTrack(this.props.trackId)
     }
 
     render() {
@@ -25,7 +25,7 @@ class EditTrackForm extends React.Component {
 const mSTP = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
     errors: state.errors.track,
-    track: state.entities.tracks[ownProps.match.params.trackId],
+    track: state.entities.tracks[ownProps.trackId],
     formType: 'Update Track'
 });
 

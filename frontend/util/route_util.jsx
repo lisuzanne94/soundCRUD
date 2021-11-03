@@ -33,12 +33,8 @@ const checkUploader = ({ component: Component, path, loggedIn, exact }) => (
 );
 
 const mapStateToProps = state => {
-    // const trackId = Object.keys(state.entities.tracks)[0];
-    // const uploaderId = state.entities.tracks[trackId].uploader.id
-
     return { 
-        loggedIn: Boolean(state.session.id), 
-        // isUploader: state.session.id === uploaderId
+        loggedIn: Boolean(state.session.id)
     };
 };
 
