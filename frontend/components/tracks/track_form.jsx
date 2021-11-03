@@ -25,8 +25,8 @@ class TrackForm extends React.Component {
     handleSubmit (e) {
         e.preventDefault();
         const formData = new FormData();
-        formData.append('track[title]', this.state.title);
         formData.append('track[id]', this.state.id);
+        formData.append('track[title]', this.state.title);
         if (this.state.coverImage) {
             formData.append('track[cover_image]', this.state.coverImage);
         };
