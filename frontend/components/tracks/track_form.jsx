@@ -24,29 +24,41 @@ class TrackForm extends React.Component {
 
     handleSubmit (e) {
         e.preventDefault();
-        // this.props.action(this.state).then(this.props.history.push('/discover'))
-        // this.props.action(this.state).then(this.changeUploadedStatus())
-        // this.setState({
-        //     title: ''
-        // })
         const formData = new FormData();
         formData.append('track[title]', this.state.title);
+        formData.append('track[id]', this.state.id);
         if (this.state.coverImage) {
             formData.append('track[cover_image]', this.state.coverImage);
-        }
+        };
 
+        this.props.action(formData).then(
+            this.setState({
+                title: '',
+                coverImage: null
+            })
+        );
 
-        this.props.action(formData)
-            .then(this.props.history.push(`/discover`))
+        this.props.clearTrackErrors();
     };
 
     update(field) {
         return e => this.setState({ [field]: e.target.value })
     };
 
+
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={i}>{error}</li>
+                ))}
+            </ul>
+        )
+    }
+
     render() {
 
-        console.log(this.state)
+        if (!this.props.track) { return null }
 
         const uploadMsg = this.state.uploaded ? (
             <div>
@@ -58,8 +70,7 @@ class TrackForm extends React.Component {
 
         return (
             <div>
-
-                {uploadMsg}
+                {this.renderErrors()}
 
                 <br />
 
@@ -72,6 +83,8 @@ class TrackForm extends React.Component {
                     <br />
                     <label>Upload image: </label>
                     <input type="file" 
+                        value=""
+                        title=" "
                         onChange={this.handleFile}/>
                     <br />
                     <button>{this.props.formType}</button>

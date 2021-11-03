@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux"; 
 import TrackForm from './track_form';
-import { fetchTrack, updateTrack } from "../../actions/track_actions";
+import { fetchTrack, updateTrack, clearTrackErrors } from "../../actions/track_actions";
 
 class EditTrackForm extends React.Component {
     
@@ -16,9 +16,7 @@ class EditTrackForm extends React.Component {
         return (
             <TrackForm
                 history={this.props.history}
-                track={this.props.track}
-                action={this.props.action}
-                formType={this.props.formType}
+                {...this.props}
             />
         );
     }
@@ -26,14 +24,15 @@ class EditTrackForm extends React.Component {
 
 const mSTP = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
-    errors: state.errors.trackErrors,
+    errors: state.errors.track,
     track: state.entities.tracks[ownProps.match.params.trackId],
     formType: 'Update Track'
 });
 
 const mDTP = dispatch => ({
     fetchTrack: trackId => dispatch(fetchTrack(trackId)),
-    action: track => dispatch(updateTrack(track))
+    action: track => dispatch(updateTrack(track)),
+    clearTrackErrors: () => dispatch(clearTrackErrors())
 });
 
 export default connect(mSTP, mDTP)(EditTrackForm);

@@ -1,11 +1,11 @@
 import TrackForm from './track_form';
-import { createTrack } from '../../actions/track_actions';
+import { createTrack, clearTrackErrors } from '../../actions/track_actions';
 import { connect } from 'react-redux';
 
 const mSTP = state => ({
     currentUser: state.entities.users[state.session.id],
     currentUserTracks: state.entities.users[state.session.id].tracks,
-    errors: state.errors.trackErrors,
+    errors: state.errors.track,
     track: {
         title: '',
         uploaderId: state.session.id
@@ -14,7 +14,8 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => ({
-    action: track => dispatch(createTrack(track))
+    action: track => dispatch(createTrack(track)),
+    clearTrackErrors: () => dispatch(clearTrackErrors())
 });
 
 export default connect(mSTP, mDTP)(TrackForm);

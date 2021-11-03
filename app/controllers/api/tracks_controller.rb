@@ -23,6 +23,7 @@ class Api::TracksController < ApplicationController
     def update
         @track = Track.find_by(id: params[:id])
 
+
         if @track.update(track_params)
             render :show
         else

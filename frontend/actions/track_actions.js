@@ -27,7 +27,7 @@ const receiveTrackErrors = errors => ({
     errors
 });
 
-const clearTrackErrors = () => ({
+export const clearTrackErrors = () => ({
     type: CLEAR_TRACK_ERRORS
 });
 
@@ -42,11 +42,13 @@ export const fetchTrack = trackId => dispatch => {
 };
 
 export const createTrack = track => dispatch => (
-    TrackAPIUtil.createTrack(track).then(track => dispatch(receiveTrack(track)))
+    TrackAPIUtil.createTrack(track).then(track => dispatch(receiveTrack(track)),
+        err => dispatch(receiveTrackErrors(err.responseJSON)))
 );
 
 export const updateTrack = track => dispatch => (
-    TrackAPIUtil.updateTrack(track).then(track => dispatch(receiveTrack(track)))
+    TrackAPIUtil.updateTrack(track).then(track => dispatch(receiveTrack(track)),
+        err => dispatch(receiveTrackErrors(err.responseJSON)))
 );
 
 export const deleteTrack = trackId => dispatch => (
