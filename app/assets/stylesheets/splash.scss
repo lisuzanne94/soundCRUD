@@ -1,0 +1,52 @@
+#root {
+    background-color: rgb(236, 236, 236);
+}
+
+.splash-page {
+    width: 950px;
+    height: 750px;
+    margin: auto;
+    background-color: white;
+}
+
+.splash-banner {
+    height: 500px;
+    background-image: url("https://wallpapercave.com/wp/wp5161079.jpg");
+    background-size: cover;
+}
+
+.splash-header-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.splash-main-title {
+    color: white;
+}
+
+.login-button:hover, .signup-button:hover {
+    cursor: pointer;
+}
+
+.login-button {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 2px;
+    color: white;
+    padding: 5px 10px;
+    margin: 0px 10px;
+};
+
+.signup-button {
+    background-color: deeppink;
+    border: 1px solid deeppink;
+    border-radius: 2px;
+    color: white;
+    padding: 5px 10px;
+};
+
+.splash-placeholder-content {
+    color: black;
+    font-size: 58px;
+}
