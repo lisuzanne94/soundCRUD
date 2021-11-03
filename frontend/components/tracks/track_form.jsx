@@ -6,17 +6,17 @@ class TrackForm extends React.Component {
         super(props);
         this.state = this.props.track
         this.state['uploaded'] = false;
-
+        
         this.handleSubmit = this.handleSubmit.bind(this);
         this.changeUploadedStatus = this.changeUploadedStatus.bind(this);
     }
 
 
-    changeUploadedStatus() {
+    changeUploadedStatus () {
         this.setState({ ['uploaded']: true })
     }
 
-    handleSubmit(e) {
+    handleSubmit (e) {
         e.preventDefault();
         // this.props.action(this.state).then(this.props.history.push('/discover'))
         this.props.action(this.state).then(this.changeUploadedStatus())
@@ -30,6 +30,14 @@ class TrackForm extends React.Component {
     };
 
     render() {
+
+        const uploadMsg = this.state.uploaded ? (
+            <div>
+                Success! =D
+            </div>
+        ) : (
+            null
+        )
 
         const uploadMsg = this.state.uploaded ? (
             <div>

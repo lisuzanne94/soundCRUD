@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 class SessionForm extends React.Component {
 
-    componentDidMount() {
+    componentDidMount () {
         this.props.clearErrors();
     }
 
@@ -40,11 +40,11 @@ class SessionForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={i}>{error}</li>
-                ))}
-            </ul>
+        <ul>
+            {this.props.errors.map((error, i) => (
+                <li key={i}>{error}</li>
+            ))}
+        </ul>
         )
     }
 
@@ -53,7 +53,7 @@ class SessionForm extends React.Component {
         return (
             <div>
                 <h2>{this.props.formType}</h2>
-
+                
                 {this.renderErrors()}
 
                 <form onSubmit={this.handleSubmit}>
