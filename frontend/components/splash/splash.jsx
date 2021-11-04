@@ -45,7 +45,6 @@ class Splash extends React.Component {
                         ))
                     }
                 </ul>
-
             </div>
         </div> 
         )

@@ -4,17 +4,75 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.697);
   z-index: 10;
-}
+};
 
 .modal-child {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 500px;
-  height: 300px;
+  width: 370px;
+  height: 400px;
   background-color: white;
-  border: solid 2px black;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -60%);
+};
+
+.session-form-div {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+};
+
+.session-form {
+  display: flex;
+  flex-direction: column;
+};
+
+.session-form-div button {
+  border-radius: 3px;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 13px;
+  color: white;
+  height: 35px;
+};
+
+.session-form-div button:hover {
+  cursor: pointer;
+}
+
+.session-login-guest-btn {
+  margin: 20px 0px 0px 0px;
+  background-color: rgb(61, 173, 82);
+  border: 1px solid rgb(61, 173, 82);
+};
+
+.session-form-separator {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px 20px 0px;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 12px;
+};
+
+.session-form-separator:before {
+  border-top: 1px solid black;
+}
+
+.session-form input {
+  height: 35px;
+  margin: 5px 0px 5px 0px;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 13px;
+};
+
+.session-submit-btn {
+  margin: 5px 0px 0px 0px;
+  background-color: rgb(183, 40, 81);
+  border: 1px solid rgb(183, 40, 81);
+};
+
+.session-switch-btn {
+  background-color: rgb(28, 107, 163);
+  border: 1px solid rgb(28, 107, 163);
 }
