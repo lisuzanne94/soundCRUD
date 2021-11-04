@@ -9,7 +9,7 @@ class NavBar extends React.Component {
 
         const navBar = currentUser ? (
             <div className="navbar">
-                <Link to="/discover"><h2>soundCRUD</h2></Link>
+                <Link to="/discover"><img className="discover-logo" src="/soundcrud-logo-transparent.png" /></Link>
                 <span>Welcome, {currentUser.username}!</span>
                 <Link to="/upload">Upload</Link>
                 <button onClick={logout} to="/">Logout</button>
