@@ -20,11 +20,12 @@ const Modal = props => {
             component = <SignupFormContainer />;
             break;
         case 'Update Track':
-            component = <EditTrackFormContainer trackId={props.trackId} />;
+            component = <EditTrackFormContainer modalTrackId={props.modalTrackId} />;
             break;
         default:
             return null;
     }
+    // debugger
 
     return (
         <div className="modal-bg" onClick={props.closeModal}>
@@ -37,7 +38,7 @@ const Modal = props => {
 
 const mSTP = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
-    trackId: ownProps.trackId,
+    modalTrackId: ownProps.modalTrackId,
     modal: state.ui.modal
 });
 

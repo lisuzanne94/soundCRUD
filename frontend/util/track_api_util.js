@@ -5,12 +5,25 @@ export const fetchTracks = () => (
     })
 );
 
-export const fetchTrack = trackId => (
+export const fetchTrack = trackId => {
+    return (
     $.ajax({
         method: 'GET',
-        url: `api/tracks/${trackId}`
+        url: `api/tracks/${trackId}`,
+        contentType: false,
+        processData: false
     })
-);
+    )
+};
+
+// export const fetchTrack = trackId => (
+//     $.ajax({
+//         method: 'GET',
+//         url: `api/tracks/${trackId}`,
+//         contentType: false,
+//         processData: false
+//     })
+// );
 
 export const createTrack = track => (
     $.ajax({

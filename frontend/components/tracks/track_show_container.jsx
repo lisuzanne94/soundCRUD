@@ -4,7 +4,8 @@ import { fetchTrack, deleteTrack } from "../../actions/track_actions";
 import { openModal } from "../../actions/modal_actions";
 
 const mSTP = (state, ownProps) => ({
-    track: state.entities.tracks[ownProps.match.params.trackId]
+    track: state.entities.tracks[ownProps.match.params.trackId],
+    trackId: ownProps.match.params.trackId
 });
 
 const mDTP = dispatch => ({

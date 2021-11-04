@@ -4,12 +4,13 @@ import TrackForm from './track_form';
 import { fetchTrack, updateTrack, clearTrackErrors } from "../../actions/track_actions";
 
 class EditTrackForm extends React.Component {
-    
-    componentDidMount() {
-        this.props.fetchTrack(this.props.trackId)
-    }
+    constructor(props) {
+        super(props)
+    } 
 
     render() {
+
+        // debugger
 
         if (!this.props.track) return null;
 
@@ -25,7 +26,8 @@ class EditTrackForm extends React.Component {
 const mSTP = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
     errors: state.errors.track,
-    track: state.entities.tracks[ownProps.trackId],
+    modalTrackId: ownProps.modalTrackId,
+    track: state.entities.tracks[ownProps.modalTrackId],
     formType: 'Update Track'
 });
 

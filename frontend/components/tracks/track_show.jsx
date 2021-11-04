@@ -7,6 +7,7 @@ class TrackShow extends React.Component {
     constructor (props) {
         // debugger
         super(props);
+        // debugger
     }
 
     componentDidMount () {
@@ -23,9 +24,10 @@ class TrackShow extends React.Component {
                 
                 <h2>{this.props.track.title}</h2>
 
-                <p>Uploaded by: {this.props.track.uploader.username}</p>
+                <p>Uploaded by: {this.props.track.uploader}</p>
 
-                <Modal trackId={this.props.track.id} />
+                <Modal modalTrackId={this.props.trackId} />
+
                 <button onClick={() => this.props.openModal('Update Track')}>Update Track</button>
 
                 <br />
