@@ -36,7 +36,7 @@ class TrackForm extends React.Component {
                 title: '',
                 coverImage: null
             })
-        );
+        ).then(this.props.closeModal)
 
         this.props.clearTrackErrors();
     };

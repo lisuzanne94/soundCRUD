@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux"; 
 import TrackForm from './track_form';
 import { fetchTrack, updateTrack, clearTrackErrors } from "../../actions/track_actions";
+import { closeModal } from '../../actions/modal_actions';
 
 class EditTrackForm extends React.Component {
 
@@ -29,6 +30,7 @@ const mSTP = (state, ownProps) => ({
 const mDTP = dispatch => ({
     fetchTrack: trackId => dispatch(fetchTrack(trackId)),
     action: track => dispatch(updateTrack(track)),
+    closeModal: () => dispatch(closeModal()),
     clearTrackErrors: () => dispatch(clearTrackErrors())
 });
 
