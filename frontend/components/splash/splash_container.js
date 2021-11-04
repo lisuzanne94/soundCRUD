@@ -1,11 +1,15 @@
 import { connect } from "react-redux";
-import { logout } from "../../actions/session_actions";
 import { openModal } from "../../actions/modal_actions";
+import { fetchTracks } from "../../actions/track_actions";
 import Splash from "./splash";
 
-const mDTP = dispatch => ({
-    logout: () => dispatch(logout()),
-    openModal: modal => dispatch(openModal(modal))
+const mSTP = state => ({
+    tracks: state.entities.tracks
 });
 
-export default connect(null, mDTP)(Splash);
+const mDTP = dispatch => ({
+    openModal: modal => dispatch(openModal(modal)),
+    fetchTracks: () => dispatch(fetchTracks())
+});
+
+export default connect(mSTP, mDTP)(Splash);
