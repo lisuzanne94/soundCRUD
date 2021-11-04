@@ -5,25 +5,22 @@ class NavBar extends React.Component {
     
     render () {
 
-        const { currentUser, logout } = this.props;
+        const { currentUser, logout, openModal } = this.props;
 
-        const navLinks = currentUser ? (
-            <div>
+        const navBar = currentUser ? (
+            <div className="navbar">
+                <Link to="/discover"><h2>soundCRUD</h2></Link>
                 <span>Welcome, {currentUser.username}!</span>
-                <Link onClick={logout} to="/">Logout</Link>
+                <Link to="/upload">Upload</Link>
+                <button onClick={logout} to="/">Logout</button>
             </div>
         ) : (
-            <div>
-                <span><Link to="/login">Log In</Link></span>
-                <span>  </span>
-                <span><Link to="/signup">Sign up</Link></span>
-            </div>
+            null
         )
 
         return (
-            <div className="navbar">
-                <h2>SoundCRUD</h2>
-                { navLinks }
+            <div className="navbar-container">
+                { navBar }
             </div>
         )
     }

@@ -24,12 +24,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const root = document.getElementById("root");
 
+    window.getState = store.getState;
+
     ReactDOM.render(<Root store={store} />, root);
 
 
       //testing
 
-  window.getState = store.getState;
+
   window.dispatch = store.dispatch;
   window.login = login;
 

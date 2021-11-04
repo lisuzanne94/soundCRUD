@@ -22,8 +22,20 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
     />
 );
 
+const checkUploader = ({ component: Component, path, loggedIn, exact }) => (
+    <Route
+        path={path}
+        exact={exact}
+        render={props =>
+            (loggedIn ? <Component {...props} /> : <Redirect to="/" />)
+        }
+    />
+);
+
 const mapStateToProps = state => {
-    return { loggedIn: Boolean(state.session.id) };
+    return { 
+        loggedIn: Boolean(state.session.id)
+    };
 };
 
 export const AuthRoute = withRouter(
