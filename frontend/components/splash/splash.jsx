@@ -27,19 +27,20 @@ class Splash extends React.Component {
                 <button className="splash-upload-button" onClick={() => openModal('Login')}>U P L O A D &#160; Y O U R &#160; O W N</button>
             </div>
 
-            <div className="sdivlash-track-list-msg">Hear what’s trending now in the SoundCRUD community</div>
+            <div className="splash-tracks-msg">
+                <p className="splash-track-list-msg">Hear what’s trending now in the SoundCRUD community {'(:'}</p>
+            </div>
 
             <div className="splash-track-list-container">
                 <ul className="splash-track-list">
                     {
                         Object.values(tracks).map(track => (
-                            <span className="track-obj" key={track.id}>
+                            <span className="splash-track-obj" key={track.id}>
                                 <li>
                                     <img className="splash-track-cover-img" src={track.coverImage} />
                                 </li>
-                                <label className="track-title">{track.title}</label>
-                                <br />
-                                <label className="track-uploader">{track.uploader}</label>
+                                <label className="splash-track-title">{track.title}</label>
+                                <label className="splash-track-uploader">{track.uploader}</label>
                             </span>
                         ))
                     }

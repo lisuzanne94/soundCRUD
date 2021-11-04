@@ -4,11 +4,10 @@
 
 .splash-page {
     width: 1000px;
-    height: 750px;
     margin: auto;
     background-color: white;
     border-top: solid 3px deeppink;
-    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-family: 'Oxygen', sans-serif;
 }
 
 .splash-banner {
@@ -30,14 +29,13 @@
 
 .login-button, .signup-button {
     padding: 5px 10px;
-    font-family: 'Zen Kaku Gothic Antique', sans-serif;
     font-weight: 300;
     font-size: 10px;
-}
+};
 
-.login-button:hover, .signup-button:hover {
+.login-button:hover, .signup-button:hover, .splash-upload-button:hover {
     cursor: pointer;
-}
+};
 
 .login-button {
     background-color: transparent;
@@ -60,13 +58,25 @@
 };
 
 .splash-upload-button {
-    margin-top: 30px;
+    margin: 25px;
     background-color: rgb(214, 21, 124);
     border: 1px solid rgb(214, 21, 124);
     border-radius: 2px;
     color: white;
     padding: 10px 20px;
-}
+};
+
+.splash-tracks-msg {
+    display: flex;
+    justify-content: center;
+};
+
+.splash-track-list-msg {
+    margin: 0px 25px 25px 25px;
+    color: rgb(56, 56, 56);
+    font-size: 20px;
+    font-weight: 100;
+};
 
 .splash-track-list {
     display: flex;
@@ -74,11 +84,22 @@
     justify-content: center;
 };
 
-.track-obj {
+.splash-track-obj {
+    display: flex;
+    flex-direction: column;
     margin: 7px;
-}
+};
 
 .splash-track-cover-img {
     width: 150px;
     height: 150px;
 };
+
+.splash-track-title {
+    font-size: 12px;
+};
+
+.splash-track-uploader {
+    font-size: 10px;
+    color: rgb(129, 129, 129);
+}
