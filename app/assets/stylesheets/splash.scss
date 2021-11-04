@@ -1,8 +1,3 @@
-@font-face {
-  font-family: 'Interstate Light';
-  src: url(asset-path('Interstate-light.ttf')) format('truetype');
-};
-
 #root {
     background-color: rgb(236, 236, 236);
 };
@@ -12,7 +7,7 @@
     margin: auto;
     background-color: white;
     border-top: solid 3px deeppink;
-    font-family: 'Interstate Light', sans-serif;
+    font-family: 'Oxygen';
 };
 
 .splash-banner {
@@ -36,11 +31,12 @@
     position: relative;
     width: 40px;
     height: auto;
-    top: -50%;
+    top: -42%;
 };
 
 .splash-main-title {
     color: white;
+    font-size: 12px;
 };
 
 .login-button, .signup-button {

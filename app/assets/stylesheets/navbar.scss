@@ -1,15 +1,74 @@
+.navbar-bg {
+    display: flex;
+    justify-content: center;
+    height: 47px;
+    background-color: rgb(59, 43, 56);
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
+    width: 1000px;
+    height: 47px;
     margin-bottom: 2em;
-    background-color: gray;
+    font-size: 14px;
+    font-weight: 300;
+};
+
+
+.nav-link:link {
+    text-decoration: none;
 };
 
 .discover-logo {
-    width: 50px;
+    width: 70px;
     height: auto;
+};
+
+.left-side-bar {
+    display: flex;
 }
 
-h2 {
-    font-size: 1.5em;
+.left-nav-btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100px;
+    height: 47px;
+    text-decoration: none;
+    color: rgb(205, 205, 205);
+    border-right: 1px solid black;
+    font-family: 'Oxygen';
+};
+
+.left-nav-btn:hover, .right-nav-btn:hover {
+    color: white;
+}
+
+.nav-btn-active {
+    background-color: black;
+};
+
+.left-side-bar:first-of-type {
+    border-left: 1px solid black;
+}
+
+.nav-home-link {
+    color: white;
+    text-decoration: none;
+};
+
+.right-side-bar {
+    display: flex;
+}
+
+.right-nav-btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100px;
+    height: 47px;
+    text-decoration: none;
+    color: rgb(205, 205, 205);
+    font-family: 'Oxygen';
 };
