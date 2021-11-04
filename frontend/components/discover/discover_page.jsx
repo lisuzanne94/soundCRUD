@@ -9,17 +9,27 @@ class DiscoverPage extends React.Component {
     }
 
     render () {
+
+        const { currentUser, tracks, fetchTracks, logout } = this.props;
         return (
-            <div>
-                <h2>THIS IS THE DISCOVER PAGE</h2>
-                <br />
-                <ul>
-                    {
-                        this.props.tracks.map(track => (
-                            <li key={track.id}><TrackItem track={track}/></li>
-                        ))
-                    }
-                </ul>
+            <div className="discover-page-container">
+                <div className="discover-tracks-container">
+                    <ul className="discover-track-list">
+                        {
+                            tracks.map(track => (
+                                <div key={track.id}>
+                                    <li className="discover-track-obj">
+                                        <Link to={`/tracks/${track.id}`}>
+                                            <img className="discover-track-cover-img" src={track.coverImage} />
+                                        </Link>
+                                        <Link to={`/tracks/${track.id}`} className="discover-track-titler">{track.title}</Link>
+                                        <Link to={`/tracks/${track.id}`} className="discover-track-uploader">{track.uploader}</Link>
+                                    </li>
+                                </div>
+                            ))
+                        }
+                    </ul>
+                </div>
             </div>
         )
     }

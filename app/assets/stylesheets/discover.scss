@@ -1,0 +1,21 @@
+.discover-page-container {
+    width: 1000px;
+    background-color: white;
+    margin: auto;
+}
+
+.discover-track-list {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.discover-track-obj {
+    display: flex;
+    flex-direction: column;
+}
+
+.discover-track-cover-img {
+    width: 150px;
+    height: 150px;
+}
