@@ -9,17 +9,19 @@ class DiscoverPage extends React.Component {
     }
 
     render () {
+
+        const { currentUser, tracks, fetchTracks, logout } = this.props;
         return (
-            <div>
-                <h2>THIS IS THE DISCOVER PAGE</h2>
-                <br />
-                <ul>
-                    {
-                        this.props.tracks.map(track => (
-                            <li key={track.id}><TrackItem track={track}/></li>
-                        ))
-                    }
-                </ul>
+            <div className="discover-page-container">
+                <div>
+                    <ul>
+                        {
+                            this.props.tracks.map(track => (
+                                <li key={track.id}><TrackItem track={track}/></li>
+                            ))
+                        }
+                    </ul>
+                </div>
             </div>
         )
     }
