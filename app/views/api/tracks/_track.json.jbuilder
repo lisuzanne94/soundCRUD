@@ -1,4 +1,4 @@
-json.extract! track, :id, :title, :uploader_id, :created_at
+json.extract! track, :id, :title, :uploader_id, :created_at, :genre
 json.uploader track.uploader.username
 
 if track.cover_image.attached? 
