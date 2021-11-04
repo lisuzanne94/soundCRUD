@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class SessionForm extends React.Component {
 
     componentDidMount () {
-        this.props.clearErrors();
+        if (this.props.errors.length > 0) { this.props.clearErrors(); }
     }
 
     constructor(props) {
