@@ -17,14 +17,14 @@ class NavBar extends React.Component {
                             </div>
                         </Link>
 
-                        <NavLink className="nav-link" className="nav-home-link" activeClassName="nav-btn-active" to="/discover">
+                        <NavLink className="nav-link" className="nav-home-link" activeclassname="nav-btn-active" to="/discover">
                             <div className="left-nav-btn">Home</div>
                         </NavLink>
                     </div>
 
                     <div className="right-side-bar">
                         <NavLink className="nav-link" to="/upload">
-                            <div className="nav-upload-btn right-nav-btn" activeClassName="nav-btn-active">Upload</div>
+                            <div className="nav-upload-btn right-nav-btn" activeclassname="nav-btn-active">Upload</div>
                         </NavLink>
                         
                         <Link className="nav-link" to="#">
