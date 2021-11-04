@@ -2,7 +2,13 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 2em;
+    background-color: gray;
 };
+
+.discover-logo {
+    width: 50px;
+    height: auto;
+}
 
 h2 {
     font-size: 1.5em;

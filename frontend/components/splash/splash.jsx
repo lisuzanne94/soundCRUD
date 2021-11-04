@@ -16,7 +16,7 @@ class Splash extends React.Component {
             <div className="splash-banner">
                 <div className="splash-header-bar">
                     <div className="splash-logo">
-                        <img className="splash-logo-img" src="/soundcrud-logo-transparent.png" />
+                        <img className="splash-logo-img" src="/soundcrud-logo-transparent-2.png" />
                         <span className="splash-main-title"><h2>S O U N D C R U D</h2></span>
                     </div>
                     <span className="splash-nav-buttons">
