@@ -18,26 +18,29 @@ class TrackShow extends React.Component {
     
     render () {
 
-        const trackDetails = this.props.track ? (
+        if (!this.props.track) { return null }
+
+        const editButton = this.props.currentUserId === this.props.track.uploader_id ? (
+            <button onClick={() => this.props.openModal('Update Track')}>Update Track</button>
+        ) : null
+
+        return (
             <div>
                 <img className="show-track-cover-img" src={this.props.track.coverImage} />
-                
+
                 <h2>{this.props.track.title}</h2>
 
                 <p>Uploaded by: {this.props.track.uploader}</p>
 
                 <Modal modalTrackId={this.props.trackId} />
 
-                <button onClick={() => this.props.openModal('Update Track')}>Update Track</button>
+                {editButton}
 
                 <br />
 
                 <button onClick={() => this.props.deleteTrack(this.props.track.id).then(() => this.props.history.push('/discover'))}>Delete Track</button>
             </div>
-        ) : null
 
-        return (
-            trackDetails
         )
     }
 };

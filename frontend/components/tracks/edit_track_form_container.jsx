@@ -4,13 +4,8 @@ import TrackForm from './track_form';
 import { fetchTrack, updateTrack, clearTrackErrors } from "../../actions/track_actions";
 
 class EditTrackForm extends React.Component {
-    constructor(props) {
-        super(props)
-    } 
 
     render() {
-
-        // debugger
 
         if (!this.props.track) return null;
 
