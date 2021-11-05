@@ -1,14 +1,15 @@
 .discover-page-container {
     display: flex;
+    justify-content: space-between;
     width: 1000px;
     background-color: white;
     margin: auto;
-}
+};
 
 .discover-track-list {
     display: flex;
     flex-wrap: wrap;
-
+    margin: 0px 0px 50px 0px;
 };
 
 .discover-track-obj {
@@ -22,5 +23,6 @@
 };
 
 .uploaders-list-container {
-    width: 500px;
+    border: 1px solid black;
+    width: 350px;
 }

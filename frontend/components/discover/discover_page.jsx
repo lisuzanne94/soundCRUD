@@ -20,7 +20,9 @@ class DiscoverPage extends React.Component {
         const indie = [];
 
         tracks.forEach(track => {
-        if (track.genre === 'kpop') {
+            if (track.genre === 'hip-hop-rap') {
+                hiphop.push(track)
+            } else if (track.genre === 'kpop') {
                 kpop.push(track)
             } else if (track.genre === 'pop') {
                 pop.push(track)
@@ -33,10 +35,11 @@ class DiscoverPage extends React.Component {
         return (
             <div className="discover-page-container">
                 <div className="discover-tracks-container">
-                    <div className="discover-hiphop-list">
+                    <div className="genre-div">
+                        <div className="indie-label">Indie</div>
                         <ul className="discover-track-list">
                             {
-                                tracks.map(track => (
+                                indie.map(track => (
                                     <div key={track.id}>
                                         <li className="discover-track-obj">
                                             <Link to={`/tracks/${track.id}`}>
@@ -50,6 +53,61 @@ class DiscoverPage extends React.Component {
                             }
                         </ul>
                     </div>
+                    <div className="genre-div">
+                        <div className="hiphoprap-label">Hip Hop & Rap</div>
+                        <ul className="discover-track-list">
+                            {
+                                hiphop.map(track => (
+                                    <div key={track.id}>
+                                        <li className="discover-track-obj">
+                                            <Link to={`/tracks/${track.id}`}>
+                                                <img className="discover-track-cover-img" src={track.coverImage} />
+                                            </Link>
+                                            <Link to={`/tracks/${track.id}`} className="discover-track-titler">{track.title}</Link>
+                                            <Link to={`/tracks/${track.id}`} className="discover-track-uploader">{track.uploader}</Link>
+                                        </li>
+                                    </div>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                    <div className="genre-div">
+                        <div className="kpop-label">KPop</div>
+                        <ul className="discover-track-list">
+                            {
+                                kpop.map(track => (
+                                    <div key={track.id}>
+                                        <li className="discover-track-obj">
+                                            <Link to={`/tracks/${track.id}`}>
+                                                <img className="discover-track-cover-img" src={track.coverImage} />
+                                            </Link>
+                                            <Link to={`/tracks/${track.id}`} className="discover-track-titler">{track.title}</Link>
+                                            <Link to={`/tracks/${track.id}`} className="discover-track-uploader">{track.uploader}</Link>
+                                        </li>
+                                    </div>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                    <div className="genre-div">
+                        <div className="pop-label">Pop</div>
+                        <ul className="discover-track-list">
+                            {
+                                pop.map(track => (
+                                    <div key={track.id}>
+                                        <li className="discover-track-obj">
+                                            <Link to={`/tracks/${track.id}`}>
+                                                <img className="discover-track-cover-img" src={track.coverImage} />
+                                            </Link>
+                                            <Link to={`/tracks/${track.id}`} className="discover-track-titler">{track.title}</Link>
+                                            <Link to={`/tracks/${track.id}`} className="discover-track-uploader">{track.uploader}</Link>
+                                        </li>
+                                    </div>
+                                ))
+                            }
+                        </ul>
+                    </div>
+
                 </div>
 
                 <div className="uploaders-list-container">
