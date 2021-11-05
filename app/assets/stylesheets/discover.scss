@@ -1,4 +1,5 @@
 .discover-page-container {
+    display: flex;
     width: 1000px;
     background-color: white;
     margin: auto;
@@ -8,14 +9,18 @@
     display: flex;
     flex-wrap: wrap;
 
-}
+};
 
 .discover-track-obj {
     display: flex;
     flex-direction: column;
-}
+};
 
 .discover-track-cover-img {
     width: 150px;
     height: 150px;
+};
+
+.uploaders-list-container {
+    width: 500px;
 }

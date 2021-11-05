@@ -9,7 +9,15 @@ class Splash extends React.Component {
 
     render () {
 
+        if (!this.props) { return null }
+
         const { fetchTracks, tracks, openModal } = this.props;
+
+        const splashTracks = [];
+        const allTracksArr = Object.values(tracks)
+        for (let i = 0; i < 12; i++) {
+            splashTracks.push(allTracksArr[i])
+        }
 
         return (
             <div className="splash-page">
@@ -37,14 +45,15 @@ class Splash extends React.Component {
             <div className="splash-track-list-container">
                 <ul className="splash-track-list">
                     {
-                        Object.values(tracks).map(track => (
-                            <span className="splash-track-obj" key={track.id}>
+                        splashTracks.map(track => (
+                            track ? 
+                            (<span className="splash-track-obj" key={track.id}>
                                 <li>
                                     <img className="splash-track-cover-img" src={track.coverImage} />
                                 </li>
                                 <label className="splash-track-title">{track.title}</label>
                                 <label className="splash-track-uploader">{track.uploader}</label>
-                            </span>
+                            </span>) : null
                         ))
                     }
                 </ul>

@@ -72,11 +72,13 @@ class TrackForm extends React.Component {
 
         const uploadMsg = this.state.uploaded ? (
             <div>
-                Success! =D
+                Success!
             </div>
         ) : (
             null
         )
+
+        const genreValue = this.props.track.genre ? this.props.track.genre : '';
 
         return (
             <div>
@@ -96,7 +98,7 @@ class TrackForm extends React.Component {
                     <br />
                     
                     <label>Genre:</label>
-                    <select name="genre" id="genre" onChange={this.handleGenre}>
+                    <select value={genreValue} name="genre" id="genre" onChange={this.handleGenre}>
                         <option disabled>Please select a genre</option>
                         <option value="kpop">Kpop</option>
                         <option value="indie">Indie</option>
