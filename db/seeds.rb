@@ -1,3 +1,5 @@
+require 'open-uri'
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -36,5 +38,43 @@ track9 = Track.create!(title: 'naruto opening 1', uploader_id: user9.id) # wood
 track10 = Track.create!(title: 'Taka-Mic', uploader_id: user1.id) # suzinator
 track11 = Track.create!(title: 'Run It', uploader_id: user7.id) # pandanextdoor
 track12 = Track.create!(title: 'Triumphant', uploader_id: user1.id) # suzinator
+
+# AWS Seeds
+track1_image = open('https://soundcrud-seeds.s3.amazonaws.com/tracks-cover-images/shiki_no_uta.jpg')
+track1.cover_image.attach(io: track1_image, filename: 'shiki_no_uta.jpg')
+
+track2_image = open('https://soundcrud-seeds.s3.amazonaws.com/tracks-cover-images/kings-dead.jpg')
+track2.cover_image.attach(io: track2_image, filename: 'kings-dead.jpg')
+
+track3_image = open('https://soundcrud-seeds.s3.amazonaws.com/tracks-cover-images/butter-bts.jpg')
+track3.cover_image.attach(io: track3_image, filename: 'butter-bts.jpg')
+
+track4_image = open('https://soundcrud-seeds.s3.amazonaws.com/tracks-cover-images/blue-tape-jay-park.jpg')
+track4.cover_image.attach(io: track4_image, filename: 'blue-tape-jay-park.jpg')
+
+track5_image = open('https://soundcrud-seeds.s3.amazonaws.com/tracks-cover-images/sleepwalking-chain-gang.jpg')
+track5.cover_image.attach(io: track5_image, filename: 'sleepwalking-chain-gang.jpg')
+
+track6_image = open('https://soundcrud-seeds.s3.amazonaws.com/tracks-cover-images/space-jam.jpg')
+track6.cover_image.attach(io: track6_image, filename: 'space-jam.jpg')
+
+track7_image = open('https://soundcrud-seeds.s3.amazonaws.com/tracks-cover-images/baby-shark.jpg')
+track7.cover_image.attach(io: track7_image, filename: 'baby-shark.jpg')
+
+track8_image = open('https://soundcrud-seeds.s3.amazonaws.com/tracks-cover-images/modal-soul.jpg')
+track8.cover_image.attach(io: track8_image, filename: 'modal-soul.jpg')
+
+track9_image = open('https://soundcrud-seeds.s3.amazonaws.com/tracks-cover-images/naruto-ost.jpg')
+track9.cover_image.attach(io: track9_image, filename: 'naruto-ost.jpg')
+
+track10_image = open('https://soundcrud-seeds.s3.amazonaws.com/tracks-cover-images/taka-mic-shing02.jpg')
+track10.cover_image.attach(io: track10_image, filename: 'taka-mic-shing02.jpg')
+
+track11_image = open('https://soundcrud-seeds.s3.amazonaws.com/tracks-cover-images/shang-chi.jpg')
+track11.cover_image.attach(io: track11_image, filename: 'shang-chi.jpg')
+
+track12_image = open('https://soundcrud-seeds.s3.amazonaws.com/tracks-cover-images/triumphant-shing02.jpg')
+track12.cover_image.attach(io: track12_image, filename: 'triumphant-shing02.jpg')
+
 
 puts 'Seed successful! :)'
