@@ -26,18 +26,18 @@ user9 = User.create!(username: 'wood', password: 'password')
 
 
 # Tracks
-track1 = Track.create!(title: 'Shiki No Uta', uploader_id: user1.id) # suzinator
-track2 = Track.create!(title: 'King\'s Dead', uploader_id: user8.id) # stelluhhh_
-track3 = Track.create!(title: 'Butter', uploader_id: user3.id) # peperoroll
-track4 = Track.create!(title: 'Afternoon', uploader_id: user4.id) # soheep
-track5 = Track.create!(title: 'Sleepwalking', uploader_id: user2.id) # mostpopularcombo
-track6 = Track.create!(title: 'Space Jam', uploader_id: user5.id) # mothammer
-track7 = Track.create!(title: 'Baby Shark', uploader_id: user6.id) # yamme
-track8 = Track.create!(title: 'Modal Soul', uploader_id: user1.id) # suzinator
-track9 = Track.create!(title: 'naruto opening 1', uploader_id: user9.id) # wood
-track10 = Track.create!(title: 'Taka-Mic', uploader_id: user1.id) # suzinator
-track11 = Track.create!(title: 'Run It', uploader_id: user7.id) # pandanextdoor
-track12 = Track.create!(title: 'Triumphant', uploader_id: user1.id) # suzinator
+track1 = Track.create!(title: 'Shiki No Uta', uploader_id: user1.id, genre: 'hip-hop-rap') # suzinator
+track2 = Track.create!(title: 'King\'s Dead', uploader_id: user8.id, genre: 'hip-hop-rap') # stelluhhh_
+track3 = Track.create!(title: 'Butter', uploader_id: user3.id, genre: 'kpop') # peperoroll
+track4 = Track.create!(title: 'Afternoon', uploader_id: user4.id, genre: 'kpop') # soheep
+track5 = Track.create!(title: 'Sleepwalking', uploader_id: user2.id, genre: 'indie') # mostpopularcombo
+track6 = Track.create!(title: 'Space Jam', uploader_id: user5.id, genre: 'pop') # mothammer
+track7 = Track.create!(title: 'Baby Shark', uploader_id: user6.id, genre: 'pop') # yamme
+track8 = Track.create!(title: 'Modal Soul', uploader_id: user1.id, genre: 'hip-hop-rap') # suzinator
+track9 = Track.create!(title: 'naruto opening 1', uploader_id: user9.id, genre: 'anime') # wood
+track10 = Track.create!(title: 'Taka-Mic', uploader_id: user1.id, genre: 'hip-hop-rap') # suzinator
+track11 = Track.create!(title: 'Run It', uploader_id: user7.id, genre: 'hip-hop-rap') # pandanextdoor
+track12 = Track.create!(title: 'Triumphant', uploader_id: user1.id, genre: 'hip-hop-rap') # suzinator
 
 # AWS Seeds
 track1_image = open('https://soundcrud-seeds.s3.amazonaws.com/tracks-cover-images/shiki_no_uta.jpg')
