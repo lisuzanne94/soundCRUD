@@ -18,8 +18,6 @@ class TrackForm extends React.Component {
 
     handleGenre(e) {
         this.setState({genre: e.currentTarget.value})
-        console.log(e.currentTarget.value)
-        console.log(this.state)
     }
 
     handleFile(e) {
@@ -78,8 +76,6 @@ class TrackForm extends React.Component {
             null
         )
 
-        const genreValue = this.props.track.genre ? this.props.track.genre : '';
-
         return (
             <div>
                 {uploadMsg}
@@ -98,7 +94,7 @@ class TrackForm extends React.Component {
                     <br />
                     
                     <label>Genre:</label>
-                    <select value={genreValue} name="genre" id="genre" onChange={this.handleGenre}>
+                    <select value={this.state.genre ? this.state.genre : this.props.genre} name="genre" id="genre" onChange={this.handleGenre}>
                         <option disabled>Please select a genre</option>
                         <option value="kpop">Kpop</option>
                         <option value="indie">Indie</option>
