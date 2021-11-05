@@ -26,7 +26,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch --mode=development",
     "prod": "webpack --watch --mode=production",
-    "postinstall": "webpack"
+    "postinstall": "webpack"  
   },
   "keywords": [],
   "author": "",
