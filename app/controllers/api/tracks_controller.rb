@@ -42,6 +42,6 @@ class Api::TracksController < ApplicationController
     private
 
     def track_params
-        params.require(:track).permit(:title, :uploader_id, :cover_image, :default_cover_image)
+        params.require(:track).permit(:title, :uploader_id, :cover_image)
     end
 end
