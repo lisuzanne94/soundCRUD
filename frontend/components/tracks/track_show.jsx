@@ -8,6 +8,9 @@ class TrackShow extends React.Component {
 
     constructor (props) {
         super(props);
+        this.state = {
+            ...this.props.track
+        }
     }
 
     componentDidMount () {
@@ -42,12 +45,16 @@ class TrackShow extends React.Component {
                     {deleteButton}
 
                     <div>
-                        <CommentFormContainer commentTrackId={this.props.trackId}/>
+                        <CommentFormContainer 
+                            commentTrackId={this.props.trackId}
+                        />
                     </div>
 
                     <div>
                         <ul>
-                            <CommentItemContainer />
+                            <CommentItemContainer 
+                                currentUserId={this.props.currentUserId}
+                            />
                         </ul>
                     </div>
                 </div>

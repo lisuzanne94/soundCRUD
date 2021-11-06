@@ -11,7 +11,11 @@ const commentsReducer = (state={}, action) => {
 
     switch (action.type) {
         case RECEIVE_TRACK:
-            return action.track.comments
+            if (action.track.comments) {
+                return action.track.comments
+            } else {
+                return state
+            };
         case RECEIVE_COMMENT:
             nextState[action.comment.id] = action.comment
             return nextState;

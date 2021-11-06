@@ -6,7 +6,7 @@ class CommentItem extends React.Component {
 
         if (!this.props.comments) { return null }
 
-        const { comments, deleteComment } = this.props;
+        const { comments, currentUserId, deleteComment } = this.props;
 
         return (
             <div className="comments-index-container">
@@ -16,7 +16,11 @@ class CommentItem extends React.Component {
                             <li key={i}>
                                 {comment.body}
                                 <br />
-                                <button onClick={() => deleteComment(comment.id)}>Delete</button>
+                                {
+                                    currentUserId === comment.commenter.id ? (
+                                        <button onClick={() => deleteComment(comment.id)}>Delete</button>
+                                    ) : null
+                                }
                                 <br />
                                 {comment.commenter.username}
                                 <br />
