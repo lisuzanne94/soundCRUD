@@ -18,6 +18,8 @@ const removeComment = commentId => ({
     commentId
 });
 
+
+// After checking soundcloud, they dont show errors for blank comments, but will keep error handling here just in case
 const receiveCommentErrors = errors => ({
     type: RECEIVE_COMMENT_ERRORS,
     errors
@@ -32,7 +34,7 @@ export const clearCommentsFromState = () => ({
 });
 
 export const createComment = comment => dispatch => (
-    CommentAPIUtil.createComment(comment).then(comment => dispatch(receiveComment(comment)))
+    CommentAPIUtil.createComment(comment).then(comment => dispatch(receiveComment(comment))
 );
 
 export const deleteComment = commentId => dispatch => (
