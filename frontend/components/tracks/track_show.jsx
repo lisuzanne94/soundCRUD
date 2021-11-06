@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CommentFormContainer from "../comments/comment_form_container";
 import CommentItemContainer from "../comments/comment_item_container";
 import Modal from '../modal/modal';
 
@@ -30,26 +31,30 @@ class TrackShow extends React.Component {
         ) : null
 
         return (
-            <div>
-                <img className="show-track-cover-img" src={this.props.track.coverImage} />
-
-                <h2>{this.props.track.title}</h2>
-
-                <p>Uploaded by: {this.props.track.uploader}</p>
-
-                <Modal modalTrackId={this.props.trackId} />
-
-                {editButton}
-                {deleteButton}
-
-
+            <div className="track-show-container">
                 <div>
-                    <ul>
-                        <CommentItemContainer />
-                    </ul>
+                    <img className="show-track-cover-img" src={this.props.track.coverImage} />
+
+                    <h2>{this.props.track.title}</h2>
+
+                    <p>Uploaded by: {this.props.track.uploader}</p>
+
+                    <Modal modalTrackId={this.props.trackId} />
+
+                    {editButton}
+                    {deleteButton}
+
+                    <div>
+                        <CommentFormContainer commentTrackId={this.props.trackId}/>
+                    </div>
+
+                    <div>
+                        <ul>
+                            <CommentItemContainer />
+                        </ul>
+                    </div>
                 </div>
             </div>
-
         )
     }
 };

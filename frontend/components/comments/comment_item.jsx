@@ -9,7 +9,7 @@ class CommentItem extends React.Component {
         const { comments } = this.props;
 
         return (
-            <div>
+            <div className="comments-index-container">
                 <ul>
                     {
                         comments.map((comment, i) => (

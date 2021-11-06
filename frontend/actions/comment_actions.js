@@ -26,8 +26,7 @@ export const clearCommentErrors = () => ({
 });
 
 export const createComment = comment => dispatch => (
-    CommentAPIUtil.createComment(comment).then(comment => dispatch(receiveComment(comment)),
-        err => dispatch(receiveCommentErrors(err.responseJSON)))
+    CommentAPIUtil.createComment(comment).then(comment => dispatch(receiveComment(comment)))
 );
 
 export const deleteComment = commentId => dispatch => (
