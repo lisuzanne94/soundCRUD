@@ -39,6 +39,10 @@ track10 = Track.create!(title: 'Taka-Mic', uploader_id: user1.id, genre: 'hip-ho
 track11 = Track.create!(title: 'Run It', uploader_id: user7.id, genre: 'hip-hop-rap') # pandanextdoor
 track12 = Track.create!(title: 'Triumphant', uploader_id: user1.id, genre: 'hip-hop-rap') # suzinator
 
+# Comments
+comment1 = Comment.create!(body: 'first!!!', commenter_id: 2, track_id: 1) #suzinator, shiki no uta
+comment2 = Comment.create!(body: 'second comment :0', commenter_id: 3, track_id: 1) #mostpopularcombo, shiki no uta
+
 # AWS Seeds
 track1_image = open('https://soundcrud-seeds.s3.amazonaws.com/tracks-cover-images/shiki_no_uta.jpg')
 track1.cover_image.attach(io: track1_image, filename: 'shiki_no_uta.jpg')

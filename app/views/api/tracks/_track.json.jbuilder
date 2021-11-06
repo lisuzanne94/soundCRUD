@@ -1,4 +1,16 @@
-json.extract! track, :id, :title, :uploader_id, :created_at, :genre, :comments
+json.extract! track, :id, :title, :uploader_id, :created_at, :genre
+
+json.comments do
+    track.comments.each do |comment|
+        json.set! comment.id do
+            json.extract! comment, :id, :body
+            json.commenter do 
+                json.extract! comment.commenter, :id, :username
+            end
+        end
+    end
+end
+
 json.uploader track.uploader.username
 
 if track.cover_image.attached? 

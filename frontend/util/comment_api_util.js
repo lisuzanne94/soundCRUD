@@ -1,18 +1,11 @@
-export const fetchComments = () => (
-    $.ajax({
-        method: 'GET',
-        url: '/api/comments'
-    })
-);
-
-export const fetchComment = commentId => (
-    $.ajax({
-        method: 'GET',
-        url: `/api/comments/${commentId}`,
-        contentType: false,
-        processData: false
-    })
-);
+// export const fetchComment = commentId => (
+//     $.ajax({
+//         method: 'GET',
+//         url: `/api/comments/${commentId}`,
+//         contentType: false,
+//         processData: false
+//     })
+// );
 
 export const createComment = comment => (
     $.ajax({
