@@ -37,7 +37,7 @@ class TrackShow extends React.Component {
 
                     <h2>{this.props.track.title}</h2>
 
-                    <p>Uploaded by: {this.props.track.uploader}</p>
+                    <p>Uploaded by: <Link to={`/users/${this.props.track.uploader_id}`}>{this.props.track.uploader}</Link></p>
 
                     <Modal modalTrackId={this.props.trackId} />
 
