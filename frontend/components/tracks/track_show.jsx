@@ -43,14 +43,9 @@ class TrackShow extends React.Component {
                 {deleteButton}
 
 
-                //Comments
                 <div>
                     <ul>
-                        {/* {this.props.track.comments.map((comment, i) => (
-                            <li key={i}>
-                                <CommentItemContainer commenter={comment.commenter} comment={comment} body={comment.body}/>
-                            </li>
-                        ))} */}
+                        <CommentItemContainer />
                     </ul>
                 </div>
             </div>

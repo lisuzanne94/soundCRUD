@@ -4,11 +4,21 @@ class CommentItem extends React.Component {
 
     render () {
 
-        if (!this.props.comment) { return null }
+        if (!this.props.comments) { return null }
+
+        const { comments } = this.props;
 
         return (
             <div>
-                {this.props.body}
+                <ul>
+                    {
+                        comments.map((comment, i) => (
+                            <li key={i}>
+                                {comment.body}
+                            </li>
+                        ))
+                    }
+                </ul>
             </div>
         )
     }
