@@ -1,5 +1,6 @@
 import { RECEIVE_TRACK } from '../actions/track_actions';
 import {
+    CLEAR_COMMENTS_FROM_STATE,
     RECEIVE_COMMENT,
     REMOVE_COMMENT
 } from '../actions/comment_actions';
@@ -17,6 +18,8 @@ const commentsReducer = (state={}, action) => {
         case REMOVE_COMMENT:
             delete nextState[action.commentId]
             return nextState;
+        case CLEAR_COMMENTS_FROM_STATE:
+            return {};
         default:
             return state;
     }

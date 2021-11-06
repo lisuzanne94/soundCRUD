@@ -14,12 +14,9 @@ class TrackShow extends React.Component {
         this.props.fetchTrack(this.props.match.params.trackId)
     };
 
-    
     render () {
 
         if (!this.props.track) { return null }
-
-        // console.log(this.props.track.comments)
 
         // guests (always id: 1) will have the ability to edit/delete all tracks for now??
         const editButton = this.props.currentUserId === (1 || this.props.track.uploader_id)? (

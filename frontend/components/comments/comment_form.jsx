@@ -22,8 +22,6 @@ class CommentForm extends React.Component {
 
     render () {
 
-        console.log(this.state)
-
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -31,7 +29,6 @@ class CommentForm extends React.Component {
                         value={this.state.body}
                         onChange={this.update("body")}
                     />
-                    <button type="submit">Submit</button>
                 </form>
             </div>
         )

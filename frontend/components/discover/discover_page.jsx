@@ -6,6 +6,7 @@ class DiscoverPage extends React.Component {
 
     componentDidMount () {
         this.props.fetchTracks();
+        this.props.clearCommentsFromState();
     }
 
     render () {
