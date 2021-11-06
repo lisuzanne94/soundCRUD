@@ -8,6 +8,8 @@ const usersReducer = (state = {}, action) => {
             // nextState[action.currentUser.id] = action.currentUser
             // return nextState;
             return { [action.currentUser.id]: action.currentUser }
+        case LOGOUT_CURRENT_USER:
+            return {}
         default:
             return state;
     }

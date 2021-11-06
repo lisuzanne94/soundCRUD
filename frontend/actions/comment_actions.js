@@ -34,7 +34,7 @@ export const clearCommentsFromState = () => ({
 });
 
 export const createComment = comment => dispatch => (
-    CommentAPIUtil.createComment(comment).then(comment => dispatch(receiveComment(comment))
+    CommentAPIUtil.createComment(comment).then(comment => dispatch(receiveComment(comment)))
 );
 
 export const deleteComment = commentId => dispatch => (
