@@ -7,6 +7,7 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => ({
+    deleteComment: commentId => dispatch(deleteComment(commentId))
 });
 
-export default connect(mSTP, null)(CommentItem);
+export default connect(mSTP, mDTP)(CommentItem);
