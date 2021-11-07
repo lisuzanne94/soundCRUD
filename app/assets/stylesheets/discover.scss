@@ -1,28 +1,77 @@
 .discover-page-container {
     display: flex;
     justify-content: space-between;
-    width: 1000px;
+    width: 1200px;
     background-color: white;
     margin: auto;
+    font-family: 'Oxygen';
 };
 
-.discover-track-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0px 0px 50px 0px;
+.discover-tracks-container {
+    width: 800px;
+    margin: 38px 30px;
+    padding: 0px 30px 0px 0px;
+    border-right: 1px solid rgb(219, 219, 219);
 };
+
+.tracks-list {
+    border-bottom: 1px solid rgb(219, 219, 219);
+    padding: 0px 0px 30px 0px;
+    margin: 0px 0px 30px 0px;
+}
+
+.track-obj-list {
+    display: flex;
+    height: 230px;
+    overflow-x: auto;
+};
+
+.list-header {
+    margin: 0px 0px 10px 0px;
+    font-size: 22px;
+};
+
+.list-subheader {
+    margin: 0px 0px 20px 0px;
+    font-size: 14px;
+    color: gray;
+}
 
 .discover-track-obj {
     display: flex;
     flex-direction: column;
+    margin: 0px 20px 0px 0px;
 };
 
 .discover-track-cover-img {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
 };
 
-.uploaders-list-container {
-    border: 1px solid black;
-    width: 350px;
+.discover-track-title {
+    text-decoration: none;
+    margin: 5px 0px 3px 0px;
+    font-size: 14px;
+    color: black
+};
+
+.discover-track-uploader {
+    text-decoration: none;
+    font-size: 12px;
+    color: gray;
+}
+
+.discover-track-title:visited, .discover-track-uploader:visited {
+    text-decoration: none;
+};
+
+.recent-listen-container {
+    width: 400px;
+    display: flex;
+    margin: 38px 0px 0px 0px;
+};
+
+.recent-listen-list-header {
+    font-size: 14px;
+    color: gray;
 }

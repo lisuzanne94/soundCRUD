@@ -2,13 +2,13 @@
     display: flex;
     justify-content: center;
     height: 47px;
-    background-color: rgb(56, 28, 62);
+    background-color: rgb(39, 37, 40);
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
-    width: 1000px;
+    width: 1200px;
     height: 47px;
     margin-bottom: 2em;
     font-size: 14px;
@@ -21,7 +21,7 @@
 };
 
 .discover-logo {
-    width: 70px;
+    width: 60px;
     height: auto;
 };
 
@@ -45,7 +45,7 @@
     color: white;
 }
 
-.nav-btn-active {
+.active-nav-btn {
     background-color: black;
 };
 

@@ -17,7 +17,7 @@ class NavBar extends React.Component {
                             </div>
                         </Link>
 
-                        <NavLink className="nav-link" className="nav-home-link" activeclassname="nav-btn-active" to="/discover">
+                        <NavLink className="nav-link" className="nav-home-link" activeClassName="active-nav-btn" to="/discover">
                             <div className="left-nav-btn">Home</div>
                         </NavLink>
                     </div>

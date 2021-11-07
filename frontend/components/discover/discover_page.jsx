@@ -32,13 +32,13 @@ class DiscoverPage extends React.Component {
             }
         })
 
-
         return (
             <div className="discover-page-container">
                 <div className="discover-tracks-container">
-                    <div className="genre-div">
-                        <div className="indie-label">Indie</div>
-                        <ul className="discover-track-list">
+                    <div className="tracks-list">
+                        <div className="list-header">More indie you might like</div>
+                        <div className="list-subheader">Suggestions made for you</div>
+                        <ul className="track-obj-list">
                             {
                                 indie.map(track => (
                                     <div key={track.id}>
@@ -46,7 +46,7 @@ class DiscoverPage extends React.Component {
                                             <Link to={`/tracks/${track.id}`}>
                                                 <img className="discover-track-cover-img" src={track.coverImage} />
                                             </Link>
-                                            <Link to={`/tracks/${track.id}`} className="discover-track-titler">{track.title}</Link>
+                                            <Link to={`/tracks/${track.id}`} className="discover-track-title">{track.title}</Link>
                                             <Link to={`/users/${track.uploader_id}`} className="discover-track-uploader">{track.uploader}</Link>
                                         </li>
                                     </div>
@@ -54,9 +54,10 @@ class DiscoverPage extends React.Component {
                             }
                         </ul>
                     </div>
-                    <div className="genre-div">
-                        <div className="hiphoprap-label">Hip Hop & Rap</div>
-                        <ul className="discover-track-list">
+                    <div className="tracks-list">
+                        <div className="list-header">In the mood for Hip Hop or Rap?</div>
+                        <div className="list-subheader"></div>
+                        <ul className="track-obj-list">
                             {
                                 hiphop.map(track => (
                                     <div key={track.id}>
@@ -64,7 +65,7 @@ class DiscoverPage extends React.Component {
                                             <Link to={`/tracks/${track.id}`}>
                                                 <img className="discover-track-cover-img" src={track.coverImage} />
                                             </Link>
-                                            <Link to={`/tracks/${track.id}`} className="discover-track-titler">{track.title}</Link>
+                                            <Link to={`/tracks/${track.id}`} className="discover-track-title">{track.title}</Link>
                                             <Link to={`/users/${track.uploader_id}`} className="discover-track-uploader">{track.uploader}</Link>
                                         </li>
                                     </div>
@@ -72,9 +73,10 @@ class DiscoverPage extends React.Component {
                             }
                         </ul>
                     </div>
-                    <div className="genre-div">
-                        <div className="kpop-label">KPop</div>
-                        <ul className="discover-track-list">
+                    <div className="tracks-list">
+                        <div className="list-header">KPop</div>
+                        <div className="list-subheader">Tracks as smooth as butter</div>
+                        <ul className="track-obj-list">
                             {
                                 kpop.map(track => (
                                     <div key={track.id}>
@@ -82,7 +84,7 @@ class DiscoverPage extends React.Component {
                                             <Link to={`/tracks/${track.id}`}>
                                                 <img className="discover-track-cover-img" src={track.coverImage} />
                                             </Link>
-                                            <Link to={`/tracks/${track.id}`} className="discover-track-titler">{track.title}</Link>
+                                            <Link to={`/tracks/${track.id}`} className="discover-track-title">{track.title}</Link>
                                             <Link to={`/users/${track.uploader_id}`} className="discover-track-uploader">{track.uploader}</Link>
                                         </li>
                                     </div>
@@ -90,9 +92,10 @@ class DiscoverPage extends React.Component {
                             }
                         </ul>
                     </div>
-                    <div className="genre-div">
-                        <div className="pop-label">Pop</div>
-                        <ul className="discover-track-list">
+                    <div className="tracks-list">
+                        <div className="list-header">Pop</div>
+                        <div className="list-subheader">Come on and slam</div>
+                        <ul className="track-obj-list">
                             {
                                 pop.map(track => (
                                     <div key={track.id}>
@@ -100,7 +103,7 @@ class DiscoverPage extends React.Component {
                                             <Link to={`/tracks/${track.id}`}>
                                                 <img className="discover-track-cover-img" src={track.coverImage} />
                                             </Link>
-                                            <Link to={`/tracks/${track.id}`} className="discover-track-titler">{track.title}</Link>
+                                            <Link to={`/tracks/${track.id}`} className="discover-track-title">{track.title}</Link>
                                             <Link to={`/users/${track.uploader_id}`} className="discover-track-uploader">{track.uploader}</Link>
                                         </li>
                                     </div>
@@ -111,8 +114,8 @@ class DiscoverPage extends React.Component {
 
                 </div>
 
-                <div className="uploaders-list-container">
-                    <h2>Artists you should follow</h2>
+                <div className="recent-listen-container">
+                    <h2 className="recent-listen-list-header">Recently Listened</h2>
                 </div>
             </div>
         )
