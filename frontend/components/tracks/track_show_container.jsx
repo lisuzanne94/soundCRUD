@@ -5,6 +5,7 @@ import { openModal } from "../../actions/modal_actions";
 
 const mSTP = (state, ownProps) => ({
     currentUserId: state.session.id,
+    currentUserProfilePic: state.entities.users[state.session.id].profilePic,
     track: state.entities.tracks[ownProps.match.params.trackId],
     trackId: ownProps.match.params.trackId
 });

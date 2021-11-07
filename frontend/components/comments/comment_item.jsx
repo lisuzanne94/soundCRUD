@@ -6,7 +6,8 @@ class CommentItem extends React.Component {
 
         if (!this.props.comments) { return null }
 
-        const { comments, currentUserId, deleteComment } = this.props;
+        const { comments, currentUserId, currentUserProfilePic, deleteComment } = this.props;
+
 
         return (
             <div className="comments-index-container">
@@ -14,22 +15,23 @@ class CommentItem extends React.Component {
                     {
                         comments.map((comment, i) => (
                             <li key={i}>
-                                {console.log(comment)}
-                                <img className="comment-profile-pic" src={comment.commenter.profilePic} />
-                                {comment.body}
-                                <br />
-                                {
-                                    currentUserId === comment.commenter.id ? (
-                                        <button onClick={() => deleteComment(comment.id)}>Delete</button>
-                                    ) : null
-                                }
-                                <br />
-                                {comment.commenter.username}
-                                <br />
-                                <br />
+                                <div className="comment-obj-container">
+                                    <div className="comment-obj">
+                                        <img className="comment-profile-pic" src={currentUserProfilePic} />
+                                        <div className="comment-body">
+                                            <div>{comment.commenter.username}</div>
+                                            <div>{comment.body}</div>
+                                        </div>
+                                    </div>
+                                    {
+                                        currentUserId === comment.commenter.id ? (
+                                            <button onClick={() => deleteComment(comment.id)}>Delete</button>
+                                        ) : null
+                                    }
+
+                                </div>
                             </li>
                         ))
-                        
                     }
                 </ul>
             </div>
