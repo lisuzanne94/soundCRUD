@@ -1,12 +1,55 @@
-.track-show-container {
-    display: flex;
-    justify-content: space-between;
+.track-show-page-container {
     width: 1200px;
     background-color: white;
     margin: auto;
+    font-family: 'Oxygen';
 }
 
-.show-track-cover-img {
-    width: 150px;
+.track-banner {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(243, 243, 243);
+    padding: 30px;
+}
+
+.track-banner-left {
+    display: flex;
+}
+
+.track-play-btn {
+    font-size: 64px;
+    margin: 0px 7px 0px 0px;
+    color: rgb(192, 20, 255);
+}
+
+.track-banner-title {
+    background-color: rgb(40, 40, 40);
+    color: white;
+    font-size: 24px;
+    margin: 0px 0px 5px 0px;
+    padding: 5px;
+}
+
+.track-banner-uploader {
+    background-color: rgb(40, 40, 40);
+    color: rgb(178, 178, 178);
+    font-size: 18px;
+    padding: 5px;
+    width: 72px;
+}
+
+.track-show-cover-img {
+    width: 300px;
     height: auto;
+}
+
+.comment-form {
+    border: 1px solid black;
+    margin: 20px 0px 15px 0px;
+}
+
+.modify-track-btns {
+    margin: 0px 0px 15px 0px;
+    padding: 0px 0px 15px 0px;
+    border-bottom: 1px solid rgb(207, 207, 207);
 }
