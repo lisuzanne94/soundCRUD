@@ -33,20 +33,20 @@ class TrackShow extends React.Component {
 
         return (
             <div className="track-show-page-container">
-                <div>
-                    <div className="track-banner">
-                        <div className="track-banner-left">
-                            <div className="track-play-btn"><FontAwesomeIcon icon={faPlayCircle} /></div>
-                            <div className="track-banner-labels">
-                                <h2 className="track-banner-title">{this.props.track.title}</h2>
-                                <h3 className="track-banner-uploader">{this.props.track.uploader}</h3>
-                            </div>
+                <div className="track-banner">
+                    <div className="track-banner-left">
+                        <div className="track-play-btn"><FontAwesomeIcon icon={faPlayCircle} /></div>
+                        <div className="track-banner-labels">
+                            <h2 className="track-banner-title">{this.props.track.title}</h2>
+                            <h3 className="track-banner-uploader">{this.props.track.uploader}</h3>
                         </div>
-                        
-                        <img className="track-show-cover-img" src={this.props.track.coverImage} />
                     </div>
+                    
+                    <img className="track-show-cover-img" src={this.props.track.coverImage} />
+                </div>
 
-                    <div className="comment-form">
+                <div className="track-show-page-under-banner">
+                    <div>
                         <CommentFormContainer 
                             commentTrackId={this.props.trackId}
                         />
