@@ -14,6 +14,8 @@ class CommentItem extends React.Component {
                     {
                         comments.map((comment, i) => (
                             <li key={i}>
+                                {console.log(comment)}
+                                <img className="comment-profile-pic" src={comment.commenter.profilePic} />
                                 {comment.body}
                                 <br />
                                 {
