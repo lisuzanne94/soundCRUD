@@ -1,22 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CommentFormContainer from "../comments/comment_form_container";
+import CommentItemContainer from "../comments/comment_item_container";
 import Modal from '../modal/modal';
 
 class TrackShow extends React.Component {
 
     constructor (props) {
         super(props);
+        this.state = {
+            ...this.props.track
+        }
     }
 
     componentDidMount () {
         this.props.fetchTrack(this.props.match.params.trackId)
     };
 
-    
     render () {
 
         if (!this.props.track) { return null }
-
 
         // guests (always id: 1) will have the ability to edit/delete all tracks for now??
         const editButton = this.props.currentUserId === (1 || this.props.track.uploader_id)? (
@@ -27,22 +30,35 @@ class TrackShow extends React.Component {
             <button onClick={() => this.props.deleteTrack(this.props.track.id).then(() => this.props.history.push('/discover'))}>Delete Track</button>
         ) : null
 
-            console.log(this.props.track.genre)
-
         return (
-            <div>
-                <img className="show-track-cover-img" src={this.props.track.coverImage} />
+            <div className="track-show-container">
+                <div>
+                    <img className="show-track-cover-img" src={this.props.track.coverImage} />
 
-                <h2>{this.props.track.title}</h2>
+                    <h2>{this.props.track.title}</h2>
 
-                <p>Uploaded by: {this.props.track.uploader}</p>
+                    <p>Uploaded by: <Link to={`/users/${this.props.track.uploader_id}`}>{this.props.track.uploader}</Link></p>
 
-                <Modal modalTrackId={this.props.trackId} />
+                    <Modal modalTrackId={this.props.trackId} />
 
-                {editButton}
-                {deleteButton}
+                    {editButton}
+                    {deleteButton}
+
+                    <div>
+                        <CommentFormContainer 
+                            commentTrackId={this.props.trackId}
+                        />
+                    </div>
+
+                    <div>
+                        <ul>
+                            <CommentItemContainer 
+                                currentUserId={this.props.currentUserId}
+                            />
+                        </ul>
+                    </div>
+                </div>
             </div>
-
         )
     }
 };

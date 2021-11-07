@@ -6,6 +6,7 @@ class DiscoverPage extends React.Component {
 
     componentDidMount () {
         this.props.fetchTracks();
+        this.props.clearCommentsFromState();
     }
 
     render () {
@@ -46,7 +47,7 @@ class DiscoverPage extends React.Component {
                                                 <img className="discover-track-cover-img" src={track.coverImage} />
                                             </Link>
                                             <Link to={`/tracks/${track.id}`} className="discover-track-titler">{track.title}</Link>
-                                            <Link to={`/tracks/${track.id}`} className="discover-track-uploader">{track.uploader}</Link>
+                                            <Link to={`/users/${track.uploader_id}`} className="discover-track-uploader">{track.uploader}</Link>
                                         </li>
                                     </div>
                                 ))
@@ -64,7 +65,7 @@ class DiscoverPage extends React.Component {
                                                 <img className="discover-track-cover-img" src={track.coverImage} />
                                             </Link>
                                             <Link to={`/tracks/${track.id}`} className="discover-track-titler">{track.title}</Link>
-                                            <Link to={`/tracks/${track.id}`} className="discover-track-uploader">{track.uploader}</Link>
+                                            <Link to={`/users/${track.uploader_id}`} className="discover-track-uploader">{track.uploader}</Link>
                                         </li>
                                     </div>
                                 ))
@@ -82,7 +83,7 @@ class DiscoverPage extends React.Component {
                                                 <img className="discover-track-cover-img" src={track.coverImage} />
                                             </Link>
                                             <Link to={`/tracks/${track.id}`} className="discover-track-titler">{track.title}</Link>
-                                            <Link to={`/tracks/${track.id}`} className="discover-track-uploader">{track.uploader}</Link>
+                                            <Link to={`/users/${track.uploader_id}`} className="discover-track-uploader">{track.uploader}</Link>
                                         </li>
                                     </div>
                                 ))
@@ -100,7 +101,7 @@ class DiscoverPage extends React.Component {
                                                 <img className="discover-track-cover-img" src={track.coverImage} />
                                             </Link>
                                             <Link to={`/tracks/${track.id}`} className="discover-track-titler">{track.title}</Link>
-                                            <Link to={`/tracks/${track.id}`} className="discover-track-uploader">{track.uploader}</Link>
+                                            <Link to={`/users/${track.uploader_id}`} className="discover-track-uploader">{track.uploader}</Link>
                                         </li>
                                     </div>
                                 ))
