@@ -94,8 +94,8 @@ class TrackForm extends React.Component {
                     <br />
                     
                     <label>Genre:</label>
-                    <select value={this.state.genre ? this.state.genre : this.props.genre} name="genre" id="genre" onChange={this.handleGenre}>
-                        <option disabled>Please select a genre</option>
+                    <select defaultValue="choose-genre" name="genre" id="genre" onChange={this.handleGenre}>
+                        <option value="choose-genre" disabled>Please select a genre</option>
                         <option value="kpop">Kpop</option>
                         <option value="indie">Indie</option>
                         <option value="hip-hop-rap">Hip-Hop & Rap</option>
