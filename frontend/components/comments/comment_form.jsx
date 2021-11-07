@@ -27,8 +27,11 @@ class CommentForm extends React.Component {
 
     render () {
 
+        const { currentUser } = this.props;
+
         return (
             <div>
+                <div><img className="comment-form-profile-pic" src={currentUser.profilePic} /></div>
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" 
                         value={this.state.body}
