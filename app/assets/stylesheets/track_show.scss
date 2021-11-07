@@ -87,3 +87,18 @@
     padding: 0px 0px 15px 0px;
     border-bottom: 1px solid rgb(207, 207, 207);
 }
+
+.modify-track-btn {
+    background-color: white;
+    border: 1px solid rgb(231, 231, 231);
+    border-radius: 2px;
+    margin: 0px 3px 0px 0px;
+    padding: 4px 10px;
+    font-family: 'Oxygen';
+    font-size: 13px;
+}
+
+.modify-track-btn:hover {
+    border-color: rgb(202, 202, 202);
+    cursor: pointer;
+}

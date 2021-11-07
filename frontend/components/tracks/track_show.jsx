@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlayCircle } from '@fortawesome/free-solid-svg-icons'
+import { faPlayCircle, faPencilAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
 import CommentFormContainer from "../comments/comment_form_container";
 import CommentItemContainer from "../comments/comment_item_container";
@@ -24,11 +24,19 @@ class TrackShow extends React.Component {
         if (!this.props.track) { return null }
 
         const editButton = this.props.currentUserId === this.props.track.uploader_id ? (
-            <button onClick={() => this.props.openModal('Update Track')}>Update Track</button>
+            <button
+                className="modify-track-btn"
+                onClick={() => this.props.openModal('Update Track')}>
+                    <FontAwesomeIcon icon={faPencilAlt} /> Edit Track
+            </button>
         ) : null
 
         const deleteButton = this.props.currentUserId === this.props.track.uploader_id ? (
-            <button onClick={() => this.props.deleteTrack(this.props.track.id).then(() => this.props.history.push('/discover'))}>Delete Track</button>
+            <button 
+                className="modify-track-btn" 
+                onClick={() => this.props.deleteTrack(this.props.track.id).then(() => this.props.history.push('/discover'))}>
+                    <FontAwesomeIcon icon={faTrashAlt} /> Delete Track
+            </button>
         ) : null
 
         return (
