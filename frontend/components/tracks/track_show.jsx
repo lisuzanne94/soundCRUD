@@ -19,11 +19,11 @@ class TrackShow extends React.Component {
 
 
         // guests (always id: 1) will have the ability to edit/delete all tracks for now??
-        const editButton = this.props.currentUserId === (1 || this.props.track.uploader_id)? (
+        const editButton = this.props.currentUserId === this.props.track.uploader_id ? (
             <button onClick={() => this.props.openModal('Update Track')}>Update Track</button>
         ) : null
 
-        const deleteButton = this.props.currentUserId === (1 || this.props.track.uploader_id) ? (
+        const deleteButton = this.props.currentUserId === this.props.track.uploader_id ? (
             <button onClick={() => this.props.deleteTrack(this.props.track.id).then(() => this.props.history.push('/discover'))}>Delete Track</button>
         ) : null
 
