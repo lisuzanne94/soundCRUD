@@ -1,6 +1,11 @@
 class Api::TracksController < ApplicationController
     def index
-        @tracks = Track.all
+        if params.has_key?(:user_id)
+            @tracks = Track.where(uploader_id: params[:user_id])
+        else
+            @tracks = Track.all
+        end
+
         render :index
     end
 

@@ -5,15 +5,15 @@
     font-family: 'Oxygen';
 }
 
-.track-show-page-under-banner {
-    width: 800px;
-}
-
 .track-banner {
     display: flex;
     justify-content: space-between;
     background-color: rgb(243, 243, 243);
     padding: 30px;
+}
+
+.track-show-page-under-banner {
+    width: 800px;
 }
 
 .track-banner-left {

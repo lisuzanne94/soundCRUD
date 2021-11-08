@@ -1,4 +1,33 @@
+.user-show-page-container {
+    width: 1200px;
+    background-color: white;
+    margin: auto;
+    font-family: 'Oxygen';
+}
+
+.user-banner {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(243, 243, 243);
+    padding: 30px;
+}
+
+.user-banner-left {
+    display: flex;
+}
+
 .user-profile-pic {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+}
+
+.user-banner-username {
+    width: max-content;
+    height: max-content;
+    background-color: rgb(40, 40, 40);
+    color: white;
+    font-size: 24px;
+    margin: 0px 0px 0px 30px;
+    padding: 10px;
 }
