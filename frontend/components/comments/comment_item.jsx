@@ -10,7 +10,6 @@ class CommentItem extends React.Component {
 
         const { comments, currentUser, deleteComment } = this.props;
 
-
         return (
             <div className="comments-index-container">
                 <ul>
@@ -19,7 +18,7 @@ class CommentItem extends React.Component {
                             <li key={i}>
                                 <div className="comment-obj-container">
                                     <div className="comment-obj">
-                                        <img className="comment-profile-pic" src={currentUser.profilePic} />
+                                        <img className="comment-profile-pic" src={comment.commenter.profilePic} />
                                         <div className="comment-body">
                                             <div className="commenter-username">{comment.commenter.username}</div>
                                             <div className="comment-body-text">{comment.body}</div>
