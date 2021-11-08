@@ -70,8 +70,9 @@ class TrackShow extends React.Component {
                     <div>
                         <ul>
                             <CommentItemContainer 
-                                currentUserId={this.props.currentUserId}
-                                currentUserProfilePic={this.props.currentUserProfilePic}
+                                // currentUserId={this.props.currentUserId}
+                                // currentUserProfilePic={this.props.currentUserProfilePic}
+                                currentUser={this.props.currentUser}
                             />
                         </ul>
                     </div>

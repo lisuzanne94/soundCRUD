@@ -6,7 +6,7 @@ class CommentItem extends React.Component {
 
         if (!this.props.comments) { return null }
 
-        const { comments, currentUserId, currentUserProfilePic, deleteComment } = this.props;
+        const { comments, currentUser, deleteComment } = this.props;
 
 
         return (
@@ -17,14 +17,14 @@ class CommentItem extends React.Component {
                             <li key={i}>
                                 <div className="comment-obj-container">
                                     <div className="comment-obj">
-                                        <img className="comment-profile-pic" src={currentUserProfilePic} />
+                                        <img className="comment-profile-pic" src={currentUser.profilePic} />
                                         <div className="comment-body">
                                             <div>{comment.commenter.username}</div>
                                             <div>{comment.body}</div>
                                         </div>
                                     </div>
                                     {
-                                        currentUserId === comment.commenter.id ? (
+                                        currentUser.id === comment.commenter.id ? (
                                             <button onClick={() => deleteComment(comment.id)}>Delete</button>
                                         ) : null
                                     }

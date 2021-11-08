@@ -4,6 +4,7 @@ import { fetchTrack, deleteTrack } from "../../actions/track_actions";
 import { openModal } from "../../actions/modal_actions";
 
 const mSTP = (state, ownProps) => ({
+    currentUser: state.entities.users[state.session.id],
     currentUserId: state.session.id,
     currentUserProfilePic: state.entities.users[state.session.id].profilePic,
     track: state.entities.tracks[ownProps.match.params.trackId],
