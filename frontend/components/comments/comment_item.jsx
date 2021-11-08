@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 class CommentItem extends React.Component {
 
@@ -19,16 +21,18 @@ class CommentItem extends React.Component {
                                     <div className="comment-obj">
                                         <img className="comment-profile-pic" src={currentUser.profilePic} />
                                         <div className="comment-body">
-                                            <div>{comment.commenter.username}</div>
-                                            <div>{comment.body}</div>
+                                            <div className="commenter-username">{comment.commenter.username}</div>
+                                            <div className="comment-body-text">{comment.body}</div>
                                         </div>
                                     </div>
                                     {
                                         currentUser.id === comment.commenter.id ? (
-                                            <button onClick={() => deleteComment(comment.id)}>Delete</button>
+                                            <button className="delete-comment-btn"
+                                                onClick={() => deleteComment(comment.id)}>
+                                                <FontAwesomeIcon icon={faTrashAlt} />
+                                            </button>
                                         ) : null
                                     }
-
                                 </div>
                             </li>
                         ))

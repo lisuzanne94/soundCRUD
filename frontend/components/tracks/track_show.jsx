@@ -8,34 +8,34 @@ import Modal from '../modal/modal';
 
 class TrackShow extends React.Component {
 
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
             ...this.props.track
         }
     }
 
-    componentDidMount () {
+    componentDidMount() {
         this.props.fetchTrack(this.props.match.params.trackId)
     };
 
-    render () {
+    render() {
 
         if (!this.props.track) { return null }
 
-        const editButton = this.props.currentUserId === this.props.track.uploader_id ? (
+        const editButton = this.props.currentUserId === this.props.track.uploader.id ? (
             <button
                 className="modify-track-btn"
                 onClick={() => this.props.openModal('Update Track')}>
-                    <FontAwesomeIcon icon={faPencilAlt} /> Edit Track
+                <FontAwesomeIcon icon={faPencilAlt} /> Edit Track
             </button>
         ) : null
 
-        const deleteButton = this.props.currentUserId === this.props.track.uploader_id ? (
-            <button 
-                className="modify-track-btn" 
+        const deleteButton = this.props.currentUserId === this.props.track.uploader.id ? (
+            <button
+                className="modify-track-btn"
                 onClick={() => this.props.deleteTrack(this.props.track.id).then(() => this.props.history.push('/discover'))}>
-                    <FontAwesomeIcon icon={faTrashAlt} /> Delete Track
+                <FontAwesomeIcon icon={faTrashAlt} /> Delete Track
             </button>
         ) : null
 
@@ -46,16 +46,16 @@ class TrackShow extends React.Component {
                         <div className="track-play-btn"><FontAwesomeIcon icon={faPlayCircle} /></div>
                         <div className="track-banner-labels">
                             <h2 className="track-banner-title">{this.props.track.title}</h2>
-                            <h3 className="track-banner-uploader">{this.props.track.uploader}</h3>
+                            <h3 className="track-banner-uploader">{this.props.track.uploader.username}</h3>
                         </div>
                     </div>
-                    
+
                     <img className="track-show-cover-img" src={this.props.track.coverImage} />
                 </div>
 
                 <div className="track-show-page-under-banner">
                     <div>
-                        <CommentFormContainer 
+                        <CommentFormContainer
                             commentTrackId={this.props.trackId}
                         />
                     </div>
@@ -67,14 +67,17 @@ class TrackShow extends React.Component {
                         {deleteButton}
                     </div>
 
-                    <div>
-                        <ul>
-                            <CommentItemContainer 
-                                // currentUserId={this.props.currentUserId}
-                                // currentUserProfilePic={this.props.currentUserProfilePic}
-                                currentUser={this.props.currentUser}
-                            />
-                        </ul>
+
+                    <div className="under-comment-form">
+                        <div className="uploader-details">
+                            <img className="uploader-details-pic" src={this.props.track.uploader.profilePic} />
+                            <div className="uploader-details-label">{this.props.track.uploader.username}</div>
+                        </div>
+
+                        <CommentItemContainer
+                            currentUser={this.props.currentUser}
+                        />
+
                     </div>
                 </div>
             </div>

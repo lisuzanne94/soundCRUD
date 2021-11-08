@@ -1,10 +1,12 @@
 .comments-index-container {
-    border: 1px solid black;
+    width: 100%;
+    margin: 0px 0px 0px 20px;
 }
 
 .comment-obj-container {
     display: flex;
     justify-content: space-between;
+    margin: 0px 0px 20px 0px;
 }
 
 .comment-obj {
@@ -14,10 +16,38 @@
 .comment-body {
     display: flex;
     flex-direction: column;
+    margin: 0px 0px 0px 5px;
 }
 
 .comment-profile-pic {
     width: 40px;
     background-color: rgb(158, 97, 127);
-    border-radius: 50%;
+    border-radius: 100%;
+}
+
+.commenter-username {
+    font-size: 13px;
+    color: gray;
+}
+
+.comment-body-text {
+    font-size: 14px;
+}
+
+.delete-comment-btn {
+    display: none;
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 3px;
+}
+
+.comment-obj-container:hover > .delete-comment-btn {
+    display: inline-block;
+}
+
+.delete-comment-btn:hover {
+    cursor: pointer;
 }
