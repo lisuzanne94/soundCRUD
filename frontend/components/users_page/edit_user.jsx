@@ -14,9 +14,9 @@ class EditUser extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    componentDidMount() {
-        this.props.fetchUser(this.props.userId)
-    }
+    // componentDidMount() {
+    //     this.props.fetchUser(this.props.userId)
+    // }
 
     handleFile(e) {
         const file = e.currentTarget.files[0];
@@ -43,7 +43,7 @@ class EditUser extends React.Component {
 
         const preview = this.state.profilePicURL ? <img src={this.state.profilePicURL} /> : null
 
-        if (!this.props.user) { return null }
+        // if (!this.props.user) { return null }
 
         const { user } = this.props;
 

@@ -16,22 +16,22 @@ class UserShow extends React.Component {
         if (!this.props.user) { return null }
         if (!this.props.tracks) { return null }
 
-        const { user, userId, openModal } = this.props;
-        const userTracks = Object.values(user.tracks)
+        const { user, userId, tracks, openModal } = this.props;
+        const userTracks = Object.values(tracks)
 
         return (
             <div>
                 {user.username}
 
-            <button onClick={() => openModal('Edit User')}>Update Profile Pic</button>
-            
-            <Modal userId={userId} />
+                <button onClick={() => openModal('Edit User')}>Update Profile Pic</button>
+                
+                <Modal userId={userId} />
 
                 <img className="user-profile-pic" src={user.profilePic} />
                 <div>
                     <ul>
                         {
-                            tracks.map((track, i) => (
+                            userTracks.map((track, i) => (
                                 <li key={i}>
                                     <div className="user-track-obj-container">
 
