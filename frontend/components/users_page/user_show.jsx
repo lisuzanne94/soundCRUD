@@ -1,36 +1,11 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlayCircle } from '@fortawesome/free-solid-svg-icons'
+import Modal from '../modal/modal';
 
 class UserShow extends React.Component {
-
-    constructor (props) {
-        super(props);
-        this.state = {
-            ...this.props.user,
-            profilePic: null
-        }
-
-        this.handleFile = this.handleFile.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
 
     componentDidMount () {
         this.props.fetchUser(this.props.match.params.userId)
         this.props.fetchUserTracks(this.props.match.params.userId);
-    }
-
-    handleFile(e) {
-        this.setState({ profilePic: e.currentTarget.files[0] })
-    }
-
-    handleSubmit (e) {
-        e.preventDefault();
-        const formData = new FormData();
-        formData.append('user[id]', this.state.id);
-        formData.append('user[profile_pic]', this.state.profilePic);
-
-        this.props.updateUser(formData);
     }
 
     render () {
@@ -38,26 +13,19 @@ class UserShow extends React.Component {
         if (!this.props.user) { return null }
         if (!this.props.tracks) { return null }
 
-        const { user, tracks } = this.props;
+        const { user, userId, openModal } = this.props;
+        const userTracks = Object.values(user.tracks)
 
         return (
-            <div className="user-show-page-container">
-                <div className="user-banner">
-                    <div className="user-banner-left">
-                        <img className="user-profile-pic" src={user.profilePic} />
-                        <h3 className="user-banner-username">{user.username}</h3>
+            <div>
+                {user.username}
 
-                        <form onSubmit={this.handleSubmit}>
-                            <input type="file"
-                                onChange={this.handleFile}
-                            />
-                            <button>Submit</button>
-                        </form>
-                    </div>
+            <button onClick={() => openModal('Edit User')}>Update Profile Pic</button>
+            
+            <Modal userId={userId} />
 
-                </div>
-
-                <div className="user-tracks-index-container">
+                <img className="user-profile-pic" src={user.profilePic} />
+                <div>
                     <ul>
                         {
                             tracks.map((track, i) => (

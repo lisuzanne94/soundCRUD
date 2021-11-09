@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import LoginFormContainer from "../session/login_form_container";
 import SignupFormContainer from "../session/signup_form_container";
 import EditTrackFormContainer from "../tracks/edit_track_form_container";
+import EditUserContainer from "../users_page/edit_user_container";
 
 const Modal = props => {
     if (!props.modal) {
@@ -21,6 +22,9 @@ const Modal = props => {
             break;
         case 'Update Track':
             component = <EditTrackFormContainer modalTrackId={props.modalTrackId} />;
+            break;
+        case 'Edit User':
+            component = <EditUserContainer userId={props.userId} />;
             break;
         default:
             return null;
