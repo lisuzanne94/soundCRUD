@@ -14,10 +14,6 @@ class EditUser extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    // componentDidMount() {
-    //     this.props.fetchUser(this.props.userId)
-    // }
-
     handleFile(e) {
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
@@ -36,29 +32,35 @@ class EditUser extends React.Component {
         formData.append('user[id]', this.state.id);
         formData.append('user[profile_pic]', this.state.profilePic);
 
-        this.props.updateUser(formData).then;
+        this.props.updateUser(formData).then(this.props.closeModal);
     }
 
     render() {
 
-        const preview = this.state.profilePicURL ? <img src={this.state.profilePicURL} /> : null
+        const preview = this.state.profilePicURL ? (
+                <img className="profile-pic-preview" src={this.state.profilePicURL} />
+            ) : null
 
-        // if (!this.props.user) { return null }
+        if (!this.props.user) { return null }
 
-        const { user } = this.props;
+        const { user, closeModal } = this.props;
 
         return (
-            <div>
-                <h3>Image Preview</h3>
-                {preview}
+            // <div className="edit-user-form-modal">
+                <div className="edit-user-form-container">
+                    <h3>{user.username}</h3>
+                    {preview}
 
-                <form onSubmit={this.handleSubmit}>
-                    <input type="file"
-                        onChange={this.handleFile}
-                    />
-                    <button>Submit</button>
-                </form>
-            </div>
+                    <form onSubmit={this.handleSubmit}>
+                        <div className="edit-user-btns">
+                            <input className="edit-user-btn" type="file"
+                                onChange={this.handleFile}
+                            />
+                            <button className="edit-user-btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            // </div>
         )
     }
 

@@ -1,0 +1,38 @@
+.edit-user-modal-bg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(236, 236, 236, 0.697);
+    z-index: 10;
+}
+
+.edit-user-modal-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 450px;
+    height: 500px;
+    background-color: white;
+    transform: translate(-50%, -50%);
+};
+
+.edit-user-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 450px;
+    height: 500px;
+}
+
+.profile-pic-preview {
+    margin: auto;
+    width: 350px;
+    height: 350px;
+}
+
+.edit-user-btns {
+    display: flex;
+    justify-content: space-between;
+}
