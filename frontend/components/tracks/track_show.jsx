@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import CommentFormContainer from "../comments/comment_form_container";
 import CommentItemContainer from "../comments/comment_item_container";
 import Modal from '../modal/modal';
+import MusicPlayer from "../music_player/music_player";
 
 class TrackShow extends React.Component {
 
@@ -80,6 +81,11 @@ class TrackShow extends React.Component {
 
                     </div>
                 </div>
+
+            <div>
+                    <audio src={this.props.track.trackFile} autoPlay controls></audio>
+            </div>
+
             </div>
         )
     }

@@ -30,3 +30,7 @@ if track.cover_image.attached?
 else 
     json.coverImage 'https://soundcrud-seeds.s3.amazonaws.com/tracks-cover-images/default-cover-img.png'
 end
+
+if track.track_file.attached? 
+    json.trackFile url_for(track.track_file)
+end

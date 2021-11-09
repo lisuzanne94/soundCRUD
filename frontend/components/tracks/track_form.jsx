@@ -7,10 +7,12 @@ class TrackForm extends React.Component {
         this.state = {
             ...this.props.track,
             coverImage: null,
+            trackFile: null,
             uploaded: false
         }
         
         this.handleGenre = this.handleGenre.bind(this);
+        this.handleTrackFile = this.handleTrackFile.bind(this);
         this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.changeUploadedStatus = this.changeUploadedStatus.bind(this);
@@ -22,6 +24,10 @@ class TrackForm extends React.Component {
 
     handleFile(e) {
         this.setState({coverImage: e.currentTarget.files[0]})
+    }
+
+    handleTrackFile(e) {
+        this.setState({trackFile: e.currentTarget.files[0]})
     }
 
     changeUploadedStatus () {
@@ -37,11 +43,15 @@ class TrackForm extends React.Component {
         if (this.state.coverImage) {
             formData.append('track[cover_image]', this.state.coverImage);
         };
+        if (this.state.trackFile) {
+            formData.append('track[track_file]', this.state.trackFile);
+        };
 
         this.props.action(formData).then(
             this.setState({
                 title: '',
                 coverImage: null,
+                trackFile: null,
                 uploaded: false
             })
         ).then(this.changeUploadedStatus).then(this.props.closeModal)
@@ -113,7 +123,14 @@ class TrackForm extends React.Component {
                         value=""
                         title=" "
                         onChange={this.handleFile}/>
+                <br />
+                    <label>Upload track file: </label>
+                    <input type="file" 
+                        value=""
+                        title=" "
+                        onChange={this.handleTrackFile}/>
                     <br />
+
                     <button>{this.props.formType}</button>
                 </form>
             </div>
