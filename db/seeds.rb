@@ -80,5 +80,4 @@ track11.cover_image.attach(io: track11_image, filename: 'shang-chi.jpg')
 track12_image = open('https://soundcrud-seeds.s3.amazonaws.com/tracks-cover-images/triumphant-shing02.jpg')
 track12.cover_image.attach(io: track12_image, filename: 'triumphant-shing02.jpg')
 
-
 puts 'Seed successful! :)'
