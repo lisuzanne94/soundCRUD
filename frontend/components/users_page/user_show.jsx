@@ -24,8 +24,6 @@ class UserShow extends React.Component {
                 {user.username}
 
                 <button onClick={() => openModal('Edit User')}>Update Profile Pic</button>
-                
-                <Modal userId={userId} />
 
                 <img className="user-profile-pic" src={user.profilePic} />
                 <div>
@@ -50,6 +48,8 @@ class UserShow extends React.Component {
                         }
                     </ul>
                 </div>
+
+                <Modal userId={userId} />
             </div>
         )
     }
