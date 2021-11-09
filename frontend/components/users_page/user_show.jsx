@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons'
 
@@ -63,13 +64,14 @@ class UserShow extends React.Component {
                             tracks.map((track, i) => (
                                 <li key={i}>
                                     <div className="user-track-obj-container">
-                                        <img className="user-track-cover-img" src={track.coverImage} />
+
+                                        <Link to={`/tracks/${track.id}`}><img className="user-track-cover-img" src={track.coverImage} /></Link>
 
                                         <div className="user-track-player">
                                             <div className="user-track-play-btn"><FontAwesomeIcon icon={faPlayCircle} /></div>
                                             <div className="user-track-labels">
-                                                <div className="user-track-uploader">{track.uploader.username}</div>
-                                                <div className="user-track-title">{track.title}</div>
+                                                <Link to={`/users/${track.uploader.id}`} className="user-track-uploader">{track.uploader.username}</Link>
+                                                <Link to={`/tracks/${track.id}`} className="user-track-title">{track.title}</Link>
                                             </div>
                                         </div>
                                     </div>
