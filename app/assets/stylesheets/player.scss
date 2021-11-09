@@ -1,0 +1,13 @@
+.music-player-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: max-content;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.music-player {
+    width: 1200px;
+}

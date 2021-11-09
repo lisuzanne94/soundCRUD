@@ -81,11 +81,6 @@ class TrackShow extends React.Component {
 
                     </div>
                 </div>
-
-            <div>
-                    <audio src={this.props.track.trackFile} autoPlay controls></audio>
-            </div>
-
             </div>
         )
     }

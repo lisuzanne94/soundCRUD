@@ -8,8 +8,8 @@ class MusicPlayer extends React.Component {
 
     render() {
         return (
-            <div>
-                <audio src={this.props.track}></audio>
+            <div className="music-player-container">
+                <audio className="music-player" src={this.props.trackFile} controls></audio>
             </div>
         )
     }
