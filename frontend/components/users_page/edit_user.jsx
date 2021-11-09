@@ -39,7 +39,11 @@ class EditUser extends React.Component {
 
         const preview = this.state.profilePicURL ? (
                 <img className="profile-pic-preview" src={this.state.profilePicURL} />
-            ) : null
+            ) : (
+                <div className="edit-user-preview-msg">
+                    Choose an image to preview it here
+                </div>
+            )
 
         if (!this.props.user) { return null }
 
@@ -48,15 +52,22 @@ class EditUser extends React.Component {
         return (
             // <div className="edit-user-form-modal">
                 <div className="edit-user-form-container">
-                    <h3>{user.username}</h3>
+                    <h3 className="edit-user-username">{user.username}</h3>
                     {preview}
 
                     <form onSubmit={this.handleSubmit}>
                         <div className="edit-user-btns">
-                            <input className="edit-user-btn" type="file"
-                                onChange={this.handleFile}
-                            />
-                            <button className="edit-user-btn">Submit</button>
+                            <label className="upload-pic-btn">Choose an image
+                                <input type="file"
+                                    value=""
+                                    title=" "
+                                    onChange={this.handleFile}
+                                />
+                                </label>
+                            <div>
+                                <button className="edit-user-cancel-btn" onClick={() => closeModal()}>Cancel</button>
+                                <button className="edit-user-btn">Save</button>
+                            </div>
                         </div>
                     </form>
                 </div>

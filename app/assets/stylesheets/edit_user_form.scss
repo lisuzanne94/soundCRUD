@@ -22,8 +22,22 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 450px;
-    height: 500px;
+    width: 390px;
+    height: 440px;
+    padding: 30px;
+    font-family: 'Oxygen';
+}
+
+.edit-user-username {
+    padding: 0px 0px 10px 0px;
+    border-bottom: 1px solid rgb(217, 217, 217);
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.edit-user-preview-msg {
+    margin: auto;
+    color: gray;
 }
 
 .profile-pic-preview {
@@ -35,4 +49,38 @@
 .edit-user-btns {
     display: flex;
     justify-content: space-between;
+}
+
+.edit-user-form-container input[type='file'] {
+    display: none;
+}
+
+.upload-pic-btn {
+    width: fit-content;
+    height: fit-content;
+    padding: 7px;
+    font-family: 'Oxygen';
+    font-size: 13px;
+    border: 1px solid rgb(192, 20, 255);
+    border-radius: 2px;
+}
+
+.edit-user-cancel-btn {
+    font-family: 'Oxygen';
+    font-size: 13px;
+    background-color: white;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.edit-user-btn {
+    font-family: 'Oxygen';
+    font-size: 13px;
+    background-color: rgb(192, 20, 255);
+    border: 1px solid rgb(192, 20, 255);
+    border-radius: 2px;
+    color: white;
+}
+
+.upload-pic-btn:hover, .edit-user-btn:hover, .edit-user-cancel-btn:hover {
+    cursor: pointer;
 }

@@ -61,7 +61,6 @@ class TrackShow extends React.Component {
                         />
                     </div>
 
-                    <Modal modalTrackId={this.props.trackId} />
 
                     <div className="modify-track-btns">
                         {editButton}
@@ -80,6 +79,8 @@ class TrackShow extends React.Component {
                         />
 
                     </div>
+                    
+                    <Modal modalTrackId={this.props.trackId} />
                 </div>
             </div>
         )
