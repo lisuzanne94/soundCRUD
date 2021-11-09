@@ -54,14 +54,22 @@
     margin: 0px 5px 0px 0px;
 }
 
+.user-track-labels {
+    display: flex;
+    flex-direction: column;
+}
+
 .user-track-uploader {
     font-size: 12px;
     color: gray;
     margin: 0px 0px 3px 0px;
+    text-decoration: none;
 }
 
 .user-track-title {
     font-size: 14px;
+    color: black;
+    text-decoration: none;
 }
 
 .user-track-cover-img {

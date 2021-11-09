@@ -18,7 +18,7 @@ class DiscoverPage extends React.Component {
         const hiphop = [];
         const kpop = [];
         const pop = [];
-        const indie = [];
+        const anime = [];
 
         tracks.forEach(track => {
             if (track.genre === 'hip-hop-rap') {
@@ -27,8 +27,8 @@ class DiscoverPage extends React.Component {
                 kpop.push(track)
             } else if (track.genre === 'pop') {
                 pop.push(track)
-            } else if (track.genre === 'indie') {
-                indie.push(track)
+            } else if (track.genre === 'anime') {
+                anime.push(track)
             }
         })
 
@@ -36,11 +36,11 @@ class DiscoverPage extends React.Component {
             <div className="discover-page-container">
                 <div className="discover-tracks-container">
                     <div className="tracks-list">
-                        <div className="list-header">More indie you might like</div>
-                        <div className="list-subheader">Suggestions made for you</div>
+                        <div className="list-header">Get transported</div>
+                        <div className="list-subheader">Suggestions made from your favorite anime</div>
                         <ul className="track-obj-list">
                             {
-                                indie.map(track => (
+                                anime.map(track => (
                                     <div key={track.id}>
                                         <li className="discover-track-obj">
                                             <Link to={`/tracks/${track.id}`}>
