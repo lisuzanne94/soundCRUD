@@ -9,6 +9,7 @@
     display: flex;
     justify-content: space-between;
     background-color: rgb(243, 243, 243);
+    margin: 0px 0px 30px 0px;
     padding: 30px;
 }
 
@@ -30,4 +31,40 @@
     font-size: 24px;
     margin: 0px 0px 0px 30px;
     padding: 10px;
+}
+
+.user-tracks-index-container {
+    width: 800px;
+    border-top: 1px solid rgb(214, 214, 214);
+    margin: 0px 0px 0px 30px;
+}
+
+.user-track-obj-container {
+    display: flex;
+    margin: 30px 0px 30px 0px;
+}
+
+.user-track-player {
+    display: flex;
+    margin: 0px 0px 0px 15px;
+}
+
+.user-track-play-btn {
+    font-size: 34px;
+    margin: 0px 5px 0px 0px;
+}
+
+.user-track-uploader {
+    font-size: 12px;
+    color: gray;
+    margin: 0px 0px 3px 0px;
+}
+
+.user-track-title {
+    font-size: 14px;
+}
+
+.user-track-cover-img {
+    width: 150px;
+    height: 150px;
 }

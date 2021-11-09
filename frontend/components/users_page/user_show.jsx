@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlayCircle } from '@fortawesome/free-solid-svg-icons'
 
 class UserShow extends React.Component {
 
@@ -33,7 +35,8 @@ class UserShow extends React.Component {
 
     render () {
 
-        if (!this.props.user || !this.props.tracks) { return null }
+        if (!this.props.user) { return null }
+        if (!this.props.tracks) { return null }
 
         const { user, tracks } = this.props;
 
@@ -54,15 +57,22 @@ class UserShow extends React.Component {
 
                 </div>
 
-                <div className="tracks-index-container">
+                <div className="user-tracks-index-container">
                     <ul>
                         {
                             tracks.map((track, i) => (
                                 <li key={i}>
-                                    <div className="track-obj-container">
-                                        <img src={track.coverImage} />
+                                    <div className="user-track-obj-container">
+                                        <img className="user-track-cover-img" src={track.coverImage} />
+
+                                        <div className="user-track-player">
+                                            <div className="user-track-play-btn"><FontAwesomeIcon icon={faPlayCircle} /></div>
+                                            <div className="user-track-labels">
+                                                <div className="user-track-uploader">{track.uploader.username}</div>
+                                                <div className="user-track-title">{track.title}</div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    {track.title}
                                 </li>
                             ))
                         }
