@@ -5,6 +5,7 @@ import TrackItem from "./track_item";
 class DiscoverPage extends React.Component {
 
     componentDidMount () {
+        this.props.fetchUsers();
         this.props.fetchTracks();
         this.props.clearCommentsFromState();
     }

@@ -2,7 +2,7 @@ import React from "react";
 import Modal from '../modal/modal';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlayCircle } from '@fortawesome/free-solid-svg-icons'
+import { faPlayCircle, faCameraRetro } from '@fortawesome/free-solid-svg-icons'
 
 class UserShow extends React.Component {
 
@@ -20,13 +20,19 @@ class UserShow extends React.Component {
         const userTracks = Object.values(tracks)
 
         return (
-            <div>
-                {user.username}
-
-                <button onClick={() => openModal('Edit User')}>Update Profile Pic</button>
-
-                <img className="user-profile-pic" src={user.profilePic} />
-                <div>
+            <div className="user-show-page-container">
+                <div className="user-banner">
+                    <div className="profile-pic-div">
+                        <img className="user-profile-pic" src={user.profilePic} />
+                        <button className="update-prof-pic-btn" onClick={() => openModal('Edit User')}>
+                            <FontAwesomeIcon icon={faCameraRetro} /> Update Profile Pic
+                        </button>
+                    </div>
+                    <div>
+                        <h3 className="user-banner-username">{user.username}</h3>
+                    </div>
+                </div>
+                <div className="user-tracks-index-container">
                     <ul>
                         {
                             userTracks.map((track, i) => (

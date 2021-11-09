@@ -3,6 +3,7 @@ import { fetchTracks } from "../../actions/track_actions";
 import { logout } from "../../actions/session_actions";
 import { clearCommentsFromState } from "../../actions/comment_actions";
 import DiscoverPage from "./discover_page";
+import { fetchUsers } from "../../actions/user_actions";
 
 const mSTP = state => ({
     currentUser: state.entities.users[state.session.id],
@@ -10,6 +11,7 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => ({
+    fetchUsers: () => dispatch(fetchUsers()),
     fetchTracks: () => dispatch(fetchTracks()),
     logout: () => dispatch(logout()),
     clearCommentsFromState: () => dispatch(clearCommentsFromState())

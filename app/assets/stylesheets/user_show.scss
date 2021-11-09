@@ -7,20 +7,39 @@
 
 .user-banner {
     display: flex;
-    justify-content: space-between;
     background-color: rgb(243, 243, 243);
+    background-image: url("https://soundcrud-seeds.s3.amazonaws.com/user-header-images/user-default-header-banner.png");
+    background-size: cover;
     margin: 0px 0px 30px 0px;
     padding: 30px;
 }
 
-.user-banner-left {
-    display: flex;
+.profile-pic-div {
+    position: relative;
+    width: fit-content;
 }
 
 .user-profile-pic {
     width: 200px;
     height: 200px;
     border-radius: 100%;
+}
+
+.update-prof-pic-btn {
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2px;
+    bottom: 0%;
+    left: 20%;
+    right: 10%;
+    font-family: 'Oxygen';
+    font-size: 12px;
+    padding: 2px 5px;
+}
+
+.update-prof-pic-btn:hover {
+    cursor: pointer;
 }
 
 .user-banner-username {
