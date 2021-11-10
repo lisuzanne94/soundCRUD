@@ -9,7 +9,7 @@ import CreateTrackFormContainer from "./tracks/create_track_form_container";
 import EditTrackForm from "./tracks/edit_track_form_container";
 import Modal from '../components/modal/modal'
 import UserShowContainer from "./users_page/user_show_container";
-import MusicPlayer from "./music_player/music_player";
+import MusicPlayerContainer from "./music_player/music_player_container";
 
 const App = () => (
     <div>
@@ -28,7 +28,7 @@ const App = () => (
             <Route><Redirect to="/"></Redirect></Route>
         </Switch>
         
-        <MusicPlayer trackFile="https://soundcrud-seeds.s3.amazonaws.com/tracks/aruarian-dance.mp3" />
+        <MusicPlayerContainer />
     </div>
 );
 
