@@ -10,6 +10,9 @@ require 'open-uri'
 
 User.destroy_all
 Track.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
+ActiveRecord::Base.connection.reset_pk_sequence!('tracks')
+ActiveRecord::Base.connection.reset_pk_sequence!('comments')
 
 
 # Users

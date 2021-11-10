@@ -16,7 +16,7 @@ const App = () => (
         <Modal />
         <NavBarContainer />
 
-        {/* <ProtectedRoute path="/" component={NavBarContainer} /> */}
+        <ProtectedRoute path="/" component={MusicPlayerContainer} />
         
         <Switch>
             <AuthRoute exact path="/" component={SplashContainer} />
@@ -27,8 +27,7 @@ const App = () => (
 
             <Route><Redirect to="/"></Redirect></Route>
         </Switch>
-        
-        <MusicPlayerContainer />
+    
     </div>
 );
 
