@@ -65,13 +65,46 @@
     text-decoration: none;
 };
 
-.recent-listen-container {
+.discover-uploaders-container {
     width: 400px;
     display: flex;
-    margin: 38px 0px 0px 0px;
+    flex-direction: column;
+    margin: 38px 38px 0px 0px;
 };
 
-.recent-listen-list-header {
+.discover-uploaders-list-header {
     font-size: 14px;
+    color: gray;
+    padding: 0px 0px 20px 0px;
+    margin: 0px 0px 20px 0px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.discover-uploaders-obj {
+    display: flex;
+    margin: 0px 0px 20px 0px;
+}
+
+.discover-uploaders-pic {
+    border-radius: 100%;
+    margin: 0px 15px 0px 0px;
+    width: 60px;
+    height: 60px;
+}
+
+.discover-uploaders-labels {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.discover-uploader-username {
+    margin: 0px 0px 5px 0px;
+    font-size: 13px;
+}
+
+.num-tracks {
+    display: flex;
+    font-size: 12px;
     color: gray;
 }

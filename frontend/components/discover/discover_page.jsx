@@ -1,20 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserFriends, faMusic } from '@fortawesome/free-solid-svg-icons'
 import TrackItem from "./track_item";
 
 class DiscoverPage extends React.Component {
 
     componentDidMount () {
-        this.props.fetchUsers();
         this.props.fetchTracks();
         this.props.clearCommentsFromState();
+        this.props.fetchUsers();
     }
 
+    // gets a random user id between 1 inclusive and max exclusive where max is the length of users array
+
+
     render () {
-
         if (!this.props.tracks) { return null }
+        if (!this.props.randomUsers) { return null }
 
-        const { currentUser, tracks, fetchTracks, logout } = this.props;
+        const { currentUser, tracks, randomUsers } = this.props;
+
+        // const randomUserIds = this.getRandomUserIds(12);
+        // const testDiv = users[12] ? (randomUserIds.map(userId =>
+        //     <li key={userId}>
+        //         <div><img className="discover-uploaders-pic" src={users[userId].profilePic} /></div>
+        //         <div>{users[userId].username}</div>
+        //         <div>{users[userId].tracks.length} tracks uploaded</div>
+        //     </li>
+        // )) : null
+
+        console.log(randomUsers)
 
         const hiphop = [];
         const kpop = [];
@@ -112,11 +128,42 @@ class DiscoverPage extends React.Component {
                             }
                         </ul>
                     </div>
-
                 </div>
 
-                <div className="recent-listen-container">
-                    <h2 className="recent-listen-list-header">Recently Listened</h2>
+                <div className="discover-uploaders-container">
+                    <h2 className="discover-uploaders-list-header"><FontAwesomeIcon icon={faUserFriends} /> Content uploaders you should check out</h2>
+                    <div>
+                        <ul>
+                            {/* {users.map(user => 
+                                <li key={user.id}>
+                                    <div><img src={user.profilePic} /></div>
+                                    <div>{user.username}</div>
+                                    <div>{user.tracks.length} tracks uploaded</div>
+                                </li>
+                                )} */}
+                            { randomUsers.map(user => 
+                                    <li key={user.id}>
+                                        <div className="discover-uploaders-obj">
+                                            <img className="discover-uploaders-pic" src={user.profilePic} />
+                                            <div className="discover-uploaders-labels">
+                                            <div className="discover-uploader-username">{user.username}</div>
+                                                {
+                                                    user.tracks.length === 1 ? (
+                                                        <div className="num-tracks">
+                                                        <FontAwesomeIcon icon={faMusic} />&#160;<p>{user.tracks.length}</p>&#160;track uploaded
+                                                        </div>
+                                                    ) : (
+                                                        <div className="num-tracks">
+                                                            <FontAwesomeIcon icon={faMusic} />&#160;<p>{user.tracks.length}</p>&#160;tracks uploaded
+                                                        </div>
+                                                    )
+                                                }
+                                            </div>
+                                        </div>
+                                    </li>
+                                ) }
+                        </ul>
+                    </div>
                 </div>
             </div>
         )
