@@ -1,5 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 
 class NavBar extends React.Component {
 
@@ -20,6 +22,16 @@ class NavBar extends React.Component {
                         <NavLink className="nav-link" className="nav-home-link" activeClassName="active-nav-btn" to="/discover">
                             <div className="left-nav-btn">Home</div>
                         </NavLink>
+
+                        <a className="nav-link" className="nav-brand-link" href="https://www.github.com/lisuzanne94" target="_blank">
+                            <div className="left-nav-btn"><FontAwesomeIcon icon={faGithub} className="nav-brand-icon" />&#160;&#160;Github</div>
+                        </a>
+
+                        <a className="nav-link" className="nav-brand-link" href="https://www.linkedin.com/in/suzanne-li-080036161" target="_blank">
+                            <div className="left-nav-btn"><FontAwesomeIcon icon={faLinkedinIn} className="nav-brand-icon" />&#160;&#160;LinkedIn</div>
+                        </a>
+
+                        
                     </div>
 
                     <div className="right-side-bar">

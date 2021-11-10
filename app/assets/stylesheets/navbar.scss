@@ -42,7 +42,7 @@
 
 .left-nav-btn {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 100px;
     height: 47px;
@@ -51,6 +51,15 @@
     border-right: 1px solid black;
     font-family: 'Oxygen';
 };
+
+.nav-brand-link {
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-brand-icon {
+    font-size: 16px;
+}
 
 .left-nav-btn:hover, .right-nav-btn:hover {
     color: white;
