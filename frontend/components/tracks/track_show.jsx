@@ -44,7 +44,9 @@ class TrackShow extends React.Component {
             <div className="track-show-page-container">
                 <div className="track-banner">
                     <div className="track-banner-left">
-                        <div className="track-play-btn"><FontAwesomeIcon icon={faPlayCircle} /></div>
+                        <div className="track-play-btn">
+                            <FontAwesomeIcon icon={faPlayCircle} onClick={() => this.props.receivePlayTrack(this.props.track)} />
+                        </div>
                         <div className="track-banner-labels">
                             <h2 className="track-banner-title">{this.props.track.title}</h2>
                             <h3 className="track-banner-uploader">{this.props.track.uploader.username}</h3>
