@@ -2,7 +2,7 @@ import {
     RECEIVE_PLAY_TRACK
 } from '../actions/player_actions';
 
-const playerReducer = (state={ currentTrack: "", isPlaying: false }, action) => {
+const playerReducer = (state={ currentTrack: null, isPlaying: false }, action) => {
     Object.freeze(state);
     const nextState = Object.assign({}, state);
 
