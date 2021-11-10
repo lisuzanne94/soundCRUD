@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import MusicPlayer from "./music_player";
-import { receivePlayTrack, receivePlay, pausePlay } from "../../actions/player_actions";
+import { receivePlayTrack } from "../../actions/player_actions";
 
 const mSTP = state => ({
     track: state.ui.player.currentTrack

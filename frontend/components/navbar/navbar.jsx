@@ -12,8 +12,8 @@ class NavBar extends React.Component {
                 <div className="navbar">
                     <div className="left-side-bar">
                         <Link to="/" className="nav-link">
-                            <div className="left-nav-btn">
-                                <img className="discover-logo" src="/soundcrud-logo-transparent-3.png" />
+                            <div className="left-nav-btn" id="discover-logo-div">
+                                <img className="discover-logo" src="/soundcrud-logo-5.png" />
                             </div>
                         </Link>
 

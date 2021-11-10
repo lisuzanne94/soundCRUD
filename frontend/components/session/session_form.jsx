@@ -60,7 +60,7 @@ class SessionForm extends React.Component {
                 <button className="session-login-guest-btn" onClick={this.loginGuest}>Login as a Guest</button>
 
                 <span className="session-form-separator">
-                    <span>or</span> 
+                    <h3 className="line-separator"><span>or</span></h3>
                 </span>
 
                 <form className="session-form">
@@ -78,7 +78,7 @@ class SessionForm extends React.Component {
                 </form>
 
                 <span className="session-form-separator">
-                    <span>or</span>
+                    <h3 className="line-separator"><span>or</span></h3>
                 </span>
                 
                 {this.props.otherForm}

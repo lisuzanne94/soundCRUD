@@ -10,10 +10,12 @@
 
 .modal-child {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
-  width: 370px;
-  height: 400px;
+  // width: 370px;
+  // height: 400px;
+  width: 430px;
+  height: 500px;
   background-color: white;
   transform: translate(-50%, -60%);
 };
@@ -32,7 +34,7 @@
 .session-form-div button {
   border-radius: 3px;
   font-family: 'Oxygen', sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   color: white;
   height: 35px;
 };
@@ -42,9 +44,9 @@
 }
 
 .session-login-guest-btn {
-  margin: 20px 0px 0px 0px;
-  background-color: rgb(61, 173, 82);
-  border: 1px solid rgb(61, 173, 82);
+  margin: 50px 0px 0px 0px;
+  background-color: rgb(53, 144, 175);
+  border: 1px solid rgb(53, 144, 175);
 };
 
 .session-form-separator {
@@ -52,11 +54,20 @@
   justify-content: center;
   margin: 20px 0px 20px 0px;
   font-family: 'Oxygen', sans-serif;
-  font-size: 12px;
+  font-size: 14px;
 };
 
-.session-form-separator:before {
-  border-top: 1px solid black;
+.line-separator {
+  width: 100%;
+  text-align: center;
+  line-height: 2%;
+  border-bottom: 1px solid black;
+  margin: 20px 0px;
+}
+
+.line-separator span {
+  background-color: white;
+  padding: 15px;
 }
 
 .session-form input {
@@ -68,11 +79,11 @@
 
 .session-submit-btn {
   margin: 5px 0px 0px 0px;
-  background-color: rgb(183, 40, 81);
-  border: 1px solid rgb(183, 40, 81);
+  background-color: rgb(193, 19, 255);
+  border: 1px solid rgb(193, 19, 255);
 };
 
 .session-switch-btn {
-  background-color: rgb(28, 107, 163);
-  border: 1px solid rgb(28, 107, 163);
+  background-color: rgb(205, 26, 122);
+  border: 1px solid rgb(205, 26, 122);
 }

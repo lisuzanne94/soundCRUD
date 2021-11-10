@@ -7,15 +7,15 @@
     width: 1200px;
     margin: auto;
     background-color: white;
-    border-top: solid 3px deeppink;
+    border-top: solid 3px rgb(193, 19, 255);
     font-family: 'Oxygen';
 };
 
 .splash-banner {
     height: 300px;
-    background-image: url("https://wallpapercave.com/wp/wp5161079.jpg");
+    background-image: url("dj-sona-bg.jpeg");
     background-size: cover;
-    background-position-y: center;
+    background-position: center;
 };
 
 .splash-header-bar {
@@ -32,18 +32,19 @@
     position: relative;
     width: 40px;
     height: auto;
-    top: -42%;
+    top: -25%;
 };
 
 .splash-main-title {
     color: white;
-    font-size: 12px;
+    font-size: 18px;
 };
 
 .login-button, .signup-button {
-    padding: 5px 10px;
+    font-family: 'Oxygen';
+    padding: 7px 12px;
     font-weight: 300;
-    font-size: 8px;
+    font-size: 14px;
 };
 
 .login-button:hover, .signup-button:hover, .splash-upload-button:hover {
@@ -59,8 +60,8 @@
 };
 
 .signup-button {
-    background-color: deeppink;
-    border: 1px solid deeppink;
+    background-color: rgb(193, 19, 255);
+    border: 1px solid rgb(193, 19, 255);
     border-radius: 2px;
     color: white;
 };
@@ -71,9 +72,10 @@
 };
 
 .splash-upload-button {
+    font-family: 'Oxygen';
     margin: 25px;
-    background-color: rgb(214, 21, 124);
-    border: 1px solid rgb(214, 21, 124);
+    background-color: rgb(193, 19, 255);
+    border: 1px solid rgb(193, 19, 255);
     border-radius: 2px;
     color: white;
     padding: 10px 20px;

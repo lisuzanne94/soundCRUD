@@ -24,12 +24,12 @@ class Splash extends React.Component {
             <div className="splash-banner">
                 <div className="splash-header-bar">
                     <div className="splash-logo">
-                        <img className="splash-logo-img" src="/soundcrud-logo-transparent-3.png" />
+                        <img className="splash-logo-img" src="/soundcrud-logo-white-transparent-5.png" />
                         <span className="splash-main-title"><h2>S O U N D C R U D</h2></span>
                     </div>
                     <span className="splash-nav-buttons">
-                        <span><button className="login-button" onClick={() => openModal('Login')}>L O G I N</button></span>
-                        <span><button className="signup-button" onClick={() => openModal('Sign Up')}>C R E A T E &#160; A C C O U N T</button></span>
+                        <span><button className="login-button" onClick={() => openModal('Login')}>Login</button></span>
+                        <span><button className="signup-button" onClick={() => openModal('Sign Up')}>Create Account</button></span>
                     </span>
                 </div>
             </div>
