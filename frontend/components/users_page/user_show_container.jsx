@@ -7,7 +7,7 @@ import { openModal } from "../../actions/modal_actions";
 const mSTP = (state, ownProps) => ({
     user: state.entities.users[ownProps.match.params.userId],
     userId: ownProps.match.params.userId,
-    tracks: state.entities.tracks
+    tracks: Object.values(state.entities.tracks)
 });
 
 const mDTP = dispatch => ({

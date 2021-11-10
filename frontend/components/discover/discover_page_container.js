@@ -22,7 +22,6 @@ const randomIds = getRandomUserIds(12);
 const mSTP = state => ({
         currentUser: state.entities.users[state.session.id],
         tracks: Object.values(state.entities.tracks),
-        users: Object.values(state.entities.users),
         randomUsers: Object.values(Object.fromEntries(Object.entries(state.entities.users).filter(([k, v]) => randomIds.includes(v.id))))
 });
 

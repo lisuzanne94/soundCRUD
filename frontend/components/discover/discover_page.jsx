@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserFriends, faMusic } from '@fortawesome/free-solid-svg-icons'
+import { faUserFriends, faPlay } from '@fortawesome/free-solid-svg-icons'
 import TrackItem from "./track_item";
 
 class DiscoverPage extends React.Component {
@@ -12,12 +12,9 @@ class DiscoverPage extends React.Component {
         this.props.fetchUsers();
     }
 
-    // gets a random user id between 1 inclusive and max exclusive where max is the length of users array
-
-
     render () {
         if (!this.props.tracks) { return null }
-        if (!this.props.randomUsers) { return null }
+        // if (!this.props.randomUsers) { return null }
 
         const { currentUser, tracks, randomUsers } = this.props;
 
@@ -29,8 +26,6 @@ class DiscoverPage extends React.Component {
         //         <div>{users[userId].tracks.length} tracks uploaded</div>
         //     </li>
         // )) : null
-
-        console.log(randomUsers)
 
         const hiphop = [];
         const kpop = [];
@@ -133,7 +128,7 @@ class DiscoverPage extends React.Component {
                 <div className="discover-uploaders-container">
                     <h2 className="discover-uploaders-list-header"><FontAwesomeIcon icon={faUserFriends} /> Content uploaders you should check out</h2>
                     <div>
-                        <ul>
+                        <ul className="discover-uploaders-list">
                             {/* {users.map(user => 
                                 <li key={user.id}>
                                     <div><img src={user.profilePic} /></div>
@@ -143,23 +138,29 @@ class DiscoverPage extends React.Component {
                                 )} */}
                             { randomUsers.map(user => 
                                     <li key={user.id}>
-                                        <div className="discover-uploaders-obj">
-                                            <img className="discover-uploaders-pic" src={user.profilePic} />
-                                            <div className="discover-uploaders-labels">
-                                            <div className="discover-uploader-username">{user.username}</div>
-                                                {
-                                                    user.tracks.length === 1 ? (
-                                                        <div className="num-tracks">
-                                                        <FontAwesomeIcon icon={faMusic} />&#160;<p>{user.tracks.length}</p>&#160;track uploaded
-                                                        </div>
-                                                    ) : (
-                                                        <div className="num-tracks">
-                                                            <FontAwesomeIcon icon={faMusic} />&#160;<p>{user.tracks.length}</p>&#160;tracks uploaded
-                                                        </div>
-                                                    )
-                                                }
+        
+                                            <div className="discover-uploaders-obj">
+                                                <Link className="discover-link" to={`/users/${user.id}`}><img className="discover-uploaders-pic" src={user.profilePic} /></Link>
+                                                <div className="discover-uploaders-labels">
+                                                    <div className="discover-uploader-username"><Link className="discover-link" to={`/users/${user.id}`}>{user.username}</Link></div>
+                                                            {
+                                                            user.tracks.length === 1 ? (
+                                                        <Link className="discover-link" to={`/users/${user.id}`}>
+                                                                    <div className="num-tracks">
+                                                                        <FontAwesomeIcon className="discover-numtracks-icon" icon={faPlay} />&#160;<p>{user.tracks.length}</p>&#160;track uploaded
+                                                                    </div>
+                                                                </Link>
+                                                            ) : (
+                                                        <Link className="discover-link" to={`/users/${user.id}`}>
+                                                                    <div className="num-tracks">
+                                                                        <FontAwesomeIcon className="discover-numtracks-icon" icon={faPlay} />&#160;<p>{user.tracks.length}</p>&#160;tracks uploaded
+                                                                    </div>
+                                                                </Link>
+                                                            )
+                                                        }
+                                                    </div>
                                             </div>
-                                        </div>
+                                        
                                     </li>
                                 ) }
                         </ul>

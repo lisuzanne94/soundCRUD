@@ -6,9 +6,24 @@ import { faPlayCircle, faCameraRetro } from '@fortawesome/free-solid-svg-icons'
 
 class UserShow extends React.Component {
 
+    constructor (props) {
+        super(props);
+        this.state = {
+            ...this.props.user,
+            ...this.props.tracks
+        }
+    }
+
     componentDidMount () {
         this.props.fetchUser(this.props.match.params.userId)
         this.props.fetchUserTracks(this.props.match.params.userId);
+    }
+
+    componentDidUpdate (prevProps) {
+        if (this.props.match.params.userId !== prevProps.match.params.userId) {
+            this.props.fetchUser(this.props.match.params.userId);
+            this.props.fetchUserTracks(this.props.match.params.userId);
+        }
     }
 
     render () {
@@ -17,7 +32,6 @@ class UserShow extends React.Component {
         if (!this.props.tracks) { return null }
 
         const { user, userId, tracks, openModal } = this.props;
-        const userTracks = Object.values(tracks)
 
         return (
             <div className="user-show-page-container">
@@ -35,7 +49,7 @@ class UserShow extends React.Component {
                 <div className="user-tracks-index-container">
                     <ul>
                         {
-                            userTracks.map((track, i) => (
+                            tracks.map((track, i) => (
                                 <li key={i}>
                                     <div className="user-track-obj-container">
 

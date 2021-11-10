@@ -80,16 +80,22 @@
     border-bottom: 1px solid rgb(221, 221, 221);
 }
 
+.discover-uploaders-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around
+}
+
 .discover-uploaders-obj {
     display: flex;
-    margin: 0px 0px 20px 0px;
+    margin: 0px 0px 15px 0px;
 }
 
 .discover-uploaders-pic {
     border-radius: 100%;
     margin: 0px 15px 0px 0px;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
 }
 
 .discover-uploaders-labels {
@@ -103,8 +109,20 @@
     font-size: 13px;
 }
 
+.discover-numtracks-icon {
+    font-size: 10px;
+}
+
 .num-tracks {
     display: flex;
     font-size: 12px;
     color: gray;
+}
+
+.discover-link {
+    text-decoration: none;
+}
+
+.discover-link:visited {
+    color: black;
 }

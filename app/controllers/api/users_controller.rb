@@ -1,6 +1,11 @@
 class Api::UsersController < ApplicationController
 
   def index
+    # length = User.all.length
+    # random_idxs = []
+    # random_idxs << rand(1..length) until random_idxs.length === 5
+    # @users = User.where(:id => random_idxs)
+
     @users = User.all
     render :index
   end
