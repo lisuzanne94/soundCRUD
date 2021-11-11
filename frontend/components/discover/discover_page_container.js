@@ -2,8 +2,9 @@ import { connect } from "react-redux";
 import { fetchTracks } from "../../actions/track_actions";
 import { logout } from "../../actions/session_actions";
 import { clearCommentsFromState } from "../../actions/comment_actions";
-import DiscoverPage from "./discover_page";
 import { fetchUsers } from "../../actions/user_actions";
+import { receivePlayTrack } from "../../actions/player_actions";
+import DiscoverPage from "./discover_page";
 
 function getRandomUserIds (length) {
         const ids = [];
@@ -28,7 +29,8 @@ const mSTP = state => ({
 const mDTP = dispatch => ({
     fetchUsers: () => dispatch(fetchUsers()),
     fetchTracks: () => dispatch(fetchTracks()),
-    clearCommentsFromState: () => dispatch(clearCommentsFromState())
+    clearCommentsFromState: () => dispatch(clearCommentsFromState()),
+    receivePlayTrack: track => dispatch(receivePlayTrack(track))
 });
 
 export default connect(mSTP, mDTP)(DiscoverPage)

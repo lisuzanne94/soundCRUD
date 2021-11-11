@@ -10,7 +10,7 @@
     background-color: rgb(243, 243, 243);
     background-image: url("https://soundcrud-seeds.s3.amazonaws.com/user-header-images/user-default-header-banner.png");
     background-size: cover;
-    margin: 0px 0px 30px 0px;
+    // margin: 0px 0px 30px 0px;
     padding: 30px;
 }
 
@@ -52,10 +52,16 @@
     padding: 10px;
 }
 
+.user-page-under-banner {
+    display: flex;
+}
+
 .user-tracks-index-container {
-    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
     border-top: 1px solid rgb(214, 214, 214);
-    margin: 0px 0px 0px 30px;
+    margin: 30px 0px 0px 30px;
 }
 
 .user-track-obj-container {
@@ -69,7 +75,14 @@
 }
 
 .user-track-play-btn {
-    font-size: 34px;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    background-color: rgb(192, 20, 255);
+    padding: 10px 10px 10px 15px;
+    border-radius: 100%;
     margin: 0px 5px 0px 0px;
 }
 
@@ -94,4 +107,22 @@
 .user-track-cover-img {
     width: 150px;
     height: 150px;
+}
+
+.user-show-line-separator {
+    width: 1px;
+    border-right: 1px solid rgb(219, 219, 219);
+    margin: 20px 0px 20px 30px;
+}
+
+.self-plug-container {
+    // border: 1px solid black;
+    width: 35%;
+    border-top: 1px solid rgb(214, 214, 214);
+    margin: 0px 30px 0px 30px;
+    padding: 30px 0px 0px 30px;
+}
+
+.self-plug-btns {
+    display: flex;
 }

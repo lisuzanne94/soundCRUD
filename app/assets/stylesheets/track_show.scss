@@ -23,9 +23,18 @@
 }
 
 .track-play-btn {
-    font-size: 64px;
+    width: fit-content;
+    height: fit-content;
+    font-size: 50px;
     margin: 0px 7px 0px 0px;
-    color: rgb(192, 20, 255);
+    color: white;
+    background-color: rgb(192, 20, 255);
+    padding: 20px 20px 20px 25px;
+    border-radius: 100%;
+}
+
+.track-play-btn:hover {
+    cursor: pointer;
 }
 
 .track-banner-title {

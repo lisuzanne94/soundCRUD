@@ -2,7 +2,8 @@ import React from "react";
 import Modal from '../modal/modal';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlayCircle, faCameraRetro } from '@fortawesome/free-solid-svg-icons'
+import { faPlay, faCameraRetro } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 
 class UserShow extends React.Component {
 
@@ -31,7 +32,7 @@ class UserShow extends React.Component {
         if (!this.props.user) { return null }
         if (!this.props.tracks) { return null }
 
-        const { user, userId, tracks, openModal } = this.props;
+        const { user, userId, tracks, openModal, receivePlayTrack } = this.props;
 
         return (
             <div className="user-show-page-container">
@@ -46,29 +47,47 @@ class UserShow extends React.Component {
                         <h3 className="user-banner-username">{user.username}</h3>
                     </div>
                 </div>
-                <div className="user-tracks-index-container">
-                    <ul>
-                        {
-                            tracks.map((track, i) => (
-                                <li key={i}>
-                                    <div className="user-track-obj-container">
+                <div className="user-page-under-banner">
+                    <div className="user-tracks-index-container">
+                        <ul>
+                            {
+                                tracks.map((track, i) => (
+                                    <li key={i}>
+                                        <div className="user-track-obj-container">
 
-                                        <Link to={`/tracks/${track.id}`}><img className="user-track-cover-img" src={track.coverImage} /></Link>
+                                            <Link to={`/tracks/${track.id}`}><img className="user-track-cover-img" src={track.coverImage} /></Link>
 
-                                        <div className="user-track-player">
-                                            <div className="user-track-play-btn"><FontAwesomeIcon icon={faPlayCircle} /></div>
-                                            <div className="user-track-labels">
-                                                <Link to={`/users/${track.uploader.id}`} className="user-track-uploader">{track.uploader.username}</Link>
-                                                <Link to={`/tracks/${track.id}`} className="user-track-title">{track.title}</Link>
+                                            <div className="user-track-player">
+                                                <div className="user-track-play-btn">
+                                                    <FontAwesomeIcon onClick={() => receivePlayTrack(track)} icon={faPlay} />
+                                                </div>
+                                                <div className="user-track-labels">
+                                                    <Link to={`/users/${track.uploader.id}`} className="user-track-uploader">{track.uploader.username}</Link>
+                                                    <Link to={`/tracks/${track.id}`} className="user-track-title">{track.title}</Link>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </div>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
 
+                    <div className="user-show-line-separator"> </div>
+
+                    <div className="self-plug-container">
+                        <div className="self-plug-header">In case you missed it</div>
+                        <div className="self-plug-btns">
+                            <a className="self-plug-github" href="https://www.github.com/lisuzanne94" target="_blank">
+                                <div><FontAwesomeIcon icon={faGithub} />&#160;&#160;Github</div>
+                            </a>
+
+                            <a className="self-plug-linkedin" href="https://www.linkedin.com/in/suzanne-li-080036161" target="_blank">
+                                <div><FontAwesomeIcon icon={faLinkedinIn} />&#160;&#160;LinkedIn</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <Modal userId={userId} />
             </div>
         )

@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlayCircle, faPencilAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { faPlay, faPencilAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
 import CommentFormContainer from "../comments/comment_form_container";
 import CommentItemContainer from "../comments/comment_item_container";
@@ -105,7 +105,7 @@ class TrackShow extends React.Component {
                 <div className="track-banner">
                     <div className="track-banner-left">
                         <div className="track-play-btn">
-                            <FontAwesomeIcon icon={faPlayCircle} onClick={() => this.props.receivePlayTrack(this.props.track)} />
+                            <FontAwesomeIcon icon={faPlay} onClick={() => this.props.receivePlayTrack(this.props.track)} />
                         </div>
                         <div className="track-banner-labels">
                             <h2 className="track-banner-title">{this.props.track.title}</h2>

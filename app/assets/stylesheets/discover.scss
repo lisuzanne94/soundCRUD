@@ -38,10 +38,30 @@
 }
 
 .discover-track-obj {
+    position: relative;
     display: flex;
     flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
     margin: 0px 20px 0px 0px;
 };
+
+.discover-play-btn {
+    display: none;
+    position: absolute;
+    bottom: 45%;
+    left: 35%;
+    cursor: pointer;
+    font-size: 28px;
+    color: white;
+    background-color: rgb(192, 20, 255);
+    padding: 15px 15px 15px 20px;
+    border-radius: 100%;
+}
+
+.discover-track-obj:hover > .discover-play-btn {
+    display: inline-block;
+}
 
 .discover-track-cover-img {
     width: 170px;
