@@ -1,0 +1,19 @@
+.edit-track-modal-bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(236, 236, 236, 0.697);
+  z-index: 10;
+}
+
+.edit-track-modal-child {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 800px;
+  height: 500px;
+  background-color: white;
+  transform: translate(-50%, -60%);
+}

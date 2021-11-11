@@ -38,8 +38,8 @@ const Modal = props => {
         case 'Update Track':
             component = <EditTrackFormContainer modalTrackId={props.modalTrackId} />;
             modalDiv = (
-                <div className="modal-bg" onClick={props.closeModal}>
-                    <div className="modal-child" onClick={e => e.stopPropagation()}>
+                <div className="edit-track-modal-bg" onClick={props.closeModal}>
+                    <div className="edit-track-modal-child" onClick={e => e.stopPropagation()}>
                         {component}
                     </div>
                 </div>

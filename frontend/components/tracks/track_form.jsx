@@ -18,6 +18,10 @@ class TrackForm extends React.Component {
         this.changeUploadedStatus = this.changeUploadedStatus.bind(this);
     }
 
+    componentDidMount () {
+        this.props.clearTrackErrors();
+    }
+
     handleGenre(e) {
         this.setState({genre: e.currentTarget.value})
     }
@@ -86,13 +90,14 @@ class TrackForm extends React.Component {
 
         if (!this.props.track) { return null }
 
-        const preview = this.state.coverImageURL ? (
-            <img className="cover-image-preview" src={this.state.coverImageURL} />
-        ) : (
-            <div className="upload-cover-image-msg">
-                Choose an image to preview it here
-            </div>
-        )
+        let preview; 
+        if (this.props.track.coverImage) {
+            preview = (<img className="cover-image-preview" src={this.props.track.coverImage} />)
+        } else if (this.state.coverImageURL) {
+            preview = (<img className="cover-image-preview" src={this.state.coverImageURL} />)
+        } else {
+            preview = (<div className="upload-cover-image-msg">Choose an image to preview it here</div>)
+        }
 
 
         const uploadMsg = this.state.uploaded ? (
@@ -177,51 +182,75 @@ class TrackForm extends React.Component {
                 </div>
             </div>
         ) : (
-                <div className="edit-track-form">
-                    {uploadMsg}
+                <div className="create-track-form-box">
+                    <div>
+                        <h3 className="create-track-form-header">Track Details</h3>
+                    </div>
 
-                    {this.renderErrors()}
+                    <div className="create-track-errors">
+                        {this.props.errors.length !== 0 ? this.renderErrors() : " "}
+                    </div>
 
-                    <br />
+                    <div className="create-track-form-under-header">
+                        <div className="preview-image-holder">
+                            {preview}
+                        </div>
 
-                    <form onSubmit={this.handleSubmit}>
-                        <label>Track Title: </label>
-                        <input type="text"
-                            value={this.state.title}
-                            onChange={this.update('title')}
-                        />
+                        {uploadMsg}
+
+                        <div className="create-track-form-container">
+                            <div>
+                                <form onSubmit={this.handleSubmit}>
+                                    <div className="create-track-form">
+                                        <div className="create-form-label-input-pair">
+                                            <label className="create-form-labels">Title*</label>
+
+                                            <input type="text"
+                                                value={this.state.title}
+                                                onChange={this.update('title')}
+                                            />
+                                        </div>
 
 
-                        <label>Genre:</label>
-                        <select defaultValue="choose-genre" name="genre" id="genre" onChange={this.handleGenre}>
-                            <option value="choose-genre" disabled>Please select a genre</option>
-                            <option value="kpop">Kpop</option>
-                            <option value="indie">Indie</option>
-                            <option value="hip-hop-rap">Hip-Hop & Rap</option>
-                            <option value="pop">Pop</option>
-                            <option value="edm">EDM</option>
-                            <option value="anime">Anime</option>
-                            <option value="rock">Rock</option>
-                            <option value="rb">R&B</option>
-                        </select>
+                                        <div className="create-form-label-input-pair">
+                                            <label className="create-form-labels">Genre*</label>
 
-                        
+                                            <select defaultValue="choose-genre" name="genre" id="genre" onChange={this.handleGenre}>
+                                                <option value="choose-genre" disabled>Please select a genre</option>
+                                                <option value="kpop">Kpop</option>
+                                                <option value="indie">Indie</option>
+                                                <option value="hip-hop-rap">Hip-Hop & Rap</option>
+                                                <option value="pop">Pop</option>
+                                                <option value="edm">EDM</option>
+                                                <option value="anime">Anime</option>
+                                                <option value="rock">Rock</option>
+                                                <option value="rb">R&B</option>
+                                            </select>
+                                        </div>
 
-                        <label>Upload image: </label>
-                        <input type="file"
-                            value=""
-                            title=" "
-                            onChange={this.handleCoverImageFile} />
-                        
-                        <label>Upload track file: </label>
-                        <input type="file"
-                            value=""
-                            title=" "
-                            onChange={this.handleTrackFile} />
-                        
+                                        <div className="create-form-label-input-pair">
+                                            <label className="create-form-labels">Upload cover image </label>
+                                            <label className="create-form-upload-btn">Choose a cover
+                                                <input type="file"
+                                                    onChange={this.handleCoverImageFile} />
+                                            </label>
+                                        </div>
 
-                        <button>{this.props.formType}</button>
-                    </form>
+                                        <div className="create-form-label-input-pair">
+                                            <label className="create-form-labels">Upload track file* </label>
+                                            <label className="create-form-upload-btn">Choose a track
+                                                <input type="file"
+                                                    onChange={this.handleTrackFile} />
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div><button className="create-track-form-save-btn">{this.props.formType}</button></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
         )
 
@@ -235,3 +264,51 @@ class TrackForm extends React.Component {
 };
 
 export default TrackForm;
+
+
+
+{/* <div className="edit-track-form">
+    {uploadMsg}
+
+    {this.renderErrors()}
+
+
+    <form onSubmit={this.handleSubmit}>
+        <label>Track Title: </label>
+        <input type="text"
+            value={this.state.title}
+            onChange={this.update('title')}
+        />
+
+
+        <label>Genre:</label>
+        <select defaultValue="choose-genre" name="genre" id="genre" onChange={this.handleGenre}>
+            <option value="choose-genre" disabled>Please select a genre</option>
+            <option value="kpop">Kpop</option>
+            <option value="indie">Indie</option>
+            <option value="hip-hop-rap">Hip-Hop & Rap</option>
+            <option value="pop">Pop</option>
+            <option value="edm">EDM</option>
+            <option value="anime">Anime</option>
+            <option value="rock">Rock</option>
+            <option value="rb">R&B</option>
+        </select>
+
+
+
+        <label>Upload image: </label>
+        <input type="file"
+            value=""
+            title=" "
+            onChange={this.handleCoverImageFile} />
+
+        <label>Upload track file: </label>
+        <input type="file"
+            value=""
+            title=" "
+            onChange={this.handleTrackFile} />
+
+
+        <button>{this.props.formType}</button>
+    </form>
+</div> */}
