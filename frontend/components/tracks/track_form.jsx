@@ -101,7 +101,7 @@ class TrackForm extends React.Component {
 
 
         const uploadMsg = this.state.uploaded ? (
-            <div>
+            <div className="upload-success-msg">
                 Success!
             </div>
         ) : (
@@ -115,6 +115,8 @@ class TrackForm extends React.Component {
                         <h3 className="track-form-header">Track Details</h3>
                     </div>
 
+                    {uploadMsg}
+                    
                     <div className="track-errors">
                         {this.props.errors.length !== 0 ? this.renderErrors() : " "}
                     </div>
@@ -124,7 +126,6 @@ class TrackForm extends React.Component {
                             {preview}
                         </div>
 
-                        {uploadMsg}
 
                         <div className="track-form-container">
                             <div>
