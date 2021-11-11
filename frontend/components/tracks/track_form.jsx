@@ -147,7 +147,7 @@ class TrackForm extends React.Component {
                                                 <option value="choose-genre" disabled>Please select a genre</option>
                                                 <option value="kpop">Kpop</option>
                                                 <option value="indie">Indie</option>
-                                                <option value="hip-hop-rap">Hip-Hop & Rap</option>
+                                                <option value="hip-hop">Hip-Hop</option>
                                                 <option value="pop">Pop</option>
                                                 <option value="edm">EDM</option>
                                                 <option value="anime">Anime</option>
@@ -219,7 +219,7 @@ class TrackForm extends React.Component {
                                                 <option value="choose-genre" disabled>Please select a genre</option>
                                                 <option value="kpop">Kpop</option>
                                                 <option value="indie">Indie</option>
-                                                <option value="hip-hop-rap">Hip-Hop & Rap</option>
+                                                <option value="hip-hop">Hip-Hop & Rap</option>
                                                 <option value="pop">Pop</option>
                                                 <option value="edm">EDM</option>
                                                 <option value="anime">Anime</option>
@@ -286,7 +286,7 @@ export default TrackForm;
             <option value="choose-genre" disabled>Please select a genre</option>
             <option value="kpop">Kpop</option>
             <option value="indie">Indie</option>
-            <option value="hip-hop-rap">Hip-Hop & Rap</option>
+            <option value="hip-hop">Hip-Hop & Rap</option>
             <option value="pop">Pop</option>
             <option value="edm">EDM</option>
             <option value="anime">Anime</option>

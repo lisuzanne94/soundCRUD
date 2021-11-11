@@ -4,7 +4,6 @@ class MusicPlayer extends React.Component {
     // constructor(props) {
     //     super(props);
     //     this.state = {
-    //         ...this.props.track,
     //         duration: 0,
     //         currentTime: 0
     //     }
@@ -41,23 +40,27 @@ class MusicPlayer extends React.Component {
 
         if (!this.props.track ) { return null }
 
+        // console.log(document.getElementById("current-song") ? document.getElementById("current-song") : null)
+
         return (
             <div className="music-player-container">
-                <audio 
+                {/* <audio 
+                    onLoadedMetadata={(e) => this.setState({ duration: e.target.duration})}
                     controls
                     autoPlay
-                    className="music-player" id="current-song" 
+                    className="music-player" 
+                    id="current-song" 
                     src={this.props.track.trackFile} >
                 </audio>
 
-                {/* <button onClick={this.pauseTrack}>Pause</button>
+                <button onClick={this.pauseTrack}>Pause</button>
                 <button onClick={this.playTrack}>Play</button>
 
                 <div>
-                    //duration doesnt work??
+                    //round duration up
                     <input type="range" 
                         min="0"
-                        max={}
+                        max={this.state.duration}
                         onChange={this.handleSeek}
                     />
                 </div> */}

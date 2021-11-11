@@ -24,6 +24,9 @@ class CommentItem extends React.Component {
                                             <div className="comment-body-text">{comment.body}</div>
                                         </div>
                                     </div>
+
+                                    <div className="comment-time-ago">{comment.commentCreatedTime.includes("about") ? comment.commentCreatedTime.slice(6) : comment.commentCreatedTime} ago</div>
+
                                     {
                                         currentUser.id === comment.commenter.id ? (
                                             <button className="delete-comment-btn"

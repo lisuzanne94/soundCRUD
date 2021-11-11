@@ -33,7 +33,7 @@ class DiscoverPage extends React.Component {
         const anime = [];
 
         tracks.forEach(track => {
-            if (track.genre === 'hip-hop-rap') {
+            if (track.genre === 'hip-hop') {
                 hiphop.push(track)
             } else if (track.genre === 'kpop') {
                 kpop.push(track)

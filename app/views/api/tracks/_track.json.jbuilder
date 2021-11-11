@@ -1,4 +1,5 @@
-json.extract! track, :id, :title, :created_at, :genre
+json.extract! track, :id, :title, :genre
+json.createdTime time_ago_in_words(track.created_at)
 
 json.comments do
     track.comments.each do |comment|
@@ -12,6 +13,7 @@ json.comments do
                 end
                 json.extract! comment.commenter, :id, :username
             end
+            json.commentCreatedTime time_ago_in_words(comment.created_at)
         end
     end
 end

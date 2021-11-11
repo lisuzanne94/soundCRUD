@@ -28,10 +28,16 @@
 .commenter-username {
     font-size: 13px;
     color: gray;
+    margin: 0px 0px 5px 0px;
 }
 
 .comment-body-text {
     font-size: 14px;
+}
+
+.comment-time-ago {
+    font-size: 10px;
+    color: gray;
 }
 
 .delete-comment-btn {
