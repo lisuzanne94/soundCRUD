@@ -37,6 +37,10 @@ export const fetchTracks = () => dispatch => (
     TrackAPIUtil.fetchTracks().then(tracks => dispatch(receiveAllTracks(tracks)))
 );
 
+export const fetchUserTracks = userId => dispatch => (
+    TrackAPIUtil.fetchUserTracks(userId).then(tracks => dispatch(receiveAllTracks(tracks)))
+);
+
 export const fetchTrack = trackId => dispatch => {
     return TrackAPIUtil.fetchTrack(trackId).then(track => dispatch(receiveTrack(track)))
 };

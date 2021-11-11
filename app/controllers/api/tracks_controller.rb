@@ -1,13 +1,16 @@
 class Api::TracksController < ApplicationController
     def index
-        @tracks = Track.all
+        if params.has_key?(:user_id)
+            @tracks = Track.where(uploader_id: params[:user_id])
+        else
+            @tracks = Track.all
+        end
+
         render :index
     end
 
     def show
-        # debugger
         @track = Track.find_by(id: params[:id])
-        # debugger
         render :show
     end
 
@@ -25,7 +28,6 @@ class Api::TracksController < ApplicationController
     def update
         @track = Track.find_by(id: params[:id])
 
-
         if @track.update(track_params)
             render :show
         else
@@ -42,6 +44,6 @@ class Api::TracksController < ApplicationController
     private
 
     def track_params
-        params.require(:track).permit(:title, :uploader_id, :cover_image)
+        params.require(:track).permit(:title, :uploader_id, :cover_image, :genre, :track_file)
     end
 end

@@ -1,0 +1,63 @@
+/* line 1, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/comments.scss */
+.comments-index-container {
+  width: 100%;
+  margin: 0px 0px 0px 30px;
+}
+
+/* line 6, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/comments.scss */
+.comment-obj-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 0px 20px 0px;
+}
+
+/* line 12, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/comments.scss */
+.comment-obj {
+  display: flex;
+}
+
+/* line 16, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/comments.scss */
+.comment-body {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px 0px 5px;
+}
+
+/* line 22, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/comments.scss */
+.comment-profile-pic {
+  width: 40px;
+  background-color: #9e617f;
+  border-radius: 100%;
+}
+
+/* line 28, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/comments.scss */
+.commenter-username {
+  font-size: 13px;
+  color: gray;
+}
+
+/* line 33, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/comments.scss */
+.comment-body-text {
+  font-size: 14px;
+}
+
+/* line 37, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/comments.scss */
+.delete-comment-btn {
+  display: none;
+  width: 25px;
+  height: 25px;
+  font-size: 12px;
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+}
+
+/* line 47, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/comments.scss */
+.comment-obj-container:hover > .delete-comment-btn {
+  display: inline-block;
+}
+
+/* line 51, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/comments.scss */
+.delete-comment-btn:hover {
+  cursor: pointer;
+}

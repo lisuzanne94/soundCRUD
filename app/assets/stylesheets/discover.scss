@@ -1,21 +1,149 @@
 .discover-page-container {
-    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
     background-color: white;
     margin: auto;
+    font-family: 'Oxygen';
+    padding-bottom: 50px;
+};
+
+.discover-tracks-container {
+    width: 800px;
+    margin: 38px 30px;
+    padding: 0px 30px 0px 0px;
+    border-right: 1px solid rgb(219, 219, 219);
+};
+
+.tracks-list {
+    border-bottom: 1px solid rgb(219, 219, 219);
+    padding: 0px 0px 30px 0px;
+    margin: 0px 0px 30px 0px;
 }
 
-.discover-track-list {
+.track-obj-list {
     display: flex;
-    flex-wrap: wrap;
+    height: 230px;
+    overflow-x: auto;
+};
 
+.list-header {
+    margin: 0px 0px 10px 0px;
+    font-size: 22px;
+};
+
+.list-subheader {
+    margin: 0px 0px 20px 0px;
+    font-size: 14px;
+    color: gray;
 }
 
 .discover-track-obj {
+    position: relative;
     display: flex;
     flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    margin: 0px 20px 0px 0px;
+};
+
+.discover-play-btn {
+    display: none;
+    position: absolute;
+    bottom: 45%;
+    left: 35%;
+    cursor: pointer;
+    font-size: 28px;
+    color: white;
+    background-color: rgb(192, 20, 255);
+    padding: 15px 15px 15px 20px;
+    border-radius: 100%;
+}
+
+.discover-track-obj:hover > .discover-play-btn {
+    display: inline-block;
 }
 
 .discover-track-cover-img {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
+};
+
+.discover-track-title {
+    text-decoration: none;
+    margin: 5px 0px 3px 0px;
+    font-size: 14px;
+    color: black
+};
+
+.discover-track-uploader {
+    text-decoration: none;
+    font-size: 12px;
+    color: gray;
+}
+
+.discover-track-title:visited, .discover-track-uploader:visited, .discover-track-title:link, .discover-track-uploader:link {
+    text-decoration: none;
+};
+
+.discover-uploaders-container {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: 38px 38px 0px 0px;
+};
+
+.discover-uploaders-list-header {
+    font-size: 14px;
+    color: gray;
+    padding: 0px 0px 20px 0px;
+    margin: 0px 0px 20px 0px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.discover-uploaders-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around
+}
+
+.discover-uploaders-obj {
+    display: flex;
+    margin: 0px 0px 15px 0px;
+}
+
+.discover-uploaders-pic {
+    border-radius: 100%;
+    margin: 0px 15px 0px 0px;
+    width: 55px;
+    height: 55px;
+}
+
+.discover-uploaders-labels {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.discover-uploader-username {
+    margin: 0px 0px 5px 0px;
+    font-size: 13px;
+}
+
+.discover-numtracks-icon {
+    font-size: 10px;
+}
+
+.num-tracks {
+    display: flex;
+    font-size: 12px;
+    color: gray;
+}
+
+.discover-link {
+    text-decoration: none;
+}
+
+.discover-link:visited {
+    color: black;
 }

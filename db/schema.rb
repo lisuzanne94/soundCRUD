@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_03_131619) do
+ActiveRecord::Schema.define(version: 2021_11_06_061941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,11 +36,22 @@ ActiveRecord::Schema.define(version: 2021_11_03_131619) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.string "body", null: false
+    t.integer "commenter_id", null: false
+    t.integer "track_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commenter_id"], name: "index_comments_on_commenter_id"
+    t.index ["track_id"], name: "index_comments_on_track_id"
+  end
+
   create_table "tracks", force: :cascade do |t|
     t.string "title", null: false
     t.integer "uploader_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "genre"
     t.index ["title"], name: "index_tracks_on_title"
     t.index ["uploader_id"], name: "index_tracks_on_uploader_id"
   end

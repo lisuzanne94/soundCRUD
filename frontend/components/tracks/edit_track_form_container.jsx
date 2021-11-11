@@ -12,6 +12,7 @@ class EditTrackForm extends React.Component {
 
         return (
             <TrackForm
+                modalTrackId={this.props.modalTrackId}
                 history={this.props.history}
                 {...this.props}
             />

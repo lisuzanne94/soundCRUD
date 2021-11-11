@@ -1,0 +1,140 @@
+/* line 1, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+#root {
+  background-color: #ececec;
+  padding-bottom: 45px;
+}
+
+/* line 6, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+.splash-page {
+  width: 1200px;
+  margin: auto;
+  background-color: white;
+  border-top: solid 3px #c113ff;
+  font-family: 'Oxygen';
+}
+
+/* line 14, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+.splash-banner {
+  height: 300px;
+  background-image: url("dj-sona-bg.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* line 21, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+.splash-header-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+
+/* line 27, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+.splash-logo {
+  display: flex;
+}
+
+/* line 31, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+.splash-logo-img {
+  position: relative;
+  width: 40px;
+  height: auto;
+  top: -25%;
+}
+
+/* line 38, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+.splash-main-title {
+  color: white;
+  font-size: 18px;
+}
+
+/* line 43, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+.login-button, .signup-button {
+  font-family: 'Oxygen';
+  padding: 7px 12px;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+/* line 50, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+.login-button:hover, .signup-button:hover, .splash-upload-button:hover {
+  cursor: pointer;
+}
+
+/* line 54, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+.login-button {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 2px;
+  color: white;
+  margin: 0px 10px;
+}
+
+/* line 62, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+.signup-button {
+  background-color: #c113ff;
+  border: 1px solid #c113ff;
+  border-radius: 2px;
+  color: white;
+}
+
+/* line 69, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+.splash-mid {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 74, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+.splash-upload-button {
+  font-family: 'Oxygen';
+  margin: 25px;
+  background-color: #c113ff;
+  border: 1px solid #c113ff;
+  border-radius: 2px;
+  color: white;
+  padding: 10px 20px;
+}
+
+/* line 84, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+.splash-tracks-msg {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 89, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+.splash-track-list-msg {
+  margin: 0px 25px 25px 25px;
+  color: #383838;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+/* line 96, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+.splash-track-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* line 102, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+.splash-track-obj {
+  display: flex;
+  flex-direction: column;
+  margin: 7px;
+}
+
+/* line 108, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+.splash-track-cover-img {
+  width: 175px;
+  height: 175px;
+}
+
+/* line 113, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+.splash-track-title {
+  font-size: 12px;
+}
+
+/* line 117, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/splash.scss */
+.splash-track-uploader {
+  font-size: 10px;
+  color: #818181;
+}

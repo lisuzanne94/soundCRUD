@@ -1,0 +1,100 @@
+/* line 1, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/modal.scss */
+.modal-bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(236, 236, 236, 0.697);
+  z-index: 10;
+}
+
+/* line 11, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/modal.scss */
+.modal-child {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 430px;
+  height: 500px;
+  background-color: white;
+  transform: translate(-50%, -60%);
+}
+
+/* line 23, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/modal.scss */
+.session-form-div {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* line 29, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/modal.scss */
+.session-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 34, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/modal.scss */
+.session-form-div button {
+  border-radius: 3px;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 14px;
+  color: white;
+  height: 35px;
+}
+
+/* line 42, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/modal.scss */
+.session-form-div button:hover {
+  cursor: pointer;
+}
+
+/* line 46, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/modal.scss */
+.session-login-guest-btn {
+  margin: 50px 0px 0px 0px;
+  background-color: #3590af;
+  border: 1px solid #3590af;
+}
+
+/* line 52, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/modal.scss */
+.session-form-separator {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px 20px 0px;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 14px;
+}
+
+/* line 60, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/modal.scss */
+.line-separator {
+  width: 100%;
+  text-align: center;
+  line-height: 2%;
+  border-bottom: 1px solid black;
+  margin: 20px 0px;
+}
+
+/* line 68, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/modal.scss */
+.line-separator span {
+  background-color: white;
+  padding: 15px;
+}
+
+/* line 73, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/modal.scss */
+.session-form input {
+  height: 35px;
+  margin: 5px 0px 5px 0px;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 13px;
+}
+
+/* line 80, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/modal.scss */
+.session-submit-btn {
+  margin: 5px 0px 0px 0px;
+  background-color: #c113ff;
+  border: 1px solid #c113ff;
+}
+
+/* line 86, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/modal.scss */
+.session-switch-btn {
+  background-color: #cd1a7a;
+  border: 1px solid #cd1a7a;
+}

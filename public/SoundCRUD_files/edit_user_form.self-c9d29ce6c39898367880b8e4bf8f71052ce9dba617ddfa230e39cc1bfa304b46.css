@@ -1,0 +1,99 @@
+/* line 1, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/edit_user_form.scss */
+.edit-user-modal-bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(236, 236, 236, 0.697);
+  z-index: 10;
+}
+
+/* line 11, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/edit_user_form.scss */
+.edit-user-modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 450px;
+  height: 500px;
+  background-color: white;
+  transform: translate(-50%, -50%);
+}
+
+/* line 21, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/edit_user_form.scss */
+.edit-user-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 390px;
+  height: 440px;
+  padding: 30px;
+  font-family: 'Oxygen';
+}
+
+/* line 31, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/edit_user_form.scss */
+.edit-user-username {
+  padding: 0px 0px 10px 0px;
+  border-bottom: 1px solid #d9d9d9;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+/* line 38, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/edit_user_form.scss */
+.edit-user-preview-msg {
+  margin: auto;
+  color: gray;
+}
+
+/* line 43, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/edit_user_form.scss */
+.profile-pic-preview {
+  margin: auto;
+  width: 350px;
+  height: 350px;
+  border-radius: 100%;
+}
+
+/* line 50, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/edit_user_form.scss */
+.edit-user-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* line 55, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/edit_user_form.scss */
+.edit-user-form-container input[type='file'] {
+  display: none;
+}
+
+/* line 59, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/edit_user_form.scss */
+.upload-pic-btn {
+  width: fit-content;
+  height: fit-content;
+  padding: 7px;
+  font-family: 'Oxygen';
+  font-size: 13px;
+  border: 1px solid #c014ff;
+  border-radius: 2px;
+}
+
+/* line 69, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/edit_user_form.scss */
+.edit-user-cancel-btn {
+  font-family: 'Oxygen';
+  font-size: 13px;
+  background-color: white;
+  border: 1px solid white;
+}
+
+/* line 76, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/edit_user_form.scss */
+.edit-user-btn {
+  font-family: 'Oxygen';
+  font-size: 13px;
+  background-color: #c014ff;
+  border: 1px solid #c014ff;
+  border-radius: 2px;
+  color: white;
+}
+
+/* line 85, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/edit_user_form.scss */
+.upload-pic-btn:hover, .edit-user-btn:hover, .edit-user-cancel-btn:hover {
+  cursor: pointer;
+}

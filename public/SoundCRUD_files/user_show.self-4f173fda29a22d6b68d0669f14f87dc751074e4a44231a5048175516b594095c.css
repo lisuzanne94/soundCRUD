@@ -1,0 +1,112 @@
+/* line 1, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/user_show.scss */
+.user-show-page-container {
+  width: 1200px;
+  background-color: white;
+  margin: auto;
+  font-family: 'Oxygen';
+}
+
+/* line 8, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/user_show.scss */
+.user-banner {
+  display: flex;
+  background-color: #f3f3f3;
+  background-image: url("https://soundcrud-seeds.s3.amazonaws.com/user-header-images/user-default-header-banner.png");
+  background-size: cover;
+  margin: 0px 0px 30px 0px;
+  padding: 30px;
+}
+
+/* line 17, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/user_show.scss */
+.profile-pic-div {
+  position: relative;
+  width: fit-content;
+}
+
+/* line 22, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/user_show.scss */
+.user-profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+}
+
+/* line 28, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/user_show.scss */
+.update-prof-pic-btn {
+  position: absolute;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 2px;
+  bottom: 0%;
+  left: 20%;
+  right: 10%;
+  font-family: 'Oxygen';
+  font-size: 12px;
+  padding: 2px 5px;
+}
+
+/* line 41, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/user_show.scss */
+.update-prof-pic-btn:hover {
+  cursor: pointer;
+}
+
+/* line 45, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/user_show.scss */
+.user-banner-username {
+  width: max-content;
+  height: max-content;
+  background-color: #282828;
+  color: white;
+  font-size: 24px;
+  margin: 0px 0px 0px 30px;
+  padding: 10px;
+}
+
+/* line 55, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/user_show.scss */
+.user-tracks-index-container {
+  width: 800px;
+  border-top: 1px solid #d6d6d6;
+  margin: 0px 0px 0px 30px;
+}
+
+/* line 61, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/user_show.scss */
+.user-track-obj-container {
+  display: flex;
+  margin: 30px 0px 30px 0px;
+}
+
+/* line 66, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/user_show.scss */
+.user-track-player {
+  display: flex;
+  margin: 0px 0px 0px 15px;
+}
+
+/* line 71, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/user_show.scss */
+.user-track-play-btn {
+  font-size: 34px;
+  margin: 0px 5px 0px 0px;
+}
+
+/* line 76, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/user_show.scss */
+.user-track-labels {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 81, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/user_show.scss */
+.user-track-uploader {
+  font-size: 12px;
+  color: gray;
+  margin: 0px 0px 3px 0px;
+  text-decoration: none;
+}
+
+/* line 88, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/user_show.scss */
+.user-track-title {
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+}
+
+/* line 94, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/user_show.scss */
+.user-track-cover-img {
+  width: 150px;
+  height: 150px;
+}

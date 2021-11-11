@@ -5,8 +5,7 @@ import Splash from "./splash";
 
 const mSTP = state => ({
     tracks: state.entities.tracks
-});
-
+})
 const mDTP = dispatch => ({
     openModal: modal => dispatch(openModal(modal)),
     fetchTracks: () => dispatch(fetchTracks())
