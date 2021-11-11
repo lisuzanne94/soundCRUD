@@ -61,6 +61,7 @@ class MusicPlayer extends React.Component {
                     onLoadedMetadata={(e) => this.setState({ duration: e.target.duration})}
                     controls
                     autoPlay
+                    controlsList="nodownload"
                     className="music-player" 
                     id="current-song" 
                     src={this.props.track.trackFile} >
