@@ -144,15 +144,12 @@ class TrackForm extends React.Component {
                                             <label className="form-labels">Genre*</label>
 
                                             <select defaultValue="choose-genre" name="genre" id="genre" onChange={this.handleGenre}>
-                                                <option value="choose-genre" disabled>Please select a genre</option>
-                                                <option value="kpop">Kpop</option>
-                                                <option value="indie">Indie</option>
+                                                <option value="choose-genre" disabled>Select a Genre</option>
+                                                <option value="alternative">Alternative</option>
                                                 <option value="hip-hop">Hip-Hop</option>
                                                 <option value="pop">Pop</option>
-                                                <option value="edm">EDM</option>
-                                                <option value="anime">Anime</option>
-                                                <option value="rock">Rock</option>
-                                                <option value="rb">R&B</option>
+                                                <option value="electronic">Electronic</option>
+                                                <option value="anime/games">Anime/Games</option>
                                             </select>
                                         </div>
                         

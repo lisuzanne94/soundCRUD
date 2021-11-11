@@ -44,7 +44,7 @@ class MusicPlayer extends React.Component {
 
         return (
             <div className="music-player-container">
-                {/* <audio 
+                <audio 
                     onLoadedMetadata={(e) => this.setState({ duration: e.target.duration})}
                     controls
                     autoPlay
@@ -53,7 +53,7 @@ class MusicPlayer extends React.Component {
                     src={this.props.track.trackFile} >
                 </audio>
 
-                <button onClick={this.pauseTrack}>Pause</button>
+                {/* <button onClick={this.pauseTrack}>Pause</button>
                 <button onClick={this.playTrack}>Play</button>
 
                 <div>

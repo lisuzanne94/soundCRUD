@@ -28,19 +28,23 @@ class DiscoverPage extends React.Component {
         // )) : null
 
         const hiphop = [];
-        const kpop = [];
+        const animegames = [];
         const pop = [];
-        const anime = [];
+        const alternative = [];
+        const electronic = [];
+
 
         tracks.forEach(track => {
             if (track.genre === 'hip-hop') {
                 hiphop.push(track)
-            } else if (track.genre === 'kpop') {
-                kpop.push(track)
+            } else if (track.genre === 'anime/games') {
+                animegames.push(track)
             } else if (track.genre === 'pop') {
                 pop.push(track)
-            } else if (track.genre === 'anime') {
-                anime.push(track)
+            } else if (track.genre === 'alternative') {
+                alternative.push(track)
+            } else if (track.genre === 'electronic') {
+                electronic.push(track)
             }
         })
 
@@ -52,7 +56,7 @@ class DiscoverPage extends React.Component {
                         <div className="list-subheader">Suggestions made from your favorite anime</div>
                         <ul className="track-obj-list">
                             {
-                                anime.map(track => (
+                                animegames.map(track => (
                                     <div key={track.id}>
                                         <li className="discover-track-obj">
                                             <Link to={`/tracks/${track.id}`}>
@@ -90,7 +94,7 @@ class DiscoverPage extends React.Component {
                         <div className="list-subheader">Tracks as smooth as butter</div>
                         <ul className="track-obj-list">
                             {
-                                kpop.map(track => (
+                                alternative.map(track => (
                                     <div key={track.id}>
                                         <li className="discover-track-obj">
                                             <Link to={`/tracks/${track.id}`}>
@@ -110,6 +114,25 @@ class DiscoverPage extends React.Component {
                         <ul className="track-obj-list">
                             {
                                 pop.map(track => (
+                                    <div key={track.id}>
+                                        <li className="discover-track-obj">
+                                            <Link to={`/tracks/${track.id}`}>
+                                                <img className="discover-track-cover-img" src={track.coverImage} />
+                                            </Link>
+                                            <Link to={`/tracks/${track.id}`} className="discover-track-title">{track.title}</Link>
+                                            <Link to={`/users/${track.uploader.id}`} className="discover-track-uploader">{track.uploader.username}</Link>
+                                        </li>
+                                    </div>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                    <div className="tracks-list">
+                        <div className="list-header">Pop</div>
+                        <div className="list-subheader">Come on and slam</div>
+                        <ul className="track-obj-list">
+                            {
+                                electronic.map(track => (
                                     <div key={track.id}>
                                         <li className="discover-track-obj">
                                             <Link to={`/tracks/${track.id}`}>

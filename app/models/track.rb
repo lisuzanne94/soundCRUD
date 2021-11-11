@@ -1,6 +1,6 @@
 class Track < ApplicationRecord
     validates :title, :uploader_id, :track_file, presence: true
-    validates :genre, inclusion: { in: ['kpop', 'indie', 'hip-hop', 'pop', 'edm', 'anime', 'rock', 'rb'] }
+    validates :genre, inclusion: { in: ['pop', 'hip-hop', 'anime/games', 'alternative', 'electronic'] }
 
     belongs_to :uploader,
         primary_key: :id,
