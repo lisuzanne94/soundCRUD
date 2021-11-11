@@ -1,0 +1,150 @@
+/* line 1, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.discover-page-container {
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  background-color: white;
+  margin: auto;
+  font-family: 'Oxygen';
+}
+
+/* line 10, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.discover-tracks-container {
+  width: 800px;
+  margin: 38px 30px;
+  padding: 0px 30px 0px 0px;
+  border-right: 1px solid #dbdbdb;
+}
+
+/* line 17, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.tracks-list {
+  border-bottom: 1px solid #dbdbdb;
+  padding: 0px 0px 30px 0px;
+  margin: 0px 0px 30px 0px;
+}
+
+/* line 23, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.track-obj-list {
+  display: flex;
+  height: 230px;
+  overflow-x: auto;
+}
+
+/* line 29, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.list-header {
+  margin: 0px 0px 10px 0px;
+  font-size: 22px;
+}
+
+/* line 34, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.list-subheader {
+  margin: 0px 0px 20px 0px;
+  font-size: 14px;
+  color: gray;
+}
+
+/* line 40, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.discover-track-obj {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 20px 0px 0px;
+}
+
+/* line 46, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.discover-track-cover-img {
+  width: 170px;
+  height: 170px;
+}
+
+/* line 51, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.discover-track-title {
+  text-decoration: none;
+  margin: 5px 0px 3px 0px;
+  font-size: 14px;
+  color: black;
+}
+
+/* line 58, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.discover-track-uploader {
+  text-decoration: none;
+  font-size: 12px;
+  color: gray;
+}
+
+/* line 64, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.discover-track-title:visited, .discover-track-uploader:visited {
+  text-decoration: none;
+}
+
+/* line 68, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.discover-uploaders-container {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin: 38px 38px 0px 0px;
+}
+
+/* line 75, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.discover-uploaders-list-header {
+  font-size: 14px;
+  color: gray;
+  padding: 0px 0px 20px 0px;
+  margin: 0px 0px 20px 0px;
+  border-bottom: 1px solid #dddddd;
+}
+
+/* line 83, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.discover-uploaders-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* line 89, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.discover-uploaders-obj {
+  display: flex;
+  margin: 0px 0px 15px 0px;
+}
+
+/* line 94, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.discover-uploaders-pic {
+  border-radius: 100%;
+  margin: 0px 15px 0px 0px;
+  width: 55px;
+  height: 55px;
+}
+
+/* line 101, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.discover-uploaders-labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* line 107, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.discover-uploader-username {
+  margin: 0px 0px 5px 0px;
+  font-size: 13px;
+}
+
+/* line 112, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.discover-numtracks-icon {
+  font-size: 10px;
+}
+
+/* line 116, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.num-tracks {
+  display: flex;
+  font-size: 12px;
+  color: gray;
+}
+
+/* line 122, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.discover-link {
+  text-decoration: none;
+}
+
+/* line 126, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/discover.scss */
+.discover-link:visited {
+  color: black;
+}

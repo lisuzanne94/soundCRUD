@@ -1,0 +1,12 @@
+/* line 1, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/player.scss */
+.music-player-container {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* line 8, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/player.scss */
+.music-player {
+  width: 100%;
+}

@@ -1,0 +1,73 @@
+/* line 1, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/create_track_form.scss */
+.create-track-form-page-container {
+  display: flex;
+  justify-content: center;
+  width: 1200px;
+  background-color: white;
+  margin: auto;
+}
+
+/* line 9, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/create_track_form.scss */
+.create-track-form-box {
+  width: 800px;
+  height: 500px;
+  border: 1px solid #dddddd;
+  border-top: 5px solid #c113ff;
+  box-shadow: 0 2px 5px #cacaca;
+  margin: 50px 0px;
+  font-family: 'Oxygen';
+}
+
+/* line 19, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/create_track_form.scss */
+.create-track-form-header {
+  font-size: 24px;
+  color: #c113ff;
+  margin: 30px;
+  padding: 0px 0px 15px 0px;
+  border-bottom: 1px solid #dedede;
+}
+
+/* line 27, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/create_track_form.scss */
+.create-track-form-under-header {
+  display: flex;
+  margin: 30px;
+}
+
+/* line 32, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/create_track_form.scss */
+.preview-image-holder {
+  border: 1px solid black;
+  width: 250px;
+  height: 250px;
+}
+
+/* line 38, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/create_track_form.scss */
+.cover-image-preview {
+  width: 250px;
+  height: 250px;
+}
+
+/* line 43, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/create_track_form.scss */
+.create-track-form-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px 0px 50px;
+}
+
+/* line 49, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/create_track_form.scss */
+.create-track-form label {
+  font-size: 14px;
+  padding: 0px 0px 30px 0px;
+}
+
+/* line 54, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/create_track_form.scss */
+.create-track-form input[type="text"] {
+  width: 150%;
+  font-family: 'Oxygen';
+}
+
+/* line 59, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/create_track_form.scss */
+.create-track-form select {
+  width: 100%;
+  font-family: 'Oxygen';
+  padding: 5x;
+}

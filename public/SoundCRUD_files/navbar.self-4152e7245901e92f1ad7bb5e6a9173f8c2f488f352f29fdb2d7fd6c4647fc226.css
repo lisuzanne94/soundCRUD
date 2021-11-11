@@ -1,0 +1,104 @@
+/* line 1, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/navbar.scss */
+.navbar-bg {
+  display: flex;
+  justify-content: center;
+  height: 47px;
+  background-color: #272528;
+}
+
+/* line 8, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/navbar.scss */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  height: 47px;
+  margin-bottom: 2em;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* line 19, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/navbar.scss */
+.nav-link:link {
+  text-decoration: none;
+}
+
+/* line 23, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/navbar.scss */
+#discover-logo-div {
+  background-color: #c014ff;
+  background-image: url("/soundcrud-logo-5.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+/* line 31, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/navbar.scss */
+.discover-logo {
+  display: none;
+}
+
+/* line 39, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/navbar.scss */
+.left-side-bar {
+  display: flex;
+}
+
+/* line 43, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/navbar.scss */
+.left-nav-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 47px;
+  text-decoration: none;
+  color: #cdcdcd;
+  border-right: 1px solid black;
+  font-family: 'Oxygen';
+}
+
+/* line 55, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/navbar.scss */
+.nav-brand-link {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* line 60, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/navbar.scss */
+.nav-brand-icon {
+  font-size: 16px;
+}
+
+/* line 64, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/navbar.scss */
+.left-nav-btn:hover, .right-nav-btn:hover {
+  color: white;
+}
+
+/* line 68, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/navbar.scss */
+.active-nav-btn {
+  background-color: black;
+}
+
+/* line 72, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/navbar.scss */
+.left-side-bar:first-of-type {
+  border-left: 1px solid black;
+}
+
+/* line 76, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/navbar.scss */
+.nav-home-link {
+  color: white;
+  text-decoration: none;
+}
+
+/* line 81, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/navbar.scss */
+.right-side-bar {
+  display: flex;
+}
+
+/* line 85, /Users/Suzi/Desktop/app_academy/fullstack_project/soundCRUD/app/assets/stylesheets/navbar.scss */
+.right-nav-btn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100px;
+  height: 47px;
+  text-decoration: none;
+  color: #cdcdcd;
+  font-family: 'Oxygen';
+}
