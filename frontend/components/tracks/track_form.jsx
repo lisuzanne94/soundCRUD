@@ -40,6 +40,7 @@ class TrackForm extends React.Component {
 
     handleTrackFile(e) {
         this.setState({trackFile: e.currentTarget.files[0]})
+        console.log(e.currentTarget.files[0].name)
     }
 
     changeUploadedStatus () {
@@ -108,6 +109,7 @@ class TrackForm extends React.Component {
             null
         )
 
+
         const form = this.props.formType === 'Create Track' ? (
             <div className="track-form-page-container">
                 <div className="track-form-box">
@@ -168,6 +170,7 @@ class TrackForm extends React.Component {
                                                 <input type="file"
                                                     onChange={this.handleTrackFile} />
                                             </label>
+                                            <span className="selected-trackfile-name">Selected: {this.state.trackFile ? this.state.trackFile.name : "No file selected yet"}</span>
                                         </div>
                                     </div>
 
@@ -213,16 +216,13 @@ class TrackForm extends React.Component {
                                         <div className="form-label-input-pair">
                                             <label className="form-labels">Genre*</label>
 
-                                            <select defaultValue="choose-genre" name="genre" id="genre" onChange={this.handleGenre}>
-                                                <option value="choose-genre" disabled>Please select a genre</option>
-                                                <option value="kpop">Kpop</option>
-                                                <option value="indie">Indie</option>
-                                                <option value="hip-hop">Hip-Hop & Rap</option>
+                                            <select defaultValue={this.state.genre ? this.state.genre : "choose-genre"} name="genre" id="genre" onChange={this.handleGenre}>
+                                                <option value="choose-genre" disabled>Select a Genre</option>
+                                                <option value="alternative">Alternative</option>
+                                                <option value="hip-hop">Hip-Hop</option>
                                                 <option value="pop">Pop</option>
-                                                <option value="edm">EDM</option>
-                                                <option value="anime">Anime</option>
-                                                <option value="rock">Rock</option>
-                                                <option value="rb">R&B</option>
+                                                <option value="electronic">Electronic</option>
+                                                <option value="anime/games">Anime/Games</option>
                                             </select>
                                         </div>
 
@@ -240,6 +240,7 @@ class TrackForm extends React.Component {
                                                 <input type="file"
                                                     onChange={this.handleTrackFile} />
                                             </label>
+                                        <span className="selected-trackfile-name">Selected: {this.state.trackFile ? this.state.trackFile.name : "No file selected yet"}</span>
                                         </div>
                                     </div>
 
