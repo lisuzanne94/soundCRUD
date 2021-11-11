@@ -109,29 +109,29 @@ class TrackForm extends React.Component {
         )
 
         const form = this.props.formType === 'Create Track' ? (
-            <div className="create-track-form-page-container">
-                <div className="create-track-form-box">
+            <div className="track-form-page-container">
+                <div className="track-form-box">
                     <div>
-                        <h3 className="create-track-form-header">Track Details</h3>
+                        <h3 className="track-form-header">Track Details</h3>
                     </div>
 
-                    <div className="create-track-errors">
+                    <div className="track-errors">
                         {this.props.errors.length !== 0 ? this.renderErrors() : " "}
                     </div>
 
-                    <div className="create-track-form-under-header">
+                    <div className="track-form-under-header">
                         <div className="preview-image-holder">
                             {preview}
                         </div>
 
                         {uploadMsg}
 
-                        <div className="create-track-form-container">
+                        <div className="track-form-container">
                             <div>
                                 <form onSubmit={this.handleSubmit}>
-                                    <div className="create-track-form">
-                                        <div className="create-form-label-input-pair">
-                                            <label className="create-form-labels">Title*</label>
+                                    <div className="track-form">
+                                        <div className="form-label-input-pair">
+                                            <label className="form-labels">Title*</label>
 
                                             <input type="text"
                                                 value={this.state.title}
@@ -140,8 +140,8 @@ class TrackForm extends React.Component {
                                         </div>
 
 
-                                        <div className="create-form-label-input-pair">
-                                            <label className="create-form-labels">Genre*</label>
+                                        <div className="form-label-input-pair">
+                                            <label className="form-labels">Genre*</label>
 
                                             <select defaultValue="choose-genre" name="genre" id="genre" onChange={this.handleGenre}>
                                                 <option value="choose-genre" disabled>Please select a genre</option>
@@ -156,24 +156,24 @@ class TrackForm extends React.Component {
                                             </select>
                                         </div>
                         
-                                        <div className="create-form-label-input-pair">
-                                            <label className="create-form-labels">Upload cover image </label>
-                                            <label className="create-form-upload-btn">Choose a cover
+                                        <div className="form-label-input-pair">
+                                            <label className="form-labels">Upload cover image </label>
+                                            <label className="form-upload-btn">Choose a cover
                                                 <input type="file"
                                                     onChange={this.handleCoverImageFile} />
                                             </label>
                                         </div>
 
-                                        <div className="create-form-label-input-pair">
-                                            <label className="create-form-labels">Upload track file* </label>
-                                            <label className="create-form-upload-btn">Choose a track
+                                        <div className="form-label-input-pair">
+                                            <label className="form-labels">Upload track file* </label>
+                                            <label className="form-upload-btn">Choose a track
                                                 <input type="file"
                                                     onChange={this.handleTrackFile} />
                                             </label>
                                         </div>
                                     </div>
 
-                                    <div><button className="create-track-form-save-btn">{this.props.formType}</button></div>
+                                    <div><button className="track-form-save-btn">{this.props.formType}</button></div>
                                 </form>
                             </div>
                         </div>
@@ -182,28 +182,28 @@ class TrackForm extends React.Component {
                 </div>
             </div>
         ) : (
-                <div className="create-track-form-box">
+                <div className="edit-track-form-box">
                     <div>
-                        <h3 className="create-track-form-header">Track Details</h3>
+                        <h3 className="track-form-header">Track Details</h3>
                     </div>
 
-                    <div className="create-track-errors">
+                    <div className="track-errors">
                         {this.props.errors.length !== 0 ? this.renderErrors() : " "}
                     </div>
 
-                    <div className="create-track-form-under-header">
+                    <div className="track-form-under-header">
                         <div className="preview-image-holder">
                             {preview}
                         </div>
 
                         {uploadMsg}
 
-                        <div className="create-track-form-container">
+                        <div className="track-form-container">
                             <div>
                                 <form onSubmit={this.handleSubmit}>
-                                    <div className="create-track-form">
-                                        <div className="create-form-label-input-pair">
-                                            <label className="create-form-labels">Title*</label>
+                                    <div className="track-form">
+                                        <div className="form-label-input-pair">
+                                            <label className="form-labels">Title*</label>
 
                                             <input type="text"
                                                 value={this.state.title}
@@ -212,8 +212,8 @@ class TrackForm extends React.Component {
                                         </div>
 
 
-                                        <div className="create-form-label-input-pair">
-                                            <label className="create-form-labels">Genre*</label>
+                                        <div className="form-label-input-pair">
+                                            <label className="form-labels">Genre*</label>
 
                                             <select defaultValue="choose-genre" name="genre" id="genre" onChange={this.handleGenre}>
                                                 <option value="choose-genre" disabled>Please select a genre</option>
@@ -228,24 +228,24 @@ class TrackForm extends React.Component {
                                             </select>
                                         </div>
 
-                                        <div className="create-form-label-input-pair">
-                                            <label className="create-form-labels">Upload cover image </label>
-                                            <label className="create-form-upload-btn">Choose a cover
+                                        <div className="form-label-input-pair">
+                                            <label className="form-labels">Upload cover image </label>
+                                            <label className="form-upload-btn">Choose a cover
                                                 <input type="file"
                                                     onChange={this.handleCoverImageFile} />
                                             </label>
                                         </div>
 
-                                        <div className="create-form-label-input-pair">
-                                            <label className="create-form-labels">Upload track file* </label>
-                                            <label className="create-form-upload-btn">Choose a track
+                                        <div className="form-label-input-pair">
+                                            <label className="form-labels">Upload track file* </label>
+                                            <label className="form-upload-btn">Choose a track
                                                 <input type="file"
                                                     onChange={this.handleTrackFile} />
                                             </label>
                                         </div>
                                     </div>
 
-                                    <div><button className="create-track-form-save-btn">{this.props.formType}</button></div>
+                                    <div><button className="track-form-save-btn">{this.props.formType}</button></div>
                                 </form>
                             </div>
                         </div>

@@ -1,4 +1,4 @@
-.create-track-form-page-container {
+.track-form-page-container {
     display: flex;
     justify-content: center;
     width: 1200px;
@@ -6,7 +6,7 @@
     margin: auto;
 }
 
-.create-track-form-box {
+.track-form-box {
     width: 800px;
     height: 500px;
     border: 1px solid rgb(221, 221, 221);
@@ -16,7 +16,7 @@
     font-family: 'Oxygen';
 }
 
-.create-track-form-header {
+.track-form-header {
     font-size: 24px;
     color: rgb(193, 19, 255);
     margin: 10px 30px;
@@ -24,7 +24,7 @@
     border-bottom: 1px solid rgb(222, 222, 222);
 }
 
-.create-track-errors {
+.track-errors {
     margin-right: 30px;
     margin-left: auto;
     text-align: right;
@@ -35,7 +35,7 @@
     color: rgb(168, 50, 123);
 }
 
-.create-track-form-under-header {
+.track-form-under-header {
     display: flex;
     margin: 0px 50px
 }
@@ -60,41 +60,41 @@
     height: 250px;
 }
 
-.create-track-form-container {
+.track-form-container {
     display: flex;
     width: 100%;
     flex-direction: column;
     margin: 0px 0px 0px 50px;
 }
 
-.create-form-label-input-pair {
+.form-label-input-pair {
     display: flex;
     flex-direction: column;
     margin: 0px 0px 15px 0px;
 }
 
-.create-form-labels {
+.form-labels {
     font-size: 14px;
     margin: 0px 0px 5px 0px;
 }
 
-.create-track-form input[type="text"] {
+.track-form input[type="text"] {
     width: 98%;
     font-family: 'Oxygen';
 }
 
-.create-track-form select {
+.track-form select {
     width: 50%;
     font-family: 'Oxygen';
     padding: 5x;
 }
 
 
-.create-track-form input[type="file"] {
+.track-form input[type="file"] {
     display: none;
 }
 
-.create-form-upload-btn {
+.form-upload-btn {
     width: fit-content;
     background-color: white;
     font-family: 'Oxygen';
@@ -104,11 +104,11 @@
     border-radius: 2px;
 }
 
-.create-form-upload-btn:hover, .create-track-form-save-btn:hover {
+.form-upload-btn:hover, .track-form-save-btn:hover {
     cursor: pointer;
 }
 
-.create-track-form-save-btn {
+.track-form-save-btn {
     margin: 40px 0px 0px 0px;
     background-color: rgb(193, 19, 255);
     border: 1px solid rgb(193, 19, 255);
