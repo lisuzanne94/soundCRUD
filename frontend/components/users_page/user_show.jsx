@@ -40,6 +40,12 @@ class UserShow extends React.Component {
             </button>
         ) : null
 
+        const nothingHereMsg = tracks.length === 0 ? (
+            <div className="nothing-here-msg">
+                This user hasn't uploaded anything yet {`:(`}
+            </div>
+        ) : null
+
 
         return (
             <div className="user-show-page-container">
@@ -54,6 +60,7 @@ class UserShow extends React.Component {
                 </div>
                 <div className="user-page-under-banner">
                     <div className="user-tracks-index-container">
+                        {nothingHereMsg}
                         <ul className="user-track-objs">
                             {
                                 tracks.map((track, i) => (

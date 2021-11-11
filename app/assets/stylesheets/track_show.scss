@@ -56,7 +56,7 @@
     padding: 5px;
 }
 
-.track-banner-uploader:visited {
+.track-banner-uploader:visited, .track-banner-uploader:link {
     text-decoration: none;
 }
 
@@ -90,6 +90,7 @@
 .track-show-cover-img {
     width: 300px;
     height: auto;
+    
 }
 
 .track-show-page-under-banner {
