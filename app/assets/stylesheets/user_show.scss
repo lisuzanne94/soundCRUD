@@ -64,9 +64,26 @@
     margin: 30px 0px 0px 30px;
 }
 
+.user-track-objs {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
 .user-track-obj-container {
     display: flex;
+    width: 390px;
     margin: 30px 0px 30px 0px;
+    // border: 1px solid black;
+}
+
+.user-track-obj-top {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    height: 150px;
+    margin: 0px 10px 0px 0px;
 }
 
 .user-track-player {
@@ -104,6 +121,12 @@
     text-decoration: none;
 }
 
+.user-track-created-time {
+    font-size: 12px;
+    color: gray;
+    margin: 0px 0px 0px 15px;
+}
+
 .user-track-cover-img {
     width: 150px;
     height: 150px;
@@ -118,11 +141,28 @@
 .self-plug-container {
     // border: 1px solid black;
     width: 35%;
-    border-top: 1px solid rgb(214, 214, 214);
+    border-top: 1px solid rgb(219, 219, 219);
     margin: 0px 30px 0px 30px;
-    padding: 30px 0px 0px 30px;
+    padding: 30px 0px 0px 0px;
+}
+
+.self-plug-header {
+    font-size: 14px;
+    color: gray;
+    padding: 0px 0px 10px 0px;
+    border-bottom: 1px solid rgb(219, 219, 219);
+    margin: 0px 0px 10px 0px;
 }
 
 .self-plug-btns {
     display: flex;
+}
+
+.self-plug-github, .self-plug-linkedin {
+    text-decoration: none;
+    background-color: black;
+    border-radius: 5px;
+    margin: 0px 5px 0px 0px;
+    padding: 10px;
+    color: white;
 }

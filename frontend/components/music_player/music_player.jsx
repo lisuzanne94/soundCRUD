@@ -15,6 +15,10 @@ class MusicPlayer extends React.Component {
         this.props.receivePlayTrack(this.props.track)
     }
 
+    componentWillUnmount () {
+        this.props.clearPlayTrack();
+    }
+
     // handleSeek (e) {
     //     // const track = document.getElementById("current-song");
     //     this.setState({ currentTime: e.currentTarget.value })

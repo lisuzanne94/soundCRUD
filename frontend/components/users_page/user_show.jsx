@@ -32,16 +32,21 @@ class UserShow extends React.Component {
         if (!this.props.user) { return null }
         if (!this.props.tracks) { return null }
 
-        const { user, userId, tracks, openModal, receivePlayTrack } = this.props;
+        const { currentUserId, user, userId, tracks, openModal, receivePlayTrack } = this.props;
+
+        const updateProfPicBtn = currentUserId === user.id ? (
+            <button className="update-prof-pic-btn" onClick={() => openModal('Edit User')}>
+                <FontAwesomeIcon icon={faCameraRetro} /> Update Profile Pic
+            </button>
+        ) : null
+
 
         return (
             <div className="user-show-page-container">
                 <div className="user-banner">
                     <div className="profile-pic-div">
                         <img className="user-profile-pic" src={user.profilePic} />
-                        <button className="update-prof-pic-btn" onClick={() => openModal('Edit User')}>
-                            <FontAwesomeIcon icon={faCameraRetro} /> Update Profile Pic
-                        </button>
+                        {updateProfPicBtn}
                     </div>
                     <div>
                         <h3 className="user-banner-username">{user.username}</h3>
@@ -49,7 +54,7 @@ class UserShow extends React.Component {
                 </div>
                 <div className="user-page-under-banner">
                     <div className="user-tracks-index-container">
-                        <ul>
+                        <ul className="user-track-objs">
                             {
                                 tracks.map((track, i) => (
                                     <li key={i}>
@@ -57,14 +62,18 @@ class UserShow extends React.Component {
 
                                             <Link to={`/tracks/${track.id}`}><img className="user-track-cover-img" src={track.coverImage} /></Link>
 
-                                            <div className="user-track-player">
-                                                <div className="user-track-play-btn">
-                                                    <FontAwesomeIcon onClick={() => receivePlayTrack(track)} icon={faPlay} />
+                                            <div className="user-track-obj-top">
+                                                 <div className="user-track-player">
+                                                    <div className="user-track-play-btn">
+                                                        <FontAwesomeIcon onClick={() => receivePlayTrack(track)} icon={faPlay} />
+                                                    </div>
+                                                    <div className="user-track-labels">
+                                                        <Link to={`/users/${track.uploader.id}`} className="user-track-uploader">{track.uploader.username}</Link>
+                                                        <Link to={`/tracks/${track.id}`} className="user-track-title">{track.title}</Link>
+                                                    </div>
                                                 </div>
-                                                <div className="user-track-labels">
-                                                    <Link to={`/users/${track.uploader.id}`} className="user-track-uploader">{track.uploader.username}</Link>
-                                                    <Link to={`/tracks/${track.id}`} className="user-track-title">{track.title}</Link>
-                                                </div>
+                                            
+                                                <div className="user-track-created-time">{track.createdTime} ago</div>
                                             </div>
                                         </div>
                                     </li>

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import MusicPlayer from "./music_player";
-import { receivePlayTrack } from "../../actions/player_actions";
+import { receivePlayTrack, clearPlayTrack } from "../../actions/player_actions";
 
 const mSTP = state => ({
     track: state.ui.player.currentTrack
@@ -8,8 +8,7 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
     receivePlayTrack: track => dispatch(receivePlayTrack(track)),
-    receivePlay: () => dispatch(receivePlay()),
-    pausePlay: () => dispatch(pausePlay())
+    clearPlayTrack: () => dispatch(clearPlayTrack())
 });
 
 export default connect(mSTP, mDTP)(MusicPlayer);
