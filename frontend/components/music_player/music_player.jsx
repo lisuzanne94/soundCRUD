@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class MusicPlayer extends React.Component {
     // constructor(props) {
@@ -44,10 +45,18 @@ class MusicPlayer extends React.Component {
 
         if (!this.props.track ) { return null }
 
+        const { track } = this.props;
+
         // console.log(document.getElementById("current-song") ? document.getElementById("current-song") : null)
 
         return (
-            <div className="music-player-container">
+            <div className="music-player-bar-container">
+                <div className="current-track-details">
+                    <h3>Now playing: <Link className="current-track-title" to={`/tracks/${track.id}`}>{track.title}</Link></h3>
+                    <p>Uploaded by: <Link className="current-track-uploader" to={`/users/${track.uploader.id}`}>{track.uploader.username}</Link></p>
+                </div>
+
+                <div className="music-player-container">
                 <audio 
                     onLoadedMetadata={(e) => this.setState({ duration: e.target.duration})}
                     controls
@@ -68,6 +77,8 @@ class MusicPlayer extends React.Component {
                         onChange={this.handleSeek}
                     />
                 </div> */}
+            </div>
+            
             </div>
         )
     }

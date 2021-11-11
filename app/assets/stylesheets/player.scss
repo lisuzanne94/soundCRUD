@@ -1,9 +1,37 @@
-.music-player-container {
+.music-player-bar-container {
     display: flex;
     position: fixed;
     bottom: 0;
     width: 100%;
+    z-index: 1;
+    flex-direction: column;
+}
+
+.music-player-container {
+    display: flex;
+    position: relative;
+    bottom: 0;
+    width: 100%;
     z-index: 2;
+}
+
+.current-track-details {
+    text-decoration: none;
+    font-family: 'Oxygen';
+    font-size: 14px;
+    text-align: right;
+    align-self: flex-end;
+    width: fit-content;
+    margin: 0px 10px 0px 0px;
+    background-color: rgba(255, 255, 255, 0.279);
+    padding: 7px;
+    border-radius: 3px;
+    color: rgb(0, 0, 0);
+}
+
+.current-track-title:visited, .current-track-uploader:visited, .current-track-title:link, .current-track-uploader:link {
+    text-decoration: none;
+    color: rgb(192, 20, 255);
 }
 
 .music-player {
