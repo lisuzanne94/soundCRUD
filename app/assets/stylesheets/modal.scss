@@ -31,6 +31,12 @@
   flex-direction: column;
 };
 
+.session-errors {
+  font-family: 'Oxygen';
+  font-size: 12px;
+  color: rgb(198, 18, 150);
+}
+
 .session-form-div button {
   border-radius: 3px;
   font-family: 'Oxygen', sans-serif;

@@ -45,7 +45,7 @@ class SessionForm extends React.Component {
         return (
         <ul>
             {this.props.errors.map((error, i) => (
-                <li key={i}>{error}</li>
+                <li className="session-errors" key={i}>{error}</li>
             ))}
         </ul>
         )
@@ -55,13 +55,13 @@ class SessionForm extends React.Component {
 
         return (
             <div className="session-form-div">
-
-                {this.renderErrors()}
                 <button className="session-login-guest-btn" onClick={this.loginGuest}>Login as a Guest</button>
 
                 <span className="session-form-separator">
                     <h3 className="line-separator"><span>or</span></h3>
                 </span>
+
+                {this.renderErrors()}
 
                 <form className="session-form">
                         <input type="text"
