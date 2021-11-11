@@ -1,7 +1,7 @@
 class Track < ApplicationRecord
     validates :title, :uploader_id, presence: true
     validates :genre, inclusion: { in: ['pop', 'hip-hop', 'anime/games', 'alternative', 'electronic'] }
-    # validate :track_file_validation
+    validate :track_file_validation
 
     belongs_to :uploader,
         primary_key: :id,
@@ -17,9 +17,9 @@ class Track < ApplicationRecord
 
     has_one_attached :track_file
 
-    # def track_file_validation
-    #     unless self.track_file.attached?
-    #         errors[:track_file] << " is required*"
-    #     end
-    # end
+    def track_file_validation
+        unless self.track_file.attached?
+            errors[:track_file] << " is required*"
+        end
+    end
 end
