@@ -98,15 +98,6 @@ class TrackForm extends React.Component {
 
         if (!this.props.track) { return null }
 
-        // let preview; 
-        // if (this.props.track.coverImage) {
-        //     preview = <img className="cover-image-preview" src={this.props.track.coverImage} />
-        // } else if (this.state.coverImageURL) {
-        //     preview = (<img className="cover-image-preview" src={this.state.coverImageURL} />)
-        // } else {
-        //     preview = (<div className="upload-cover-image-msg">Choose an image to preview it here</div>)
-        // }
-
         let prevCoverImage =  this.props.track.coverImage ? (<img className="cover-image-preview" src={this.props.track.coverImage} />) : null
 
         let preview; 
@@ -281,51 +272,3 @@ class TrackForm extends React.Component {
 };
 
 export default TrackForm;
-
-
-
-{/* <div className="edit-track-form">
-    {uploadMsg}
-
-    {this.renderErrors()}
-
-
-    <form onSubmit={this.handleSubmit}>
-        <label>Track Title: </label>
-        <input type="text"
-            value={this.state.title}
-            onChange={this.update('title')}
-        />
-
-
-        <label>Genre:</label>
-        <select defaultValue="choose-genre" name="genre" id="genre" onChange={this.handleGenre}>
-            <option value="choose-genre" disabled>Please select a genre</option>
-            <option value="kpop">Kpop</option>
-            <option value="indie">Indie</option>
-            <option value="hip-hop">Hip-Hop & Rap</option>
-            <option value="pop">Pop</option>
-            <option value="edm">EDM</option>
-            <option value="anime">Anime</option>
-            <option value="rock">Rock</option>
-            <option value="rb">R&B</option>
-        </select>
-
-
-
-        <label>Upload image: </label>
-        <input type="file"
-            value=""
-            title=" "
-            onChange={this.handleCoverImageFile} />
-
-        <label>Upload track file: </label>
-        <input type="file"
-            value=""
-            title=" "
-            onChange={this.handleTrackFile} />
-
-
-        <button>{this.props.formType}</button>
-    </form>
-</div> */}
