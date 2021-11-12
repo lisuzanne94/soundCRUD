@@ -46,7 +46,6 @@ class UserShow extends React.Component {
             </div>
         ) : null
 
-
         return (
             <div className="user-show-page-container">
                 <div className="user-banner">
