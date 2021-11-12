@@ -175,7 +175,6 @@ class DiscoverPage extends React.Component {
                                                         }
                                                     </div>
                                             </div>
-                                        
                                     </li>
                                 ) }
                         </ul>
