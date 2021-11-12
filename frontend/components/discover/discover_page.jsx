@@ -14,18 +14,8 @@ class DiscoverPage extends React.Component {
 
     render () {
         if (!this.props.tracks) { return null }
-        // if (!this.props.randomUsers) { return null }
 
         const { currentUser, tracks, randomUsers } = this.props;
-
-        // const randomUserIds = this.getRandomUserIds(12);
-        // const testDiv = users[12] ? (randomUserIds.map(userId =>
-        //     <li key={userId}>
-        //         <div><img className="discover-uploaders-pic" src={users[userId].profilePic} /></div>
-        //         <div>{users[userId].username}</div>
-        //         <div>{users[userId].tracks.length} tracks uploaded</div>
-        //     </li>
-        // )) : null
 
         const hiphop = [];
         const animegames = [];
@@ -52,8 +42,8 @@ class DiscoverPage extends React.Component {
             <div className="discover-page-container">
                 <div className="discover-tracks-container">
                     <div className="tracks-list">
-                        <div className="list-header">Get transported</div>
-                        <div className="list-subheader">Suggestions made from your favorite anime and games</div>
+                        <div className="list-header">Dive back in</div>
+                        <div className="list-subheader">Essential picks from your favorite anime & games</div>
                         <ul className="track-obj-list">
                             {
                                 animegames.map(track => (
@@ -74,7 +64,7 @@ class DiscoverPage extends React.Component {
                         </ul>
                     </div>
                     <div className="tracks-list">
-                        <div className="list-header">In the mood for Hip Hop or Rap?</div>
+                        <div className="list-header">In the mood for some hip hop?</div>
                         <div className="list-subheader"></div>
                         <ul className="track-obj-list">
                             {
@@ -95,7 +85,7 @@ class DiscoverPage extends React.Component {
                     </div>
                     <div className="tracks-list">
                         <div className="list-header">Alternative</div>
-                        <div className="list-subheader">Alternative/Indie hits</div>
+                        <div className="list-subheader">There are no alternatives to these indie hits</div>
                         <ul className="track-obj-list">
                             {
                                 alternative.map(track => (
@@ -115,7 +105,7 @@ class DiscoverPage extends React.Component {
                     </div>
                     <div className="tracks-list">
                         <div className="list-header">Pop</div>
-                        <div className="list-subheader">Tracks that are poppin</div>
+                        <div className="list-subheader">Tracks that are POPPIN right now</div>
                         <ul className="track-obj-list">
                             {
                                 pop.map(track => (
@@ -135,7 +125,7 @@ class DiscoverPage extends React.Component {
                     </div>
                     <div className="tracks-list">
                         <div className="list-header">Electronic</div>
-                        <div className="list-subheader"></div>
+                        <div className="list-subheader">🎧 🎛️ 🎚️</div>
                         <ul className="track-obj-list">
                             {
                                 electronic.map(track => (
@@ -161,13 +151,6 @@ class DiscoverPage extends React.Component {
                     <h2 className="discover-uploaders-list-header"><FontAwesomeIcon icon={faUserFriends} /> Content uploaders you should check out</h2>
                     <div>
                         <ul className="discover-uploaders-list">
-                            {/* {users.map(user => 
-                                <li key={user.id}>
-                                    <div><img src={user.profilePic} /></div>
-                                    <div>{user.username}</div>
-                                    <div>{user.tracks.length} tracks uploaded</div>
-                                </li>
-                                )} */}
                             { randomUsers.map(user => 
                                     <li key={user.id}>
         

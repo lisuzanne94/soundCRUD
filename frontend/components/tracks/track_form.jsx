@@ -8,7 +8,8 @@ class TrackForm extends React.Component {
             ...this.props.track,
             coverImage: null,
             trackFile: null,
-            uploaded: false
+            uploaded: false,
+            genre: (this.props.track.genre || 'choose-genre')
         }
         
         this.handleGenre = this.handleGenre.bind(this);
@@ -16,6 +17,7 @@ class TrackForm extends React.Component {
         this.handleCoverImageFile = this.handleCoverImageFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.changeUploadedStatus = this.changeUploadedStatus.bind(this);
+        this.resetState = this.resetState.bind(this);
     }
 
     componentDidMount () {
@@ -40,11 +42,23 @@ class TrackForm extends React.Component {
 
     handleTrackFile(e) {
         this.setState({trackFile: e.currentTarget.files[0]})
-        console.log(e.currentTarget.files[0].name)
     }
 
     changeUploadedStatus () {
         this.setState({ ['uploaded']: true })
+    }
+
+    resetState() {
+        if (this.props.formType === 'Create Track') {
+            this.setState({
+                title: '',
+                coverImage: null,
+                coverImageURL: null,
+                trackFile: null,
+                uploaded: false,
+                genre: 'choose-genre'
+            })
+        }
     }
 
     handleSubmit (e) {
@@ -60,14 +74,7 @@ class TrackForm extends React.Component {
             formData.append('track[track_file]', this.state.trackFile);
         };
 
-        this.props.action(formData).then(
-            this.setState({
-                title: '',
-                coverImage: null,
-                trackFile: null,
-                uploaded: false
-            })
-        ).then(this.changeUploadedStatus).then(this.props.closeModal)
+        this.props.action(formData).then(this.resetState).then(this.changeUploadedStatus).then(this.props.closeModal)
 
         this.props.clearTrackErrors();
     };
@@ -91,10 +98,11 @@ class TrackForm extends React.Component {
 
         if (!this.props.track) { return null }
 
+        let prevCoverImage =  this.props.track.coverImage ? (<img className="cover-image-preview" src={this.props.track.coverImage} />) : null
+
         let preview; 
-        if (this.props.track.coverImage) {
-            preview = (<img className="cover-image-preview" src={this.props.track.coverImage} />)
-        } else if (this.state.coverImageURL) {
+        if (this.state.coverImageURL) {
+            prevCoverImage = null;
             preview = (<img className="cover-image-preview" src={this.state.coverImageURL} />)
         } else {
             preview = (<div className="upload-cover-image-msg">Choose an image to preview it here</div>)
@@ -146,7 +154,7 @@ class TrackForm extends React.Component {
                                         <div className="form-label-input-pair">
                                             <label className="form-labels">Genre*</label>
 
-                                            <select defaultValue="choose-genre" name="genre" id="genre" onChange={this.handleGenre}>
+                                            <select value={this.state.genre} name="genre" id="genre" onChange={this.handleGenre}>
                                                 <option value="choose-genre" disabled>Select a Genre</option>
                                                 <option value="alternative">Alternative</option>
                                                 <option value="hip-hop">Hip-Hop</option>
@@ -194,6 +202,7 @@ class TrackForm extends React.Component {
 
                     <div className="track-form-under-header">
                         <div className="preview-image-holder">
+                            {prevCoverImage}
                             {preview}
                         </div>
 
@@ -263,51 +272,3 @@ class TrackForm extends React.Component {
 };
 
 export default TrackForm;
-
-
-
-{/* <div className="edit-track-form">
-    {uploadMsg}
-
-    {this.renderErrors()}
-
-
-    <form onSubmit={this.handleSubmit}>
-        <label>Track Title: </label>
-        <input type="text"
-            value={this.state.title}
-            onChange={this.update('title')}
-        />
-
-
-        <label>Genre:</label>
-        <select defaultValue="choose-genre" name="genre" id="genre" onChange={this.handleGenre}>
-            <option value="choose-genre" disabled>Please select a genre</option>
-            <option value="kpop">Kpop</option>
-            <option value="indie">Indie</option>
-            <option value="hip-hop">Hip-Hop & Rap</option>
-            <option value="pop">Pop</option>
-            <option value="edm">EDM</option>
-            <option value="anime">Anime</option>
-            <option value="rock">Rock</option>
-            <option value="rb">R&B</option>
-        </select>
-
-
-
-        <label>Upload image: </label>
-        <input type="file"
-            value=""
-            title=" "
-            onChange={this.handleCoverImageFile} />
-
-        <label>Upload track file: </label>
-        <input type="file"
-            value=""
-            title=" "
-            onChange={this.handleTrackFile} />
-
-
-        <button>{this.props.formType}</button>
-    </form>
-</div> */}
