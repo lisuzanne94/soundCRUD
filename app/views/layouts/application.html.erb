@@ -5,6 +5,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta property="og:title" content="Project Title" />
+     <meta property='og:image' content="<%= image_url('soundcrud-splash.png') %>"/>
+     <meta property="og:description"
+       content="A music sharing SoundCloud clone."
+     />
+     <meta property="og:url"
+       content="http://soundcrud.herokuapp.com/"
+     />
+
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
