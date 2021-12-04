@@ -93,8 +93,10 @@ import { Link } from "react-router-dom";
 const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
     const [state, setState] = useState({
         duration: 0,
-        currentTime: 0
+        time: 0
     })
+
+    const { duration, time } = state;
 
     const currentTrack = document.getElementById("current-song");
 
@@ -103,10 +105,17 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
         return clearPlayTrack;
     }, [track]);
 
-    const handleSeek = e => {
-        setState(() => ({ currentTime: e.currentTarget.value }))
-        console.log(e.currentTarget.value)
+    const setDuration = e => {
+        setState(prevState => ({ ...prevState, duration: e.target.duration }))
     }
+
+    const handleSeek = e => {
+        setState(prevState => ({ ...prevState, time: e.target.value }));
+        currentTrack.currentTime = time;
+        console.log(currentTrack.currentTime)
+    }
+
+    const logTime = () => console.log(time)
 
     const playTrack = () => currentTrack.play();
 
@@ -122,7 +131,7 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
 
             <div className="music-player-container">
                 <audio
-                    onLoadedMetadata={(e) => setState({ duration: e.target.duration })}
+                    onLoadedMetadata={setDuration}
                     controls
                     autoPlay
                     controlsList="nodownload"
@@ -138,8 +147,8 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
                     //round duration up
                     <input type="range"
                         min="0"
-                        max={state.duration}
-                        onChange={handleSeek}
+                        max={duration}
+                        onClick={handleSeek}
                     />
                 </div>
             </div>
