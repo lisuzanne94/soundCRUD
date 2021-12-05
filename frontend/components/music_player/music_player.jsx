@@ -96,15 +96,22 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
     const [isSeeking, setSeeking] = useState(false);
 
     const currentTrack = document.getElementById("current-song");
+    // currentTrack ? currentTrack.ontimeupdate = () => console.log(currentTrack.currentTime) : null
 
     useEffect(() => {
         receivePlayTrack(track);
+
         return clearPlayTrack;
     }, [track]);
 
     const playTrack = () => currentTrack.play();
 
     const pauseTrack = () => currentTrack.pause();
+
+    const updateProgressBar = () => {
+        const progressBar = document.getElementById("progress-bar");
+        progressBar.value = Math.floor(currentTrack.currentTime);
+    }
 
     return track ? (
         <div className="music-player-bar-container">
@@ -121,6 +128,7 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
                         setDuration(currentTrack.duration);
                         setCurrentTime(currentTrack.currentTime)
                     }}
+                    onTimeUpdate={updateProgressBar}
                     autoPlay
                     controlsList="nodownload"
                     className="music-player"
@@ -134,6 +142,7 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
                 <div>
                     //round duration up
                     <input type="range"
+                        id="progress-bar"
                         min="0"
                         max={duration}
                         value={20}
