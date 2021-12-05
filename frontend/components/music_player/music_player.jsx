@@ -91,12 +91,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
-    const [state, setState] = useState({
-        duration: 0,
-        time: 0
-    })
-
-    const { duration, time } = state;
+    const [time, setCurrentTime] = useState(0);
+    const [duration, setDuration] = useState(0);
+    const [isSeeking, setSeeking] = useState(false);
 
     const currentTrack = document.getElementById("current-song");
 
@@ -105,22 +102,9 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
         return clearPlayTrack;
     }, [track]);
 
-    const setDuration = e => {
-        setState(prevState => ({ ...prevState, duration: e.target.duration }))
-    }
-
-    const handleSeek = e => {
-        setState(prevState => ({ ...prevState, time: e.target.value }));
-        currentTrack.currentTime = time;
-        console.log(currentTrack.currentTime)
-    }
-
-    const logTime = () => console.log(time)
-
     const playTrack = () => currentTrack.play();
 
     const pauseTrack = () => currentTrack.pause();
-
 
     return track ? (
         <div className="music-player-bar-container">
@@ -131,8 +115,12 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
 
             <div className="music-player-container">
                 <audio
-                    onLoadedMetadata={setDuration}
-                    controls
+                    // onLoadStart={setDuration}
+                    // onLoadedMetadata={setDuration}
+                    onLoadedData={() => {
+                        setDuration(currentTrack.duration);
+                        setCurrentTime(currentTrack.currentTime)
+                    }}
                     autoPlay
                     controlsList="nodownload"
                     className="music-player"
@@ -148,8 +136,20 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
                     <input type="range"
                         min="0"
                         max={duration}
-                        onClick={handleSeek}
+                        value={20}
+                        onInput={e => {
+                            setCurrentTime(e.target.value)
+                            // setCurrentTime(10)
+                            currentTrack.currentTime = e.target.value
+                            // console.log(time)
+                            // console.log(e.target.value)
+                        }}
                     />
+                </div>
+                <div>
+                    <div>
+                        {time}
+                    </div>
                 </div>
             </div>
 
