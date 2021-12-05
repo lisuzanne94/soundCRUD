@@ -110,7 +110,15 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
 
     const updateProgressBar = () => {
         const progressBar = document.getElementById("progress-bar");
-        progressBar.value = Math.floor(currentTrack.currentTime);
+        setInterval(() => {
+            progressBar.value = currentTrack.currentTime;
+        }, 1000);
+    }
+
+    const updateTimer = () => {
+        setInterval(() => {
+            setCurrentTime(currentTrack.currentTime)
+        }, 1000);
     }
 
     return track ? (
@@ -126,9 +134,13 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
                     // onLoadedMetadata={setDuration}
                     onLoadedData={() => {
                         setDuration(currentTrack.duration);
-                        setCurrentTime(currentTrack.currentTime)
+                        setCurrentTime(currentTrack.currentTime);
                     }}
-                    onTimeUpdate={updateProgressBar}
+                    onTimeUpdate={() => {
+                        updateProgressBar();
+                        // console.log(document.getElementById("progress-bar").value)
+                        updateTimer();
+                    }}
                     autoPlay
                     controlsList="nodownload"
                     className="music-player"
@@ -139,13 +151,12 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
                 <button onClick={pauseTrack}>Pause</button>
                 <button onClick={playTrack}>Play</button>
 
-                <div>
+                <div id="playbar">
                     //round duration up
                     <input type="range"
                         id="progress-bar"
                         min="0"
-                        max={duration}
-                        value={20}
+                        max={Math.ceil(duration)}
                         onInput={e => {
                             setCurrentTime(e.target.value)
                             // setCurrentTime(10)
@@ -157,7 +168,7 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
                 </div>
                 <div>
                     <div>
-                        {time}
+                        {Math.floor(time)}
                     </div>
                 </div>
             </div>
