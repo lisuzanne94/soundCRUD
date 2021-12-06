@@ -47,6 +47,14 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
         };
     }
 
+    const formatDuration = duration => {
+        if (Math.floor(duration % 60) < 10) {
+            return `${Math.floor(duration / 60)}:0${Math.floor(duration) % 60}`
+        } else {
+            return `${Math.floor(duration / 60)}:${Math.floor(duration) % 60}`
+        } 
+    }
+
     return track ? (
         <div className="music-player-bar-container">
             <div className="current-track-details">
@@ -96,7 +104,8 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
                         }}
                     />
                     <div>
-                        {duration}
+                        {/* {duration} */}
+                        {formatDuration(duration)}
                     </div>
                 </div>
 
