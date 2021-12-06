@@ -36,6 +36,17 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
         setVolume(e.target.value)
     }
 
+    const formatTime = time => {
+        let minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+
+        if (seconds < 10) {
+            return `${minutes}:0${seconds}`
+        } else {
+            return `${minutes}:${seconds}`
+        };
+    }
+
     return track ? (
         <div className="music-player-bar-container">
             <div className="current-track-details">
@@ -68,7 +79,8 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
 
                 <div id="playbar">
                     <div>
-                        {Math.floor(time)}
+                        {/* {Math.floor(time)} */}
+                        {formatTime(Math.floor(time))}
                     </div>
 
                     <input type="range"
