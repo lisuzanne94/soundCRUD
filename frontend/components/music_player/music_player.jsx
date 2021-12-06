@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlay, faPause, faRedoAlt } from '@fortawesome/free-solid-svg-icons'
 
 const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
     const [time, setCurrentTime] = useState(0);
@@ -18,6 +20,11 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
     const playTrack = () => currentTrack.play();
 
     const pauseTrack = () => currentTrack.pause();
+
+    const repeatTrack = () => {
+        currentTrack.currentTime = 0;
+        currentTrack.play();
+    }
 
     const updateProgressBar = () => {
         const progressBar = document.getElementById("progress-bar");
@@ -82,8 +89,12 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
                     src={track.trackFile} 
                 />
 
-                <button onClick={pauseTrack}>Pause</button>
-                <button onClick={playTrack}>Play</button>
+                <FontAwesomeIcon icon={faPlay} onClick={playTrack} />
+                <FontAwesomeIcon icon={faPause} onClick={pauseTrack} />
+                <FontAwesomeIcon icon={faRedoAlt} onClick={repeatTrack} />
+
+                {/* <button onClick={pauseTrack}>Pause</button>
+                <button onClick={playTrack}>Play</button> */}
 
                 <div id="playbar">
                     <div>
@@ -118,6 +129,10 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
                         value={volume}
                         onChange={e => updateVolume(e)}
                     />
+                </div>
+
+                <div className="">
+
                 </div>
 
             </div>
