@@ -1,3 +1,112 @@
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
+const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
+    const [time, setCurrentTime] = useState(0);
+    const [duration, setDuration] = useState(0);
+    const [volume, setVolume] = useState(0.4);
+
+    const currentTrack = document.getElementById("current-song");
+    currentTrack ? currentTrack.volume = volume : null;
+
+    useEffect(() => {
+        receivePlayTrack(track);
+
+        return clearPlayTrack;
+    }, [track]);
+
+    const playTrack = () => currentTrack.play();
+
+    const pauseTrack = () => currentTrack.pause();
+
+    const updateProgressBar = () => {
+        const progressBar = document.getElementById("progress-bar");
+        setInterval(() => {
+            progressBar.value = currentTrack.currentTime;
+        }, 1000);
+    }
+
+    const updateTimer = () => {
+        setInterval(() => {
+            setCurrentTime(currentTrack.currentTime)
+        }, 1000);
+    }
+
+    const updateVolume = e => {
+        setVolume(e.target.value)
+    }
+
+    return track ? (
+        <div className="music-player-bar-container">
+            <div className="current-track-details">
+                <h3>Now playing: <Link className="current-track-title" to={`/tracks/${track.id}`}>{track.title}</Link></h3>
+                <p>Uploaded by: <Link className="current-track-uploader" to={`/users/${track.uploader.id}`}>{track.uploader.username}</Link></p>
+            </div>
+
+            <div className="music-player-container">
+                <audio
+                    // onLoadStart={setDuration}
+                    // onLoadedMetadata={setDuration}
+                    onLoadedData={() => {
+                        setDuration(currentTrack.duration);
+                        setCurrentTime(currentTrack.currentTime);
+                    }}
+                    onTimeUpdate={() => {
+                        updateProgressBar();
+                        // console.log(document.getElementById("progress-bar").value)
+                        updateTimer();
+                    }}
+                    autoPlay
+                    controlsList="nodownload"
+                    className="music-player"
+                    id="current-song"
+                    src={track.trackFile} 
+                />
+
+                <button onClick={pauseTrack}>Pause</button>
+                <button onClick={playTrack}>Play</button>
+
+                <div id="playbar">
+                    <div>
+                        {Math.floor(time)}
+                    </div>
+
+                    <input type="range"
+                        id="progress-bar"
+                        min="0"
+                        max={Math.ceil(duration)}
+                        onInput={e => {
+                            setCurrentTime(e.target.value)
+                            // setCurrentTime(10)
+                            currentTrack.currentTime = e.target.value
+                            // console.log(time)
+                            // console.log(e.target.value)
+                        }}
+                    />
+                    <div>
+                        {duration}
+                    </div>
+                </div>
+
+                <div>
+                    <input type="range"
+                        id="volume-bar"
+                        min="0"
+                        max="1"
+                        step="0.1"
+                        value={volume}
+                        onChange={e => updateVolume(e)}
+                    />
+                </div>
+
+            </div>
+
+        </div>
+    ) : null
+}
+
+export default MusicPlayer;
+
 // import React from "react";
 // import { Link } from "react-router-dom";
 
@@ -86,95 +195,3 @@
 // };
 
 // export default MusicPlayer;
-
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
-const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
-    const [time, setCurrentTime] = useState(0);
-    const [duration, setDuration] = useState(0);
-    const [isSeeking, setSeeking] = useState(false);
-
-    const currentTrack = document.getElementById("current-song");
-    // currentTrack ? currentTrack.ontimeupdate = () => console.log(currentTrack.currentTime) : null
-
-    useEffect(() => {
-        receivePlayTrack(track);
-
-        return clearPlayTrack;
-    }, [track]);
-
-    const playTrack = () => currentTrack.play();
-
-    const pauseTrack = () => currentTrack.pause();
-
-    const updateProgressBar = () => {
-        const progressBar = document.getElementById("progress-bar");
-        setInterval(() => {
-            progressBar.value = currentTrack.currentTime;
-        }, 1000);
-    }
-
-    const updateTimer = () => {
-        setInterval(() => {
-            setCurrentTime(currentTrack.currentTime)
-        }, 1000);
-    }
-
-    return track ? (
-        <div className="music-player-bar-container">
-            <div className="current-track-details">
-                <h3>Now playing: <Link className="current-track-title" to={`/tracks/${track.id}`}>{track.title}</Link></h3>
-                <p>Uploaded by: <Link className="current-track-uploader" to={`/users/${track.uploader.id}`}>{track.uploader.username}</Link></p>
-            </div>
-
-            <div className="music-player-container">
-                <audio
-                    // onLoadStart={setDuration}
-                    // onLoadedMetadata={setDuration}
-                    onLoadedData={() => {
-                        setDuration(currentTrack.duration);
-                        setCurrentTime(currentTrack.currentTime);
-                    }}
-                    onTimeUpdate={() => {
-                        updateProgressBar();
-                        // console.log(document.getElementById("progress-bar").value)
-                        updateTimer();
-                    }}
-                    autoPlay
-                    controlsList="nodownload"
-                    className="music-player"
-                    id="current-song"
-                    src={track.trackFile} >
-                </audio>
-
-                <button onClick={pauseTrack}>Pause</button>
-                <button onClick={playTrack}>Play</button>
-
-                <div id="playbar">
-                    //round duration up
-                    <input type="range"
-                        id="progress-bar"
-                        min="0"
-                        max={Math.ceil(duration)}
-                        onInput={e => {
-                            setCurrentTime(e.target.value)
-                            // setCurrentTime(10)
-                            currentTrack.currentTime = e.target.value
-                            // console.log(time)
-                            // console.log(e.target.value)
-                        }}
-                    />
-                </div>
-                <div>
-                    <div>
-                        {Math.floor(time)}
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    ) : null
-}
-
-export default MusicPlayer;
