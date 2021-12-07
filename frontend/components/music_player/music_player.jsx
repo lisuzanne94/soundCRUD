@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlay, faPause, faRedoAlt } from '@fortawesome/free-solid-svg-icons'
+import { faPlay, faPause, faRedoAlt, faVolumeDown } from '@fortawesome/free-solid-svg-icons'
 
 const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
     const [time, setCurrentTime] = useState(0);
@@ -32,9 +32,7 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
 
     const updateProgressBar = () => {
         const progressBar = document.getElementById("progress-bar");
-        setInterval(() => {
-            progressBar.value = currentTrack.currentTime;
-        }, 1000);
+        progressBar.value = currentTrack.currentTime;
     }
 
     const updateTimer = () => {
@@ -69,89 +67,79 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
     const togglePlay = () => {
         if (currentTrack) {
             if (currentTrack.paused) {
-                return <FontAwesomeIcon icon={faPlay} onClick={playTrack} />
+                return <FontAwesomeIcon id="toggle-play-btn" icon={faPlay} onClick={playTrack} />
             } else {
-                return <FontAwesomeIcon icon={faPause} onClick={pauseTrack} />
+                return <FontAwesomeIcon id="toggle-play-btn" icon={faPause} onClick={pauseTrack} />
             }
         }
     }
 
     return track ? (
         <div className="music-player-bar-container">
-            <div className="current-track-details">
-                <h3>Now playing: <Link className="current-track-title" to={`/tracks/${track.id}`}>{track.title}</Link></h3>
-                <p>Uploaded by: <Link className="current-track-uploader" to={`/users/${track.uploader.id}`}>{track.uploader.username}</Link></p>
-            </div>
-
             <div className="music-player-container">
                 <audio
-                    // onLoadStart={setDuration}
-                    // onLoadedMetadata={setDuration}
+                    className="music-player"
                     onLoadedData={() => {
                         setDuration(currentTrack.duration);
                         setCurrentTime(currentTrack.currentTime);
                     }}
                     onTimeUpdate={() => {
                         updateProgressBar();
-                        // console.log(document.getElementById("progress-bar").value)
                         updateTimer();
                     }}
                     autoPlay
                     controlsList="nodownload"
-                    className="music-player"
                     id="current-song"
                     src={track.trackFile} 
                 />
 
-                {/* <FontAwesomeIcon icon={faPlay} onClick={playTrack} />
-                <FontAwesomeIcon icon={faPause} onClick={pauseTrack} /> */}
                 {togglePlay()}
-                <FontAwesomeIcon icon={faRedoAlt} onClick={replayTrack} />
+                <FontAwesomeIcon id="replay-btn" icon={faRedoAlt} onClick={replayTrack} />
 
-                {/* <button onClick={pauseTrack}>Pause</button>
-                <button onClick={playTrack}>Play</button> */}
-
-                <div id="playbar">
-                    <div>
-                        {/* {Math.floor(time)} */}
-                        {formatTime(Math.floor(time))}
-                    </div>
-
+                <div id="track-timer">
+                    {formatTime(Math.floor(time))}
+                </div>
+                
+                <div className="progress-bar-div">
                     <input type="range"
                         id="progress-bar"
                         min="0"
                         max={Math.ceil(duration)}
                         onInput={e => {
                             setCurrentTime(e.target.value)
-                            // setCurrentTime(10)
                             currentTrack.currentTime = e.target.value
-                            // console.log(time)
-                            // console.log(e.target.value)
                         }}
                     />
-                    <div>
-                        {/* {duration} */}
-                        {formatDuration(duration)}
+                </div>
+
+                <div id="track-duration">
+                    {formatDuration(duration)}
+                </div>
+
+                <div className="volume">
+                    <div className="volume-container">
+                        <input type="range"
+                            className="volume-bar"
+                            min="0"
+                            max="1"
+                            step="0.1"
+                            value={volume}
+                            onChange={e => updateVolume(e)}
+                        />
+                    </div>
+
+                    <div><FontAwesomeIcon id="volume-btn" icon={faVolumeDown} /></div>
+                </div>
+
+                <div className="playing-track-details">
+                    <img className="playing-track-art" src={track.coverImage} />
+                    <div className="playing-track-labels">
+                        {<Link className="current-track-title" to={`/tracks/${track.id}`}>{track.title}</Link>}
+                        {<Link className="current-track-uploader" to={`/users/${track.uploader.id}`}>{track.uploader.username}</Link>}
                     </div>
                 </div>
 
-                <div>
-                    <input type="range"
-                        id="volume-bar"
-                        min="0"
-                        max="1"
-                        step="0.1"
-                        value={volume}
-                        onChange={e => updateVolume(e)}
-                    />
-                </div>
-
-                <div className="">
-
-                </div>
-
             </div>
-
         </div>
     ) : null
 }
