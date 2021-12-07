@@ -17,11 +17,15 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
         return clearPlayTrack;
     }, [track]);
 
-    const playTrack = () => currentTrack.play();
+    const playTrack = () => {
+        currentTrack.play()
+    };
 
-    const pauseTrack = () => currentTrack.pause();
+    const pauseTrack = () => {
+        currentTrack.pause()
+    };
 
-    const repeatTrack = () => {
+    const replayTrack = () => {
         currentTrack.currentTime = 0;
         currentTrack.play();
     }
@@ -62,6 +66,16 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
         } 
     }
 
+    const togglePlay = () => {
+        if (currentTrack) {
+            if (currentTrack.paused) {
+                return <FontAwesomeIcon icon={faPlay} onClick={playTrack} />
+            } else {
+                return <FontAwesomeIcon icon={faPause} onClick={pauseTrack} />
+            }
+        }
+    }
+
     return track ? (
         <div className="music-player-bar-container">
             <div className="current-track-details">
@@ -89,9 +103,10 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
                     src={track.trackFile} 
                 />
 
-                <FontAwesomeIcon icon={faPlay} onClick={playTrack} />
-                <FontAwesomeIcon icon={faPause} onClick={pauseTrack} />
-                <FontAwesomeIcon icon={faRedoAlt} onClick={repeatTrack} />
+                {/* <FontAwesomeIcon icon={faPlay} onClick={playTrack} />
+                <FontAwesomeIcon icon={faPause} onClick={pauseTrack} /> */}
+                {togglePlay()}
+                <FontAwesomeIcon icon={faRedoAlt} onClick={replayTrack} />
 
                 {/* <button onClick={pauseTrack}>Pause</button>
                 <button onClick={playTrack}>Play</button> */}
