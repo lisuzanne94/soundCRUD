@@ -1,9 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlay, faPencilAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { faPlay, faPause, faPencilAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
 import CommentFormContainer from "../comments/comment_form_container";
 import CommentItemContainer from "../comments/comment_item_container";
+import PlayButtonContainer from "../play_button/play_button_container";
 import Modal from '../modal/modal';
 
 class TrackShow extends React.Component {
@@ -39,13 +40,67 @@ class TrackShow extends React.Component {
             </button>
         ) : null
 
+        // let togglePlay;
+        // if (this.props.currentTrack && this.props.currentTrack.id === this.props.trackId) {
+        //     if (!document.getElementById("current-song").paused) {
+        //         togglePlay = (<div className="track-play-btn">
+        //             <FontAwesomeIcon icon={faPause} onClick={() => document.getElementById("current-song").pause()} />
+        //         </div>)
+        //     } else {
+        //         togglePlay = (<div className="track-play-btn">
+        //             <FontAwesomeIcon icon={faPlay} onClick={() => document.getElementById("current-song").play()} />
+        //         </div>)
+        //     }
+        // }
+
+        // const togglePlay = (this.props.currentTrack && this.props.currentTrack.id === this.props.trackId && !document.getElementById("current-song").paused) ? 
+            // (<div className="track-play-btn">
+            //     <FontAwesomeIcon icon={faPause} onClick={() => document.getElementById("current-song").pause()} />
+            // </div>) :
+            // (<div className="track-play-btn">
+            //     <FontAwesomeIcon icon={faPlay} onClick={() => this.props.receivePlayTrack(this.props.track)} />
+            // </div>)
+
+            // const togglePlay = () => {
+            //     if (!this.props.currentTrack && this.props.currentTrack.id === this.props.trackId) {
+            //         if (!document.getElementById("current-song").paused) {
+            //             return (<div className="track-play-btn">
+            //                 <FontAwesomeIcon icon={faPause} onClick={() => this.props.receivePlayTrack(this.props.track)} />
+            //             </div>)
+            //         } else {
+            //             (<div className="track-play-btn">
+            //                 <FontAwesomeIcon icon={faPlay} onClick={() => document.getElementById("current-song").pause()} />
+            //             </div>)
+            //         }
+            //     }
+            // }
+
+        // const togglePlay = () => {
+        //     if (!this.props.currentTrack || this.props.currentTrack.id !== this.props.trackId) {
+        //         return (<div className="track-play-btn">
+        //             <FontAwesomeIcon icon={faPlay} onClick={() => this.props.receivePlayTrack(this.props.track)} />
+        //         </div>) }
+        //     if (this.props.currentTrack.id === this.props.trackId && !document.getElementById("current-song").paused) {
+        //             return (<div className="track-play-btn">
+        //                 <FontAwesomeIcon icon={faPause} onClick={() => document.getElementById("current-song").pause()} />
+        //             </div>)
+        //         } else {
+        //             (<div className="track-play-btn">
+        //                 <FontAwesomeIcon icon={faPlay} onClick={() => document.getElementById("current-song").play()} />
+        //             </div>)
+        //         }
+        //     }
+
         return (
             <div className="track-show-page-container">
                 <div className="track-banner">
                     <div className="track-banner-left">
-                        <div className="track-play-btn">
+                        {/* <div className="track-play-btn">
                             <FontAwesomeIcon icon={faPlay} onClick={() => this.props.receivePlayTrack(this.props.track)} />
-                        </div>
+                        </div> */}
+                        {/* {togglePlay()} */}
+                        <PlayButtonContainer trackId={this.props.trackId} track={this.props.track} />
+
                         <div className="track-banner-labels">
                             <h2 className="track-banner-title">{this.props.track.title}</h2>
                             <h3><Link className="track-banner-uploader" to={`/users/${this.props.track.uploader.id}`}>{this.props.track.uploader.username}</Link></h3>

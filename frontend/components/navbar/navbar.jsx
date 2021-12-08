@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedinIn, faAngellist } from '@fortawesome/free-brands-svg-icons'
 
 class NavBar extends React.Component {
 
@@ -23,12 +23,16 @@ class NavBar extends React.Component {
                             <div className="left-nav-btn">Home</div>
                         </NavLink>
 
-                        <a className="nav-link" className="nav-brand-link" href="https://www.github.com/lisuzanne94" target="_blank">
+                        <a className="nav-link" className="nav-brand-link" href="https://github.com/lisuzanne94/soundCRUD" target="_blank">
                             <div className="left-nav-btn"><FontAwesomeIcon icon={faGithub} className="nav-brand-icon" />&#160;&#160;Github</div>
                         </a>
 
                         <a className="nav-link" className="nav-brand-link" href="https://www.linkedin.com/in/suzanne-li-080036161" target="_blank">
                             <div className="left-nav-btn"><FontAwesomeIcon icon={faLinkedinIn} className="nav-brand-icon" />&#160;&#160;LinkedIn</div>
+                        </a>
+
+                        <a className="nav-link" className="nav-brand-link" href="https://angel.co/u/suzanne-li-2" target="_blank">
+                            <div className="left-nav-btn"><FontAwesomeIcon icon={faAngellist} className="nav-brand-icon" />&#160;&#160;AngelList</div>
                         </a>
                         
                     </div>

@@ -3,26 +3,33 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faPause, faRedoAlt, faVolumeDown } from '@fortawesome/free-solid-svg-icons'
 
-const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
+const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack, playTrack, pauseTrack }) => {
     const [time, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [volume, setVolume] = useState(0.4);
+    const [interval, setInterval] = useState(null);
 
     const currentTrack = document.getElementById("current-song");
     currentTrack ? currentTrack.volume = volume : null;
 
     useEffect(() => {
-        receivePlayTrack(track);
+        track ? receivePlayTrack(track) : null;
 
         return clearPlayTrack;
     }, [track]);
 
-    const playTrack = () => {
-        currentTrack.play()
+    useEffect(() => {
+        return () => clearInterval(interval) 
+    })
+
+    const playCurrentTrack = () => {
+        currentTrack.play();
+        playTrack();
     };
 
-    const pauseTrack = () => {
-        currentTrack.pause()
+    const pauseCurrentTrack = () => {
+        currentTrack.pause();
+        pauseTrack();
     };
 
     const replayTrack = () => {
@@ -33,13 +40,18 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
     const updateProgressBar = () => {
         const progressBar = document.getElementById("progress-bar");
         progressBar.value = currentTrack.currentTime;
+        //Tells the state and play button that song is done playing
+        Math.floor(time) === Math.floor(currentTrack.duration) ? pauseTrack() : null;
     }
 
     const updateTimer = () => {
-        setInterval(() => {
+        const intervalId = setInterval(() => {
             setCurrentTime(currentTrack.currentTime)
         }, 1000);
+        setInterval(intervalId)
     }
+
+ 
 
     const updateVolume = e => {
         setVolume(e.target.value)
@@ -67,9 +79,9 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
     const togglePlay = () => {
         if (currentTrack) {
             if (currentTrack.paused) {
-                return <FontAwesomeIcon id="toggle-play-btn" icon={faPlay} onClick={playTrack} />
+                return <FontAwesomeIcon id="toggle-play-btn" icon={faPlay} onClick={playCurrentTrack} />
             } else {
-                return <FontAwesomeIcon id="toggle-play-btn" icon={faPause} onClick={pauseTrack} />
+                return <FontAwesomeIcon id="toggle-play-btn" icon={faPause} onClick={pauseCurrentTrack} />
             }
         }
     }
@@ -105,7 +117,7 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
                         id="progress-bar"
                         min="0"
                         max={Math.ceil(duration)}
-                        onInput={e => {
+                        onChange={e => {
                             setCurrentTime(e.target.value)
                             currentTrack.currentTime = e.target.value
                         }}

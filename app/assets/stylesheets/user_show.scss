@@ -98,7 +98,8 @@
     margin: 0px 0px 0px 15px;
 }
 
-.user-track-play-btn {
+.user-track-play-btn .track-play-btn {
+    text-align: center;
     width: fit-content;
     height: fit-content;
     cursor: pointer;
@@ -106,7 +107,20 @@
     color: white;
     background-color: rgb(192, 20, 255);
     padding: 10px 10px 10px 15px;
-    border-radius: 100%;
+    border-radius: 50%;
+    margin: 0px 5px 0px 0px;
+}
+
+.user-track-play-btn .track-pause-btn {
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    background-color: rgb(192, 20, 255);
+    padding: 10px 12px 10px 13px;
+    border-radius: 50%;
     margin: 0px 5px 0px 0px;
 }
 
@@ -146,7 +160,6 @@
 }
 
 .self-plug-container {
-    // border: 1px solid black;
     width: 35%;
     border-top: 1px solid rgb(219, 219, 219);
     margin: 0px 30px 0px 30px;
@@ -165,9 +178,10 @@
     display: flex;
 }
 
-.self-plug-github, .self-plug-linkedin {
+.self-plug-github, .self-plug-linkedin, .self-plug-angellist {
     text-decoration: none;
     background-color: black;
+    font-size: 13px;
     border-radius: 5px;
     margin: 0px 5px 0px 0px;
     padding: 10px;

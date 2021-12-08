@@ -1,9 +1,10 @@
 import React from "react";
+import PlayButtonContainer from "../play_button/play_button_container";
 import Modal from '../modal/modal';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlay, faCameraRetro } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import { faCameraRetro } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faLinkedinIn, faAngellist } from '@fortawesome/free-brands-svg-icons'
 
 class UserShow extends React.Component {
 
@@ -32,7 +33,7 @@ class UserShow extends React.Component {
         if (!this.props.user) { return null }
         if (!this.props.tracks) { return null }
 
-        const { currentUserId, user, userId, tracks, openModal, receivePlayTrack } = this.props;
+        const { currentUserId, user, userId, tracks, openModal } = this.props;
 
         const updateProfPicBtn = currentUserId === user.id ? (
             <button className="update-prof-pic-btn" onClick={() => openModal('Edit User')}>
@@ -70,8 +71,11 @@ class UserShow extends React.Component {
 
                                             <div className="user-track-obj-top">
                                                  <div className="user-track-player">
-                                                    <div className="user-track-play-btn">
+                                                    {/* <div className="user-track-play-btn">
                                                         <FontAwesomeIcon onClick={() => receivePlayTrack(track)} icon={faPlay} />
+                                                    </div> */}
+                                                    <div className="user-track-play-btn">
+                                                        <PlayButtonContainer trackId={track.id} track={track} />
                                                     </div>
                                                     <div className="user-track-labels">
                                                         <Link to={`/users/${track.uploader.id}`} className="user-track-uploader">{track.uploader.username}</Link>
@@ -93,12 +97,16 @@ class UserShow extends React.Component {
                     <div className="self-plug-container">
                         <div className="self-plug-header">In case you missed it</div>
                         <div className="self-plug-btns">
-                            <a className="self-plug-github" href="https://www.github.com/lisuzanne94" target="_blank">
+                            <a className="self-plug-github" href="https://github.com/lisuzanne94/soundCRUD" target="_blank">
                                 <div><FontAwesomeIcon icon={faGithub} />&#160;&#160;Github</div>
                             </a>
 
                             <a className="self-plug-linkedin" href="https://www.linkedin.com/in/suzanne-li-080036161" target="_blank">
                                 <div><FontAwesomeIcon icon={faLinkedinIn} />&#160;&#160;LinkedIn</div>
+                            </a>
+
+                            <a className="self-plug-angellist" href="https://angel.co/u/suzanne-li-2" target="_blank">
+                                <div><FontAwesomeIcon icon={faAngellist} />&#160;&#160;AngelList</div>
                             </a>
                         </div>
                     </div>
