@@ -7,17 +7,20 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack, playTrack, pause
     const [time, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [volume, setVolume] = useState(0.4);
+    const [interval, setInterval] = useState(null);
 
     const currentTrack = document.getElementById("current-song");
     currentTrack ? currentTrack.volume = volume : null;
-    currentTrack && (time === currentTrack.duration) ? () => pauseTrack() : null;
-
 
     useEffect(() => {
         track ? receivePlayTrack(track) : null;
 
         return clearPlayTrack;
     }, [track]);
+
+    useEffect(() => {
+        return () => clearInterval(interval) 
+    })
 
     const playCurrentTrack = () => {
         currentTrack.play();
@@ -42,10 +45,13 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack, playTrack, pause
     }
 
     const updateTimer = () => {
-        setInterval(() => {
+        const intervalId = setInterval(() => {
             setCurrentTime(currentTrack.currentTime)
         }, 1000);
+        setInterval(intervalId)
     }
+
+ 
 
     const updateVolume = e => {
         setVolume(e.target.value)
