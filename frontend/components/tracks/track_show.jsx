@@ -75,21 +75,21 @@ class TrackShow extends React.Component {
             //     }
             // }
 
-        const togglePlay = () => {
-            if (!this.props.currentTrack || this.props.currentTrack.id !== this.props.trackId) {
-                return (<div className="track-play-btn">
-                    <FontAwesomeIcon icon={faPlay} onClick={() => this.props.receivePlayTrack(this.props.track)} />
-                </div>) }
-            if (this.props.currentTrack.id === this.props.trackId && !document.getElementById("current-song").paused) {
-                    return (<div className="track-play-btn">
-                        <FontAwesomeIcon icon={faPause} onClick={() => document.getElementById("current-song").pause()} />
-                    </div>)
-                } else {
-                    (<div className="track-play-btn">
-                        <FontAwesomeIcon icon={faPlay} onClick={() => document.getElementById("current-song").play()} />
-                    </div>)
-                }
-            }
+        // const togglePlay = () => {
+        //     if (!this.props.currentTrack || this.props.currentTrack.id !== this.props.trackId) {
+        //         return (<div className="track-play-btn">
+        //             <FontAwesomeIcon icon={faPlay} onClick={() => this.props.receivePlayTrack(this.props.track)} />
+        //         </div>) }
+        //     if (this.props.currentTrack.id === this.props.trackId && !document.getElementById("current-song").paused) {
+        //             return (<div className="track-play-btn">
+        //                 <FontAwesomeIcon icon={faPause} onClick={() => document.getElementById("current-song").pause()} />
+        //             </div>)
+        //         } else {
+        //             (<div className="track-play-btn">
+        //                 <FontAwesomeIcon icon={faPlay} onClick={() => document.getElementById("current-song").play()} />
+        //             </div>)
+        //         }
+        //     }
 
         return (
             <div className="track-show-page-container">

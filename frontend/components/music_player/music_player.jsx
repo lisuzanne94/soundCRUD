@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faPause, faRedoAlt, faVolumeDown } from '@fortawesome/free-solid-svg-icons'
 
-const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
+const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack, playTrack, pauseTrack }) => {
     const [time, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [volume, setVolume] = useState(0.4);
@@ -12,17 +12,19 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
     currentTrack ? currentTrack.volume = volume : null;
 
     useEffect(() => {
-        receivePlayTrack(track);
+        track ? receivePlayTrack(track) : null;
 
         return clearPlayTrack;
     }, [track]);
 
-    const playTrack = () => {
-        currentTrack.play()
+    const playCurrentTrack = () => {
+        currentTrack.play();
+        playTrack();
     };
 
-    const pauseTrack = () => {
-        currentTrack.pause()
+    const pauseCurrentTrack = () => {
+        currentTrack.pause();
+        pauseTrack();
     };
 
     const replayTrack = () => {
@@ -67,9 +69,9 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack }) => {
     const togglePlay = () => {
         if (currentTrack) {
             if (currentTrack.paused) {
-                return <FontAwesomeIcon id="toggle-play-btn" icon={faPlay} onClick={playTrack} />
+                return <FontAwesomeIcon id="toggle-play-btn" icon={faPlay} onClick={playCurrentTrack} />
             } else {
-                return <FontAwesomeIcon id="toggle-play-btn" icon={faPause} onClick={pauseTrack} />
+                return <FontAwesomeIcon id="toggle-play-btn" icon={faPause} onClick={pauseCurrentTrack} />
             }
         }
     }

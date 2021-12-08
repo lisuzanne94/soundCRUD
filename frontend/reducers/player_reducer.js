@@ -16,8 +16,10 @@ const playerReducer = (state={ currentTrack: null, isPlaying: false }, action) =
             return nextState;
         case PLAY_TRACK:
             nextState["isPlaying"] = true;
+            return nextState;
         case PAUSE_TRACK:
             nextState["isPlaying"] = false;
+            return nextState;
         case CLEAR_PLAY_TRACK:
             return { currentTrack: null, isPlaying: false }
         default:
