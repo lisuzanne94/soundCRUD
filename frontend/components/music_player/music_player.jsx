@@ -10,6 +10,8 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack, playTrack, pause
 
     const currentTrack = document.getElementById("current-song");
     currentTrack ? currentTrack.volume = volume : null;
+    currentTrack && (time === currentTrack.duration) ? () => pauseTrack() : null;
+
 
     useEffect(() => {
         track ? receivePlayTrack(track) : null;
@@ -35,6 +37,8 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack, playTrack, pause
     const updateProgressBar = () => {
         const progressBar = document.getElementById("progress-bar");
         progressBar.value = currentTrack.currentTime;
+        //Tells the state and play button that song is done playing
+        Math.floor(time) === Math.floor(currentTrack.duration) ? pauseTrack() : null;
     }
 
     const updateTimer = () => {
@@ -107,7 +111,7 @@ const MusicPlayer = ({ track, receivePlayTrack, clearPlayTrack, playTrack, pause
                         id="progress-bar"
                         min="0"
                         max={Math.ceil(duration)}
-                        onInput={e => {
+                        onChange={e => {
                             setCurrentTime(e.target.value)
                             currentTrack.currentTime = e.target.value
                         }}

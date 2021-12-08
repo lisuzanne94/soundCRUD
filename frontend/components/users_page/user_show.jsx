@@ -1,4 +1,5 @@
 import React from "react";
+import PlayButtonContainer from "../play_button/play_button_container";
 import Modal from '../modal/modal';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -70,9 +71,10 @@ class UserShow extends React.Component {
 
                                             <div className="user-track-obj-top">
                                                  <div className="user-track-player">
-                                                    <div className="user-track-play-btn">
+                                                    {/* <div className="user-track-play-btn">
                                                         <FontAwesomeIcon onClick={() => receivePlayTrack(track)} icon={faPlay} />
-                                                    </div>
+                                                    </div> */}
+                                                    <PlayButtonContainer trackId={track.id} track={track} />
                                                     <div className="user-track-labels">
                                                         <Link to={`/users/${track.uploader.id}`} className="user-track-uploader">{track.uploader.username}</Link>
                                                         <Link to={`/tracks/${track.id}`} className="user-track-title">{track.title}</Link>

@@ -4,7 +4,7 @@ import { faPlay, faPause, faPencilAlt, faTrashAlt } from '@fortawesome/free-soli
 import { Link } from "react-router-dom";
 import CommentFormContainer from "../comments/comment_form_container";
 import CommentItemContainer from "../comments/comment_item_container";
-import PlayButton from "../play_button/play_button_container";
+import PlayButtonContainer from "../play_button/play_button_container";
 import Modal from '../modal/modal';
 
 class TrackShow extends React.Component {
@@ -99,7 +99,7 @@ class TrackShow extends React.Component {
                             <FontAwesomeIcon icon={faPlay} onClick={() => this.props.receivePlayTrack(this.props.track)} />
                         </div> */}
                         {/* {togglePlay()} */}
-                        <PlayButton trackId={this.props.trackId} track={this.props.track} />
+                        <PlayButtonContainer trackId={this.props.trackId} track={this.props.track} />
 
                         <div className="track-banner-labels">
                             <h2 className="track-banner-title">{this.props.track.title}</h2>
