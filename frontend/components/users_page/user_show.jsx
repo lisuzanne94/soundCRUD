@@ -4,7 +4,7 @@ import Modal from '../modal/modal';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCameraRetro } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedinIn, faAngellist } from '@fortawesome/free-brands-svg-icons'
 
 class UserShow extends React.Component {
 
@@ -103,6 +103,10 @@ class UserShow extends React.Component {
 
                             <a className="self-plug-linkedin" href="https://www.linkedin.com/in/suzanne-li-080036161" target="_blank">
                                 <div><FontAwesomeIcon icon={faLinkedinIn} />&#160;&#160;LinkedIn</div>
+                            </a>
+
+                            <a className="self-plug-angellist" href="https://angel.co/u/suzanne-li-2" target="_blank">
+                                <div><FontAwesomeIcon icon={faAngellist} />&#160;&#160;AngelList</div>
                             </a>
                         </div>
                     </div>
