@@ -97,7 +97,7 @@ class UserShow extends React.Component {
                     <div className="self-plug-container">
                         <div className="self-plug-header">In case you missed it</div>
                         <div className="self-plug-btns">
-                            <a className="self-plug-github" href="https://www.github.com/lisuzanne94" target="_blank">
+                            <a className="self-plug-github" href="https://github.com/lisuzanne94/soundCRUD" target="_blank">
                                 <div><FontAwesomeIcon icon={faGithub} />&#160;&#160;Github</div>
                             </a>
 

@@ -23,7 +23,7 @@ class NavBar extends React.Component {
                             <div className="left-nav-btn">Home</div>
                         </NavLink>
 
-                        <a className="nav-link" className="nav-brand-link" href="https://www.github.com/lisuzanne94" target="_blank">
+                        <a className="nav-link" className="nav-brand-link" href="https://github.com/lisuzanne94/soundCRUD" target="_blank">
                             <div className="left-nav-btn"><FontAwesomeIcon icon={faGithub} className="nav-brand-icon" />&#160;&#160;Github</div>
                         </a>
 
