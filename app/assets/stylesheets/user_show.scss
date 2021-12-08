@@ -98,7 +98,8 @@
     margin: 0px 0px 0px 15px;
 }
 
-.user-track-play-btn {
+.user-track-play-btn .track-play-btn {
+    text-align: center;
     width: fit-content;
     height: fit-content;
     cursor: pointer;
@@ -106,7 +107,21 @@
     color: white;
     background-color: rgb(192, 20, 255);
     padding: 10px 10px 10px 15px;
-    border-radius: 100%;
+    border-radius: 50%;
+    margin: 0px 5px 0px 0px;
+}
+
+.user-track-play-btn .track-pause-btn {
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    background-color: rgb(192, 20, 255);
+    padding: 10px 12px 10px 13px;
+    // padding: auto;
+    border-radius: 50%;
     margin: 0px 5px 0px 0px;
 }
 

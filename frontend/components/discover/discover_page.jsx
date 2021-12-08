@@ -55,7 +55,9 @@ class DiscoverPage extends React.Component {
                                             {/* <div className="discover-play-btn">
                                                 <FontAwesomeIcon icon={faPlay} onClick={() => this.props.receivePlayTrack(track)} />
                                             </div> */}
-                                            <PlayButtonContainer trackId={track.id} track={track} />
+                                            <div className="discover-play-btn">
+                                                <PlayButtonContainer trackId={track.id} track={track} />
+                                            </div>
                                             <Link to={`/tracks/${track.id}`} className="discover-track-title">{track.title}</Link>
                                             <Link to={`/users/${track.uploader.id}`} className="discover-track-uploader">{track.uploader.username}</Link>
                                         </li>
@@ -73,7 +75,9 @@ class DiscoverPage extends React.Component {
                                     <div key={track.id}>
                                         <li className="discover-track-obj">
                                             {/* <div className="discover-play-btn"><FontAwesomeIcon icon={faPlay} onClick={() => this.props.receivePlayTrack(track)} /></div> */}
-                                            <PlayButtonContainer trackId={track.id} track={track} />
+                                            <div className="discover-play-btn">
+                                                <PlayButtonContainer trackId={track.id} track={track} />
+                                            </div>
                                             <Link to={`/tracks/${track.id}`}>
                                                 <img className="discover-track-cover-img" src={track.coverImage} />
                                             </Link>
@@ -94,7 +98,9 @@ class DiscoverPage extends React.Component {
                                     <div key={track.id}>
                                         <li className="discover-track-obj">
                                             {/* <div className="discover-play-btn"><FontAwesomeIcon icon={faPlay} onClick={() => this.props.receivePlayTrack(track)} /></div> */}
-                                            <PlayButtonContainer trackId={track.id} track={track} />
+                                            <div className="discover-play-btn">
+                                                <PlayButtonContainer trackId={track.id} track={track} />
+                                            </div>
                                             <Link to={`/tracks/${track.id}`}>
                                                 <img className="discover-track-cover-img" src={track.coverImage} />
                                             </Link>
@@ -115,7 +121,9 @@ class DiscoverPage extends React.Component {
                                     <div key={track.id}>
                                         <li className="discover-track-obj">
                                             {/* <div className="discover-play-btn"><FontAwesomeIcon icon={faPlay} onClick={() => this.props.receivePlayTrack(track)} /></div> */}
-                                            <PlayButtonContainer trackId={track.id} track={track} />
+                                            <div className="discover-play-btn">
+                                                <PlayButtonContainer trackId={track.id} track={track} />
+                                            </div>
                                             <Link to={`/tracks/${track.id}`}>
                                                 <img className="discover-track-cover-img" src={track.coverImage} />
                                             </Link>
@@ -138,7 +146,9 @@ class DiscoverPage extends React.Component {
                                             {/* <div className="discover-play-btn">
                                                 <FontAwesomeIcon icon={faPlay} onClick={() => this.props.receivePlayTrack(track)} />
                                             </div> */}
-                                            <PlayButtonContainer trackId={track.id} track={track} />
+                                            <div className="discover-play-btn">
+                                                <PlayButtonContainer trackId={track.id} track={track} />
+                                            </div>
                                             <Link to={`/tracks/${track.id}`}>
                                                 <img className="discover-track-cover-img" src={track.coverImage} />
                                             </Link>

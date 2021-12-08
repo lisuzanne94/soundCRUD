@@ -20,7 +20,7 @@ const PlayButton = ({ currentTrack, trackId, track, receivePlayTrack, playTrack,
             }} />
         </div>)
     } else if (currentTrack.id === parseInt(trackId) && isPlaying) {
-        button = (<div className="track-play-btn">
+        button = (<div className="track-pause-btn">
             <FontAwesomeIcon icon={faPause} onClick={() => {
                 currentPlayingTrack.pause();
                 pauseTrack();
@@ -43,7 +43,7 @@ const PlayButton = ({ currentTrack, trackId, track, receivePlayTrack, playTrack,
                     }} />
             </div>)
         } else if (currentTrack && currentTrack.id === trackId && isPlaying) {
-            button = (<div className="track-play-btn">
+            button = (<div className="track-pause-btn">
                 <FontAwesomeIcon icon={faPause} onClick={() => {
                     currentPlayingTrack.pause();
                     pauseTrack();

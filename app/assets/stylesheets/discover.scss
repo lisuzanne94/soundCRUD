@@ -45,7 +45,7 @@
     margin: 0px 25px 0px 0px;
 };
 
-.discover-play-btn {
+.discover-play-btn .track-play-btn {
     display: none;
     position: absolute;
     bottom: 45%;
@@ -55,10 +55,23 @@
     color: white;
     background-color: rgb(192, 20, 255);
     padding: 15px 15px 15px 20px;
-    border-radius: 100%;
+    border-radius: 50%;
 }
 
-.discover-track-obj:hover > .discover-play-btn {
+.discover-play-btn .track-pause-btn {
+    display: none;
+    position: absolute;
+    bottom: 45%;
+    left: 35%;
+    cursor: pointer;
+    font-size: 28px;
+    color: white;
+    background-color: rgb(192, 20, 255);
+    padding: 15px 17px 15px 17px;
+    border-radius: 50%;
+}
+
+.discover-track-obj:hover > .discover-play-btn .track-play-btn, .discover-track-obj:hover > .discover-play-btn .track-pause-btn {
     display: inline-block;
 }
 
