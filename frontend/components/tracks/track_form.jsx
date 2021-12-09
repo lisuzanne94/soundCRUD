@@ -83,7 +83,6 @@ class TrackForm extends React.Component {
         return e => this.setState({ [field]: e.target.value })
     };
 
-
     renderErrors() {
         return (
             <ul>

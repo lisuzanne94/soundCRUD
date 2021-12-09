@@ -52,9 +52,6 @@ class DiscoverPage extends React.Component {
                                             <Link to={`/tracks/${track.id}`}>
                                                 <img className="discover-track-cover-img" src={track.coverImage} />
                                             </Link>
-                                            {/* <div className="discover-play-btn">
-                                                <FontAwesomeIcon icon={faPlay} onClick={() => this.props.receivePlayTrack(track)} />
-                                            </div> */}
                                             <div className="discover-play-btn">
                                                 <PlayButtonContainer trackId={track.id} track={track} />
                                             </div>
@@ -74,7 +71,6 @@ class DiscoverPage extends React.Component {
                                 hiphop.map(track => (
                                     <div key={track.id}>
                                         <li className="discover-track-obj">
-                                            {/* <div className="discover-play-btn"><FontAwesomeIcon icon={faPlay} onClick={() => this.props.receivePlayTrack(track)} /></div> */}
                                             <div className="discover-play-btn">
                                                 <PlayButtonContainer trackId={track.id} track={track} />
                                             </div>
@@ -97,7 +93,6 @@ class DiscoverPage extends React.Component {
                                 alternative.map(track => (
                                     <div key={track.id}>
                                         <li className="discover-track-obj">
-                                            {/* <div className="discover-play-btn"><FontAwesomeIcon icon={faPlay} onClick={() => this.props.receivePlayTrack(track)} /></div> */}
                                             <div className="discover-play-btn">
                                                 <PlayButtonContainer trackId={track.id} track={track} />
                                             </div>
@@ -120,7 +115,6 @@ class DiscoverPage extends React.Component {
                                 pop.map(track => (
                                     <div key={track.id}>
                                         <li className="discover-track-obj">
-                                            {/* <div className="discover-play-btn"><FontAwesomeIcon icon={faPlay} onClick={() => this.props.receivePlayTrack(track)} /></div> */}
                                             <div className="discover-play-btn">
                                                 <PlayButtonContainer trackId={track.id} track={track} />
                                             </div>
@@ -143,9 +137,6 @@ class DiscoverPage extends React.Component {
                                 electronic.map(track => (
                                     <div key={track.id}>
                                         <li className="discover-track-obj">
-                                            {/* <div className="discover-play-btn">
-                                                <FontAwesomeIcon icon={faPlay} onClick={() => this.props.receivePlayTrack(track)} />
-                                            </div> */}
                                             <div className="discover-play-btn">
                                                 <PlayButtonContainer trackId={track.id} track={track} />
                                             </div>
@@ -168,7 +159,6 @@ class DiscoverPage extends React.Component {
                         <ul className="discover-uploaders-list">
                             { randomUsers.map(user => 
                                     <li key={user.id}>
-        
                                             <div className="discover-uploaders-obj">
                                                 <Link className="discover-link" to={`/users/${user.id}`}><img className="discover-uploaders-pic" src={user.profilePic} /></Link>
                                                 <div className="discover-uploaders-labels">
