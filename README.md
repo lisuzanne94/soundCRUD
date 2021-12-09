@@ -49,6 +49,5 @@ Users can leave timestamped comments for any track. All comments for that track 
 <img src="docs/soundcrud-comments.png"></img>
 
 ## Future Features
-* Custom track playbar
 * Track visualizers 
 * Playlists
