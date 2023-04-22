@@ -1,6 +1,6 @@
 # soundCRUD
 
-**Due to hosting issues, the live site is no longer available.**
+**Due to [changes in Heroku's services](https://blog.heroku.com/next-chapter), the live site is no longer available.**
 
 soundCRUD is a clone of SoundCloud in which users can upload and share music tracks with others. Users can browse through tracks uploaded by the rest of the community and can comment and listen to each track.
 
